@@ -1,6 +1,6 @@
 <x-guest-layout>
   <!-- Section 1 -->
-  <section class="dark:bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-600 pt-24">
+  <section class="dark:bg-gray-500 pt-24">
     <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
       <div class="mr-auto place-self-center lg:col-span-7">
         <h1 class="max-w-2xl mb-4 text-4xl font-extrabold underline underline-offset-8 decoration-yellow-600 tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">All Smart<br>Device Brands</h1>
@@ -13,7 +13,7 @@
   </section>
   <!-- Section 1 -->
   <!-- Section 2 -->
-  <section class="dark:bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-600 pt-24">
+  <section class="dark:bg-gray-500 pt-24">
 
     <div class="container mx-auto text-center">
       <header class="pb-6">
@@ -37,8 +37,8 @@
   </section>
   <!-- Section 2 -->
   <!-- Section 3 -->
-  <section class="dark:bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-600 ">
-    <div class="dark:bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-600 ">
+  <section class="dark:bg-gray-500 ">
+    <div class="dark:bg-gray-500 ">
       <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <h2 class="dark:text-white text-2xl font-bold tracking-tight text-gray-900">ALL BRANDS</h2>
         @for($i = 0; $i < 8; $i++) <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">

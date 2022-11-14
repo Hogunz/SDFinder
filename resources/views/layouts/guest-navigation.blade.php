@@ -9,7 +9,6 @@
               <ul class="p-2 border-r bg-white absolute rounded left-0 right-0 shadow mt-8 md:mt-8 hidden">
                 <li class="flex xl:hidden cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
                   <div class="flex items-center">
-
                     <span class="ml-2 font-bold">Home</span>
                   </div>
                 </li>
@@ -60,26 +59,27 @@
             <div class="flex items-center">
 
               <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/light-with-button-svg3.svg" alt="logo" />
-              <h2 class="hidden sm:block text-base text-gray-700 font-bold leading-normal px-3">SDFinder</h2>
+
+              <h2 class="hidden sm:block text-base text-gray-700 font-bold leading-normal px-3 hover:text-red-600" style="font-family: 'BRONSON', sans-serif;
+                                                ">SDFinder</h2>
 
             </div>
           </button>
         </a>
+        <!-- Main  -->
         <div class="flex">
           <div class="hidden xl:flex md:mr-6 xl:mr-16">
-            <a href="/" class="focus:text-indigo-700 border-b-2 border-transparent focus:border-indigo-700 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out hover:font-extrabold hover:underline underline-offset-8">
-
+            <a href="/" class="focus:text-gray-700 border-b-2 border-transparent focus:border-gray-600 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out hover:font-extrabold ">
               Home
             </a>
-            <a href="/device-finder" class="focus:text-indigo-700 border-b-2 border-transparent focus:border-indigo-700 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out hover:font-extrabold hover:underline underline-offset-8">
-
+            <a href="/mobile-finder" class="focus:text-gray-700 border-b-2 border-transparent focus:border-gray-600 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out hover:font-extrabold ">
               Device Finder
             </a>
-            <a href="/reviews" class="focus:text-indigo-700 border-b-2 border-transparent focus:border-indigo-700 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out hover:font-extrabold hover:underline underline-offset-8">
+            <a href="/reviews" class="focus:text-gray-700 border-b-2 border-transparent focus:border-gray-600 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out hover:font-extrabold ">
 
               Reviews
             </a>
-            <a href="/brands" class="focus:text-indigo-700 border-b-2 border-transparent focus:border-indigo-700 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out hover:font-extrabold hover:underline underline-offset-8">
+            <a href="/brands" class="focus:text-gray-700 border-b-2 border-transparent focus:border-gray-600 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out hover:font-extrabold ">
 
               Brands
             </a>
@@ -104,7 +104,17 @@
               </svg>
             </button>
             <div class="ml-6 relative">
-              <button aria-label="dropdown" class="focus:outline-none border-b-2 border-transparent focus:border-indigo-700 py-3  focus:text-indigo-700 text-gray-600 hover:text-indigo-700 flex items-center relative" onclick="dropdownHandler(this)">
+
+              <div class="flex space-x-2 justify-center">
+                  <a href="login" class="inline-block px-6 py-2.5 dark:text-white text-gray-600 font-medium text-xs leading-normal tracking-wide  rounded-lg  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+              Login
+                </a>
+                <a href="register" class="href">
+                <button type="button" class="inline-block px-6 py-2.5  dark:text-white text-gray-600 font-medium text-xs leading-normal tracking-wide  rounded-lg  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Register</button>
+              </a>
+              </div>
+              
+              <!-- <button aria-label="dropdown" class="focus:outline-none border-b-2 border-transparent focus:border-indigo-700 py-3  focus:text-indigo-700 text-gray-600 hover:text-indigo-700 flex items-center relative" onclick="dropdownHandler(this)">
                 <ul class="p-2 w-40 border-r bg-white absolute rounded right-0 shadow top-0 mt-16 hidden">
                   <li class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
                     <a href="/store-profile" class="focus:underline focus:text-indigo-700 focus:outline-none flex items-center">
@@ -114,6 +124,16 @@
                         <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                       </svg>
                       <span class="ml-2">My Profile</span>
+                    </a>
+                  </li>
+                  <li class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
+                    <a href="javascript:void(0)" class="focus:underline focus:text-indigo-700 focus:outline-none flex items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                      <span class="ml-2">Account Settings</span>
                     </a>
                   </li>
                   <li class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
@@ -127,14 +147,9 @@
                       <span class="ml-2">Help Center</span>
                     </a>
                   </li>
-                  <li class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
+                  <li class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
                     <a href="javascript:void(0)" class="focus:underline focus:text-indigo-700 focus:outline-none flex items-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" />
-                        <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                        <circle cx="12" cy="12" r="3" />
-                      </svg>
-                      <span class="ml-2">Account Settings</span>
+                      <span class="ml-2">Log Out</span>
                     </a>
                   </li>
                 </ul>
@@ -145,11 +160,11 @@
                   <img class="icon icon-tabler icon-tabler-chevron-down cursor-pointer" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/light-with-button-svg8.svg" alt="chevron down" />
                 </div>
               </button>
+            </div> -->
             </div>
           </div>
         </div>
       </div>
-    </div>
   </nav>
   <nav>
     <div class="py-4 px-6 w-full flex xl:hidden justify-between items-center bg-white fixed top-0 z-40">
@@ -190,10 +205,10 @@
                   <a class="cursor-pointer">
                     <div class="text-gray-800 pt-10">
                       <div class="flex items-center">
-                        <div class="w-6 h-6 md:w-8 md:h-8 text-indigo-700">
+                        <div class="w-6 h-6 md:w-8 md:h-8 text-gray-700">
                           <img class="icon icon-tabler icon-tabler-grid" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/light-with-button-svg12.svg" alt="dashboard" />
                         </div>
-                        <p tabindex="0" class="focus:outline-none focus:text-indigo-600 text-indigo-700 xl:text-base text-base ml-3">Home</p>
+                        <p tabindex="0" class="focus:outline-none focus:text-gray-600 text-gray-700 xl:text-base text-base ml-3">Home</p>
                       </div>
                     </div>
                   </a>

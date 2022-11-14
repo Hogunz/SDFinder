@@ -16,8 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/device-finder', function () {
-    return view('device-finder');
+Route::get('/login', function () {
+    return view('login');
+});
+Route::get('/register', function () {
+    return view('register');
+});
+Route::get('/mobile-finder', function () {
+    return view('mobile-finder');
+});
+Route::get('/tablet-finder', function () {
+    return view('tablet-finder');
 });
 Route::get('/reviews', function () {
     return view('reviews');
@@ -32,6 +41,13 @@ Route::get('/store-profile', function () {
     return view('store-profile');
 });
 
+Route::get('/vendor-dashboard', function () {
+    return view('vendor-dashboard');
+});
+
+Route::get('/phone/create', function () {
+    return view('admin.phones.create');
+});
 
 
 Route::get('/dashboard', function () {

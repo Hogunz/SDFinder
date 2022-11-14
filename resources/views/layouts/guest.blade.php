@@ -6,8 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         
-        <title>{{ config('app.name', 'Laravel') }}</title>
-        
+       
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
         
@@ -17,13 +16,76 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
         <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" /> -->
-        <link href="http://fonts.cdnfonts.com/css/aquire" rel="stylesheet">
+        <!-- LOGO FONT -->
+        <link href="https://fonts.cdnfonts.com/css/bronson-2" rel="stylesheet">
+           <style>
+/* This example part of kwd-dashboard see https://kamona-wd.github.io/kwd-dashboard/ */
+/* So here we will write some classes to simulate dark mode and some of tailwind css config in our project */
+:root {
+  --light: #edf2f9;
+  --dark: #152e4d;
+  --darker: #12263f;
+}
 
+.dark .dark\:text-light {
+  color: var(--light);
+}
+
+.dark .dark\:bg-dark {
+  background-color: var(--dark);
+}
+
+.dark .dark\:bg-darker {
+  background-color: var(--darker);
+}
+
+.dark .dark\:text-gray-300 {
+  color: #d1d5db;
+}
+
+.dark .dark\:text-indigo-500 {
+  color: #6366f1;
+}
+
+.dark .dark\:text-indigo-100 {
+  color: #e0e7ff;
+}
+
+.dark .dark\:hover\:text-light:hover {
+    color: var(--light);
+}
+
+.dark .dark\:border-indigo-800 {
+  border-color: #3730a3;
+}
+
+.dark .dark\:border-indigo-700 {
+  border-color: #4338ca;
+}
+
+.dark .dark\:bg-indigo-600 {
+  background-color: #4f46e5;
+}
+
+.dark .dark\:hover\:bg-indigo-600:hover {
+  background-color: #4f46e5;
+}
+
+.dark .dark\:border-indigo-500 {
+  border-color: #6366f1;
+}
+
+.hover\:overflow-y-auto:hover {
+  overflow-y: auto;
+}
+
+</style>
+        
     </head>
    
     <body class="dark:bg-gray-500">
 
-        <div class="flex flex-col h-screen justify-between">
+        <div class="flex flex-col h-screen justify-between font-sans bg-scroll  scroll-smooth">
             <header>@include('layouts.guest-navigation')</header>
             <main>
                 {{ $slot }}
@@ -190,5 +252,155 @@
             }
         };
     </script>
-    <!-- SCRIPT -->
+<!-- login form -->
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"></script>
+
+<!-- STORE OWNSER -->
+<!-- store-dashboard -->
+
+<script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.6.x/dist/component.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+
+<script>
+
+    const setup = () => {
+    const getTheme = () => {
+        if (window.localStorage.getItem('dark')) {
+        return JSON.parse(window.localStorage.getItem('dark'))
+        }
+        return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    }
+
+    const setTheme = (value) => {
+        window.localStorage.setItem('dark', value)
+    }
+
+    return {
+        loading: true,
+        isDark: getTheme(),
+        toggleTheme() {
+        this.isDark = !this.isDark
+        setTheme(this.isDark)
+        },
+        setLightTheme() {
+        this.isDark = false
+        setTheme(this.isDark)
+        },
+        setDarkTheme() {
+        this.isDark = true
+        setTheme(this.isDark)
+        },
+        watchScreen() {
+        if (window.innerWidth <= 1024) {
+            this.isSidebarOpen = false
+        } else if (window.innerWidth >= 1024) {
+            this.isSidebarOpen = true
+        }
+        },
+        isSidebarOpen: window.innerWidth >= 1024 ? true : false,
+        toggleSidbarMenu() {
+        this.isSidebarOpen = !this.isSidebarOpen
+        },
+        isNotificationsPanelOpen: false,
+        openNotificationsPanel() {
+        this.isNotificationsPanelOpen = true
+        this.$nextTick(() => {
+            this.$refs.notificationsPanel.focus()
+        })
+        },
+        isSettingsPanelOpen: false,
+        openSettingsPanel() {
+        this.isSettingsPanelOpen = true
+        this.$nextTick(() => {
+            this.$refs.settingsPanel.focus()
+        })
+        },
+        isSearchPanelOpen: false,
+        openSearchPanel() {
+        this.isSearchPanelOpen = true
+        this.$nextTick(() => {
+            this.$refs.searchInput.focus()
+        })
+        },
+    }
+    }
+</script>
+
+<!-- Required chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Chart bar -->
+<script>
+  const labelsBarChart = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const dataBarChart = {
+    labels: labelsBarChart,
+    datasets: [
+      {
+        label: "test",
+        backgroundColor: "hsl(252, 82.9%, 67.8%)",
+        borderColor: "hsl(252, 82.9%, 67.8%)",
+        data: [2, 10, 5, 2, 20, 30, 45],
+      },
+    ],
+  };
+
+  const configBarChart = {
+    type: "bar",
+    data: dataBarChart,
+    options: {},
+  };
+
+  var chartBar = new Chart(
+    document.getElementById("chartBar"),
+    configBarChart
+  );
+</script>
+<!-- SCRIPT -->
+
+<!-- doughnut CHART -->
+<!-- Required chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Chart doughnut -->
+<script>
+  const dataDoughnut = {
+    labels: ["Phone", "Laptop", "Tablet"],
+    datasets: [
+      {
+        label: "My First Dataset",
+        data: [300, 50, 100],
+        backgroundColor: [
+          "rgb(133, 105, 241)",
+          "rgb(164, 101, 241)",
+          "rgb(101, 143, 241)",
+        ],
+        hoverOffset: 4,
+      },
+    ],
+  };
+
+  const configDoughnut = {
+    type: "doughnut",
+    data: dataDoughnut,
+    options: {},
+  };
+
+  var chartBar = new Chart(
+    document.getElementById("chartDoughnut"),
+    configDoughnut
+  );
+</script>
 </html>

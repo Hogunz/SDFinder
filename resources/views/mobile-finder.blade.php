@@ -1,8 +1,9 @@
 <x-guest-layout>
+    
     <!-- Section 1 -->
-    <section class="dark:bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-600 pt-24">
+    <section class="container mx-auto dark:bg-gray-500 pt-24">
         <header>
-            <div class="container mx-auto pb-6 ">
+            <div class=" pb-6 ">
                 <!-- Background image -->
                 <div class="relative overflow-hidden bg-no-repeat bg-cover rounded-3xl" style="
     background-position: 50%;
@@ -24,24 +25,28 @@
     <!-- Section 1 -->
 
     <!-- Section 2 -->
-    <section class="dark:bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-600">
+    <section class="dark:bg-gray-500">
         <div class="container mx-auto text-center">
             <h6 class="text-3xl pb-6 font-bold  uppercase dark:text-white tracking-widest">device finder</h6>
-            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+            <a href="mobile-finder" class="href">
+            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 ">
                 <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                     MOBILE
                 </span>
             </button>
+            </a>
             <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                 <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                     LAPTOP
                 </span>
             </button>
+            <a href="tablet-finder" class="href">
             <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                 <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                     TABLET
                 </span>
             </button>
+            </a>
         </div>
     </section>
     <!-- Section 2 -->
@@ -62,16 +67,10 @@
                 </div>
 
 
-                <!-- Filters Button (Small Screen) -->
 
-                <button onclick="showFilters()" class="cursor-pointer mt-6 block sm:hidden hover:bg-gray-700 focus:ring-offset-2 focus:ring-gray-800 py-2 w-full bg-gray-800  text-base leading-4 font-normal text-white dark:text-gray-800 dark:bg-white dark:hover:bg-gray-100 justify-center items-center">
-                    <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg1.svg" alt="filter" />
-                    <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg1dark.svg" alt="filter" />
-                    Filters
-                </button>
             </div>
 
-            <div id="filterSection" class="block relative md:py-10 lg:px-20 md:px-6 py-9 px-4 bg-gray-50 dark:bg-gray-800 w-full">
+            <div id="filterSection" class="block mb-8 relative md:py-10 lg:px-20 md:px-6 py-9 px-4 bg-gray-50 dark:bg-gray-800 w-full">
                 <!-- Cross button Code -->
                 <div onclick="closeFilterSection()" class="cursor-pointer absolute right-0 top-0 md:py-10 lg:px-20 md:px-6 py-9 px-4">
                     <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg2.svg" alt="cross" />
@@ -152,13 +151,13 @@
 
 
                         </div>
-                        <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
+                        <div class="border rounded-md px-4 py-2.5 flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                             <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Year</label>
-                            <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                            <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                         </div>
                         <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
                             <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Price</label>
-                            <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                            <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                         </div>
                     </div>
                 </div>
@@ -476,13 +475,13 @@
                     </div>
                 </div>
                 <div>
-                    <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
+                    <div class="md:flex md:space-x-6 mt-8 grid md:grid-cols-4 gap-y-8 flex-wrap">
                         <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
                             <div class="inline-block">
                                 <div class="flex space-x-6 justify-center items-center">
                                     <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                         <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Height</label>
-                                        <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                        <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                     </div>
                                 </div>
                             </div>
@@ -492,15 +491,15 @@
                                 <div class="flex space-x-6 justify-center items-center">
                                     <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                         <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Width</label>
-                                        <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                        <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                     </div>
                                     <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                         <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Thickness</label>
-                                        <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                        <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                     </div>
                                     <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                         <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Weight</label>
-                                        <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                        <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                     </div>
                                 </div>
                             </div>
@@ -654,7 +653,7 @@
                         <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg4dark.svg" alt="materials" />
                         <p class="lg:text-2xl text-xl lg:leading-6 leading-5 font-medium ">Platform</p>
                     </div>
-                    <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
+                    <div class="md:flex md:space-x-6 mt-8 grid grid-cols-4 gap-y-8 flex-wrap">
                         <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
                             <div class="inline-block">
                                 <div class="flex space-x-6 justify-center items-center">
@@ -735,7 +734,7 @@
                                 <div class="flex space-x-6 justify-center items-center">
                                     <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                         <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">CPU Frequency</label>
-                                        <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                        <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                     </div>
                                 </div>
                             </div>
@@ -745,7 +744,7 @@
                                 <div class="flex space-x-6 justify-center items-center">
                                     <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                         <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">CPU Cores</label>
-                                        <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                        <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                     </div>
                                 </div>
                             </div>
@@ -798,7 +797,7 @@
                             <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg4dark.svg" alt="materials" />
                             <p class="lg:text-2xl text-xl lg:leading-6 leading-5 font-medium ">Memory</p>
                         </div>
-                        <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
+                        <div class="md:flex md:space-x-6 mt-8 grid md:grid-cols-3 gap-y-8 flex-wrap">
                             <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
                                 <div class="inline-block">
                                     <div class="flex space-x-6 justify-center items-center">
@@ -811,7 +810,7 @@
                                                         <div class="flex space-x-6 justify-center items-center">
                                                             <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                                                 <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">RAM</label>
-                                                                <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                                                <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -821,7 +820,7 @@
                                                         <div class="flex space-x-6 justify-center items-center">
                                                             <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                                                 <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Storage</label>
-                                                                <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                                                <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -889,19 +888,19 @@
                                                             <div class="flex space-x-6 justify-center items-center">
                                                                 <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                                                     <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">RAM</label>
-                                                                    <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                                                    <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
+                                                <div class="md:flex md:space-x-6 mt-8 grid md:grid-cols-3 gap-y-8 flex-wrap">
                                                     <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
                                                         <div class="inline-block">
                                                             <div class="flex space-x-6 justify-center items-center">
                                                                 <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                                                     <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">RAM</label>
-                                                                    <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                                                    <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -911,13 +910,13 @@
                                                             <div class="flex space-x-6 justify-center items-center">
                                                                 <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                                                     <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Storage</label>
-                                                                    <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                                                    <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
+                                                <div class="md:flex md:space-x-6 mt-8 grid md:grid-cols-3 gap-y-8 flex-wrap">
                                                     <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
                                                         <div class="inline-block">
                                                             <div class="flex space-x-6 justify-start items-center">
@@ -995,7 +994,7 @@
                                                         <div class="inline-block">
                                                             <div class="flex space-x-6 justify-start items-center">
                                                                 <div class="form-check">
-                                                                    <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="HDR" id="HDR">
+                                                                    <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="HDR" id="HDR">
                                                                     <label class="form-check-label inline-block text-gray-600" for="HDR">
                                                                         HDR
                                                                     </label>
@@ -1007,7 +1006,7 @@
                                                         <div class="inline-block">
                                                             <div class="flex space-x-6 justify-center items-center">
                                                                 <div class="form-check">
-                                                                    <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="HRR" id="HRR">
+                                                                    <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="HRR" id="HRR">
                                                                     <label class="form-check-label inline-block text-gray-600" for="HRR">
                                                                         High Refresh Rate
                                                                     </label>
@@ -1041,13 +1040,13 @@
                                             <div>
                                                 <div class="flex space-x-2 text-gray-800 dark:text-white">
                                                 </div>
-                                                <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
+                                                <div class="md:flex md:space-x-6 mt-8 grid md:grid-cols-3 gap-y-8 flex-wrap">
                                                     <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
                                                         <div class="inline-block">
                                                             <div class="flex space-x-6 justify-center items-center">
                                                                 <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                                                     <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Resolution</label>
-                                                                    <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                                                    <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1057,7 +1056,7 @@
                                                             <div class="flex space-x-6 justify-center items-center">
                                                                 <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                                                     <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">F-Number</label>
-                                                                    <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                                                    <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1067,7 +1066,7 @@
                                                             <div class="flex space-x-6 justify-center items-center">
                                                                 <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                                                     <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Video</label>
-                                                                    <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                                                    <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1159,7 +1158,7 @@
                             <div class="inline-block">
                                 <div class="flex space-x-6 justify-start items-center">
                                     <div class="form-check">
-                                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="OIS" id="OIS">
+                                        <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="OIS" id="OIS">
                                         <label class="form-check-label inline-block text-gray-600" for="OIS">
                                             OIS
                                         </label>
@@ -1171,7 +1170,7 @@
                             <div class="inline-block">
                                 <div class="flex space-x-6 justify-center items-center">
                                     <div class="form-check">
-                                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="telephoto" id="telephoto">
+                                        <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="telephoto" id="telephoto">
                                         <label class="form-check-label inline-block text-gray-600" for="telephoto">
                                             Telephoto
                                         </label>
@@ -1186,7 +1185,7 @@
                             <div class="inline-block">
                                 <div class="flex space-x-6 justify-center items-center">
                                     <div class="form-check">
-                                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="ultrawide" id="ultrawide">
+                                        <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="ultrawide" id="ultrawide">
                                         <label class="form-check-label inline-block text-gray-600" for="ultrawide">
                                             Ultrawide
                                         </label>
@@ -1211,13 +1210,13 @@
                                         <div>
                                             <div class="flex space-x-2 text-gray-800 dark:text-white">
                                             </div>
-                                            <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
+                                            <div class="md:flex md:space-x-6 mt-8 grid md:grid-cols-3 gap-y-8 flex-wrap">
                                                 <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
                                                     <div class="inline-block">
                                                         <div class="flex space-x-6 justify-center items-center">
                                                             <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                                                 <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Resolution</label>
-                                                                <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                                                <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1227,7 +1226,7 @@
                                                         <div class="flex space-x-6 justify-center items-center">
                                                             <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                                                 <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">F-Number</label>
-                                                                <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                                                <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1237,7 +1236,7 @@
                                                         <div class="flex space-x-6 justify-center items-center">
                                                             <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                                                 <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Video</label>
-                                                                <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                                                <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1257,7 +1256,7 @@
                         <div class="inline-block">
                             <div class="flex space-x-6 justify-start items-center">
                                 <div class="form-check">
-                                    <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="fontflash" id="fontflash">
+                                    <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="fontflash" id="fontflash">
                                     <label class="form-check-label inline-block text-gray-600" for="fontflash">
                                         Font Flash
                                     </label>
@@ -1269,7 +1268,7 @@
                         <div class="inline-block">
                             <div class="flex space-x-6 justify-center items-center">
                                 <div class="form-check">
-                                    <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="popupcamera" id="popupcamera">
+                                    <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="popupcamera" id="popupcamera">
                                     <label class="form-check-label inline-block text-gray-600" for="popupcamera">
                                         Pop-Up Camera
                                     </label>
@@ -1281,7 +1280,7 @@
                         <div class="inline-block">
                             <div class="flex space-x-6 justify-center items-center">
                                 <div class="form-check">
-                                    <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="dualcamera" id="dualcamera">
+                                    <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="dualcamera" id="dualcamera">
                                     <label class="form-check-label inline-block text-gray-600" for="dualcamera">
                                         Dual Camera
                                     </label>
@@ -1293,7 +1292,7 @@
                         <div class="inline-block">
                             <div class="flex space-x-6 justify-center items-center">
                                 <div class="form-check">
-                                    <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="underdisplaycamera" id="underdisplaycamera">
+                                    <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="underdisplaycamera" id="underdisplaycamera">
                                     <label class="form-check-label inline-block text-gray-600" for="underdisplaycamera">
                                         Under Display Camera
                                     </label>
@@ -1306,7 +1305,7 @@
                         <div class="inline-block">
                             <div class="flex space-x-6 justify-center items-center">
                                 <div class="form-check">
-                                    <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="OIS2">
+                                    <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="OIS2">
                                     <label class="form-check-label inline-block text-gray-600" for="OIS2">
                                         OIS
                                     </label>
@@ -1328,7 +1327,7 @@
                             <div class="inline-block">
                                 <div class="flex space-x-6 justify-start items-center">
                                     <div class="form-check">
-                                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="jack" id="jack">
+                                        <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="jack" id="jack">
                                         <label class="form-check-label inline-block text-gray-600" for="jack">
                                             3.5MM Jack
                                         </label>
@@ -1340,7 +1339,7 @@
                             <div class="inline-block">
                                 <div class="flex space-x-6 justify-center items-center">
                                     <div class="form-check">
-                                        <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="dualspeakers" id="dualspeakers">
+                                        <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="dualspeakers" id="dualspeakers">
                                         <label class="form-check-label inline-block text-gray-600" for="dualspeakers">
                                             Dual Speakers
                                         </label>
@@ -1363,7 +1362,7 @@
                                 <div class="inline-block">
                                     <div class="flex space-x-6 justify-start items-center">
                                         <div class="form-check">
-                                            <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="accelerometer" id="accelerometer">
+                                            <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="accelerometer" id="accelerometer">
                                             <label class="form-check-label inline-block text-gray-600" for="accelerometer">
                                                 Accelerometer
                                             </label>
@@ -1375,7 +1374,7 @@
                                 <div class="inline-block">
                                     <div class="flex space-x-6 justify-center items-center">
                                         <div class="form-check">
-                                            <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="barometer" id="barometer">
+                                            <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="barometer" id="barometer">
                                             <label class="form-check-label inline-block text-gray-600" for="barometer">
                                                 Barometer
                                             </label>
@@ -1387,7 +1386,7 @@
                                 <div class="inline-block">
                                     <div class="flex space-x-6 justify-center items-center">
                                         <div class="form-check">
-                                            <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="gyro" id="gyro">
+                                            <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="gyro" id="gyro">
                                             <label class="form-check-label inline-block text-gray-600" for="gyro">
                                                 Gyro
                                             </label>
@@ -1399,7 +1398,7 @@
                                 <div class="inline-block">
                                     <div class="flex space-x-6 justify-center items-center">
                                         <div class="form-check">
-                                            <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="heartrate" id="heartrate">
+                                            <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="heartrate" id="heartrate">
                                             <label class="form-check-label inline-block text-gray-600" for="heartrate">
                                                 Heart Rate
                                             </label>
@@ -1412,7 +1411,7 @@
                                 <div class="inline-block">
                                     <div class="flex space-x-6 justify-center items-center">
                                         <div class="form-check">
-                                            <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="compass" id="compass">
+                                            <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="compass" id="compass">
                                             <label class="form-check-label inline-block text-gray-600" for="compass">
                                                 Compass
                                             </label>
@@ -1424,7 +1423,7 @@
                                 <div class="inline-block">
                                     <div class="flex space-x-6 justify-center items-center">
                                         <div class="form-check">
-                                            <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="proximity" id="proximity">
+                                            <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="proximity" id="proximity">
                                             <label class="form-check-label inline-block text-gray-600" for="proximity">
                                                 Proximity
                                             </label>
@@ -1515,42 +1514,12 @@
 
                                 </div>
                             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                             <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
                                 <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
                                     <div class="inline-block">
                                         <div class="flex space-x-6 justify-start items-center">
                                             <div class="form-check">
-                                                <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="fontflash" id="fontflash">
+                                                <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="fontflash" id="fontflash">
                                                 <label class="form-check-label inline-block text-gray-600" for="fontflash">
                                                     Font Flash
                                                 </label>
@@ -1562,7 +1531,7 @@
                                     <div class="inline-block">
                                         <div class="flex space-x-6 justify-center items-center">
                                             <div class="form-check">
-                                                <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="popupcamera" id="popupcamera">
+                                                <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="popupcamera" id="popupcamera">
                                                 <label class="form-check-label inline-block text-gray-600" for="popupcamera">
                                                     Pop-Up Camera
                                                 </label>
@@ -1574,7 +1543,7 @@
                                     <div class="inline-block">
                                         <div class="flex space-x-6 justify-center items-center">
                                             <div class="form-check">
-                                                <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="dualcamera" id="dualcamera">
+                                                <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="dualcamera" id="dualcamera">
                                                 <label class="form-check-label inline-block text-gray-600" for="dualcamera">
                                                     Dual Camera
                                                 </label>
@@ -1586,7 +1555,7 @@
                                     <div class="inline-block">
                                         <div class="flex space-x-6 justify-center items-center">
                                             <div class="form-check">
-                                                <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="underdisplaycamera" id="underdisplaycamera">
+                                                <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="underdisplaycamera" id="underdisplaycamera">
                                                 <label class="form-check-label inline-block text-gray-600" for="underdisplaycamera">
                                                     Under Display Camera
                                                 </label>
@@ -1599,7 +1568,7 @@
                                     <div class="inline-block">
                                         <div class="flex space-x-6 justify-center items-center">
                                             <div class="form-check">
-                                                <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="OIS2">
+                                                <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="OIS2">
                                                 <label class="form-check-label inline-block text-gray-600" for="OIS2">
                                                     OIS
                                                 </label>
@@ -1617,7 +1586,7 @@
                                     <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg4dark.svg" alt="materials" />
                                     <p class="lg:text-2xl text-xl lg:leading-6 leading-5 font-medium ">Battery</p>
                                 </div>
-                                <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
+                                <div class="md:flex md:space-x-6 mt-8 grid md:grid-cols-3 gap-y-8 flex-wrap">
                                     <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
                                         <div class="inline-block">
                                             <div class="flex space-x-6 justify-center items-center">
@@ -1630,7 +1599,7 @@
                                                                 <div class="flex space-x-6 justify-center items-center">
                                                                     <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                                                         <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Capacity</label>
-                                                                        <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                                                        <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1640,7 +1609,7 @@
                                                                 <div class="flex space-x-6 justify-center items-center">
                                                                     <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                                                         <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Wired Charging</label>
-                                                                        <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                                                        <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1650,7 +1619,7 @@
                                                                 <div class="flex space-x-6 justify-center items-center">
                                                                     <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start ">
                                                                         <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Wireless Charging</label>
-                                                                        <input id="minmax-range" type="range" min="0" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                                                        <input id="minmax-range" type="range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance cursor-pointer dark:bg-gray-700">
                                                                     </div>
                                                                 </div>
                                                             </div>
