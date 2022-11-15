@@ -169,24 +169,7 @@
         }
 
     </script>
-    <!-- CAROUSEL -->
-    <script>
-        let defaultTransform = 0;
-        function goNext() {
-            defaultTransform = defaultTransform - 398;
-            var slider = document.getElementById("slider");
-            if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7) defaultTransform = 0;
-            slider.style.transform = "translateX(" + defaultTransform + "px)";
-        }
-        next.addEventListener("click", goNext);
-        function goPrev() {
-            var slider = document.getElementById("slider");
-            if (Math.abs(defaultTransform) === 0) defaultTransform = 0;
-            else defaultTransform = defaultTransform + 398;
-            slider.style.transform = "translateX(" + defaultTransform + "px)";
-        }
-        prev.addEventListener("click", goPrev);
-    </script>
+    
     <!-- NAVBAR -->
     <script>
 
@@ -255,7 +238,7 @@
 <!-- login form -->
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"></script>
 
-<!-- STORE OWNSER -->
+<!-- STORE OWNER -->
 <!-- store-dashboard -->
 
 <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.6.x/dist/component.min.js"></script>
@@ -326,81 +309,9 @@
     }
 </script>
 
-<!-- Required chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<!-- Chart bar -->
+<!-- FILTER SLIDER -->
 <script>
-  const labelsBarChart = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  const dataBarChart = {
-    labels: labelsBarChart,
-    datasets: [
-      {
-        label: "test",
-        backgroundColor: "hsl(252, 82.9%, 67.8%)",
-        borderColor: "hsl(252, 82.9%, 67.8%)",
-        data: [2, 10, 5, 2, 20, 30, 45],
-      },
-    ],
-  };
-
-  const configBarChart = {
-    type: "bar",
-    data: dataBarChart,
-    options: {},
-  };
-
-  var chartBar = new Chart(
-    document.getElementById("chartBar"),
-    configBarChart
-  );
-</script>
-<!-- SCRIPT -->
-
-<!-- doughnut CHART -->
-<!-- Required chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<!-- Chart doughnut -->
-<script>
-  const dataDoughnut = {
-    labels: ["Phone", "Laptop", "Tablet"],
-    datasets: [
-      {
-        label: "My First Dataset",
-        data: [300, 50, 100],
-        backgroundColor: [
-          "rgb(133, 105, 241)",
-          "rgb(164, 101, 241)",
-          "rgb(101, 143, 241)",
-        ],
-        hoverOffset: 4,
-      },
-    ],
-  };
-
-  const configDoughnut = {
-    type: "doughnut",
-    data: dataDoughnut,
-    options: {},
-  };
-
-  var chartBar = new Chart(
-    document.getElementById("chartDoughnut"),
-    configDoughnut
-  );
+  
 </script>
 </html>

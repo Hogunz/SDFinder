@@ -41,27 +41,26 @@
     <div class="dark:bg-gray-500 ">
       <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <h2 class="dark:text-white text-2xl font-bold tracking-tight text-gray-900">ALL BRANDS</h2>
-        @for($i = 0; $i < 8; $i++) <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          <div class="group relative">
+        @for($i = 0; $i < 8; $i++) <div class="m-8 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          <div class="group relative p-8">
             <div class="aspect-w-1 aspect-h-1 mx-auto w-48  xl:aspect-w-7 xl:aspect-h-8">
               <img src="img/brands/xiaomi.png" alt="Front of men&#039;s Basic Tee in black." class=" object-contain object-center ">
             </div>
             <div class="mt-4 flex flex-col text-center ">
               <div>
-                <h3 class="dark:text-white font-extrabold tracking-widest text-sm text-gray-700">
+                <h3 class="dark:text-white  font-extrabold tracking-widest text-sm text-gray-700">
                   <a href="/store-profile">
-                    <span aria-hidden="true" class=" absolute inset-0"></span>
+                    <span aria-hidden="true" class="mb-6 absolute inset-0"></span>
                     Xiaomi
                   </a>
                 </h3>
-
               </div>
               <div class="flex space-x-2 justify-center">
-                <button type="button" data-mdb-ripple="true" data-mdb-ripple-color="light" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View All</button>
+                <button type="button" data-mdb-ripple="true" data-mdb-ripple-color="light" class="inline-block mt-6 px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View All</button>
               </div>
             </div>
           </div>
-          <div class="group relative">
+          <div class="group relative  p-8">
             <div class="aspect-w-1 aspect-h-1 mx-auto w-48    xl:aspect-w-7 xl:aspect-h-8">
               <img src="img/brands/apple.png" alt="Front of men&#039;s Basic Tee in black." class=" object-contain object-center ">
             </div>
@@ -69,18 +68,18 @@
               <div>
               <h3 class="dark:text-white font-extrabold tracking-widest text-sm text-gray-700">
                   <a href="/store-profile">
-                    <span aria-hidden="true" class=" absolute inset-0"></span>
+                    <span aria-hidden="true" class="mb-6 absolute inset-0"></span>
                     Apple
                   </a>
                 </h3>
                 <div class="flex space-x-2 justify-center">
-                <button type="button" data-mdb-ripple="true" data-mdb-ripple-color="light" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View All</button>
+                <button type="button" data-mdb-ripple="true" data-mdb-ripple-color="light" class="inline-block mt-6 px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View All</button>
               </div>
               </div>
             
             </div>
           </div>
-          <div class="group relative">
+          <div class="group relative  p-8">
             <div class="aspect-w-1 aspect-h-1 mx-auto w-48    xl:aspect-w-7 xl:aspect-h-8">
               <img src="img/brands/oppo.png" alt="Front of men&#039;s Basic Tee in black." class=" object-contain object-center ">
             </div>
@@ -88,18 +87,18 @@
               <div>
               <h3 class="dark:text-white font-extrabold tracking-widest text-sm text-gray-700">
                   <a href="/store-profile">
-                    <span aria-hidden="true" class=" absolute inset-0"></span>
+                    <span aria-hidden="true" class="mb-6 absolute inset-0"></span>
                     Oppo
                   </a>
                 </h3>
                 <div class="flex space-x-2 justify-center">
-                <button type="button" data-mdb-ripple="true" data-mdb-ripple-color="light" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View All</button>
+                <button type="button" data-mdb-ripple="true" data-mdb-ripple-color="light" class="inline-block mt-6 px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View All</button>
               </div>
               </div>
            
             </div>
           </div>
-          <div class="group relative">
+          <div class="group relative  p-8">
             <div class="aspect-w-1 aspect-h-1 mx-auto w-48   xl:aspect-w-7 xl:aspect-h-8">
               <img src="img/brands/huawei.png" alt="Front of men&#039;s Basic Tee in black." class=" object-contain object-center ">
             </div>
@@ -112,7 +111,7 @@
                   </a>
                 </h3>
                 <div class="flex space-x-2 justify-center">
-                <button type="button" data-mdb-ripple="true" data-mdb-ripple-color="light" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View All</button>
+                <button type="button" data-mdb-ripple="true" data-mdb-ripple-color="light" class="inline-block mt-6 px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View All</button>
               </div>
               </div>
           

@@ -36,7 +36,7 @@
           <div class="mx-auto max-w-2xl py-16 px-4 sm:py-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             @for($i = 0; $i < 4; $i++)
-              <a href="#" class="group">
+              <a href="phone-profile" class="group">
                 <div class="aspect-w-1 aspect-h-1 w-full xl:aspect-w-7 xl:aspect-h-8">
                   <img src="img/welcome_page/smartphone_head.png" alt="" class="  object-contain object-center ">
                 </div>

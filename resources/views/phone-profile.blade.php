@@ -108,10 +108,9 @@ height: 350px;
   <!-- Section 6 -->
   <section class="bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-600 pt-6 pb-6">
     <div class="container mx-auto">
-      <h5 class="text-xl font-extrabold dark:text-white">The stores where you buy you buy the product:</h5>
+      <h5 class="text-xl font-extrabold text-white dark:text-white">The stores where you buy you buy the product:</h5>
     </div>
-    @for($i = 0; $i < 3; $i++)
-    <div class="container mx-auto py-4 px-4">
+    @for($i = 0; $i < 3; $i++) <div class="container mx-auto py-4 px-4">
       <div class="bg-white dark:bg-gray-700 p-6 shadow-lg rounded-lg flex justify-between items-center">
         <div class="flex dark:text-white">
           <div class="mr-4">
@@ -120,7 +119,10 @@ height: 350px;
           <div>
             <p class="text-4xl font-extrabold line-clamp-1">Octagon Computer Superstore</p>
             <span class="flex items-center justify-start text-gray-500">
-            <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16" id="IconChangeColor"> <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z" id="mainIconPathAttribute"></path> <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z" id="mainIconPathAttribute"></path> </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16" id="IconChangeColor">
+                <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z" id="mainIconPathAttribute"></path>
+                <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z" id="mainIconPathAttribute"></path>
+              </svg>
               Manufacturer, Distributor, Wholesaler
             </span>
             <p class="text-sm text-gray-500 mt-1 line-clamp-2">
@@ -136,8 +138,8 @@ height: 350px;
           </button>
         </a>
       </div>
-    </div>
-  @endfor
+      </div>
+      @endfor
   </section>
   <!-- Section 6 -->
 </x-guest-layout>

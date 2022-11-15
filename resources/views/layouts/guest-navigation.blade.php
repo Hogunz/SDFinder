@@ -1,6 +1,6 @@
 <div class="h-full w-full">
   <!-- Code block starts -->
-  <nav role="navigation" class="dark:bg-gray-500 drop-shadow-2xl xl:block hidden">
+  <nav role="navigation" class="dark:bg-gray-500 border  drop-shadow-2xl xl:block hidden">
     <div class="mx-auto container px-6 py-2 xl:py-0">
       <div class="flex items-center justify-between">
         <div class="inset-y-0 left-0 flex items-center xl:hidden">
@@ -62,7 +62,6 @@
 
               <h2 class="hidden sm:block text-base text-gray-700 font-bold leading-normal px-3 hover:text-red-600" style="font-family: 'BRONSON', sans-serif;
                                                 ">SDFinder</h2>
-
             </div>
           </button>
         </a>
@@ -76,11 +75,9 @@
               Device Finder
             </a>
             <a href="/reviews" class="focus:text-gray-700 border-b-2 border-transparent focus:border-gray-600 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out hover:font-extrabold ">
-
               Reviews
             </a>
             <a href="/brands" class="focus:text-gray-700 border-b-2 border-transparent focus:border-gray-600 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out hover:font-extrabold ">
-
               Brands
             </a>
           </div>
@@ -89,9 +86,11 @@
               <div class="w-full pr-12 h-full flex items-center border-r">
                 <div class="relative w-full">
                   <div class="text-gray-600 absolute ml-3 inset-0 m-auto w-4 h-4">
+                    <a href="" class="href">
                     <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/light_with_Grey_background-svg3.svg" alt="search">
+                    </a>
                   </div>
-                  <input class="border border-gray-100 focus:outline-none focus:border-indigo-700 w-56 rounded text-sm text-gray-500 placeholder-gray-600 bg-gray-100 pl-8 py-2" type="text" placeholder="Search">
+                  <input class="border border-gray-100 focus:outline-none focus:border-indigo-700 w-56 rounded text-sm text-gray-500 placeholder-gray-600  pl-8 py-2" type="text" placeholder="Search">
                 </div>
               </div>
             </div>
