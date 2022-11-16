@@ -1,6 +1,6 @@
 <div class="h-full w-full">
   <!-- Code block starts -->
-  <nav role="navigation" class="dark:bg-gray-500 border  drop-shadow-2xl xl:block hidden">
+  <nav role="navigation" class="dark:bg-gray-500 xl:block hidden">
     <div class="mx-auto container px-6 py-2 xl:py-0">
       <div class="flex items-center justify-between">
         <div class="inset-y-0 left-0 flex items-center xl:hidden">
@@ -105,11 +105,11 @@
             <div class="ml-6 relative">
 
               <div class="flex space-x-2 justify-center">
-                  <a href="login" class="inline-block px-6 py-2.5 dark:text-white text-gray-600 font-medium text-xs leading-normal tracking-wide  rounded-lg  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+                  <a href="login" class="inline-block px-6 py-2.5 dark:text-white text-gray-600 font-medium text-xs leading-normal tracking-wide  rounded-lg  hover:bg-blue-700 hover:text-white hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
               Login
                 </a>
                 <a href="register" class="href">
-                <button type="button" class="inline-block px-6 py-2.5  dark:text-white text-gray-600 font-medium text-xs leading-normal tracking-wide  rounded-lg  hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Register</button>
+                <button type="button" class="inline-block px-6 py-2.5  dark:text-white text-gray-600 font-medium text-xs leading-normal tracking-wide  rounded-lg  hover:bg-blue-700 hover:text-white hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Register</button>
               </a>
               </div>
               
