@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\GpuController;
+use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\ChipsetController;
+use App\Http\Controllers\Admin\OperatingSystemController;
+use App\Http\Controllers\Admin\OperatingSystemVersionController;
+use App\Http\Controllers\Admin\PhoneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,13 +51,28 @@ Route::get('/vendor-dashboard', function () {
     return view('vendor-dashboard');
 });
 
-Route::get('/phone/create', function () {
-    return view('admin.phones.create');
+
+
+Route::name('admin.')->prefix('admin/')->group(function () {
+    Route::resource('brands', BrandController::class);
+    Route::resource('chipsets', ChipsetController::class);
+    Route::resource('gpus', GpuController::class);
+
+    Route::resource('os', OperatingSystemController::class)->parameters([
+        'os' => 'operating_system',
+    ]);
+
+    Route::resource('os.version', OperatingSystemVersionController::class)->parameters([
+        'os' => 'operating_system',
+        'version' => 'operating_system_version'
+    ])->shallow();
+    Route::resource('phones', PhoneController::class);
 });
 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
 
 require __DIR__.'/auth.php';
