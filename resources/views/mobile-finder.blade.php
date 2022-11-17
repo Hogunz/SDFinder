@@ -28,9 +28,16 @@
         </header>
     </section>
     <!-- Section 1 -->
+<!-- Section 2 -->
+<div class="flex space-x-0 mx-auto container  ">
+<x-input placeholder="Pre-defined">asdasd</x-input>
+<x-button>Search</x-button>
+</div>
 
-    <!-- Section 2 -->
+<!-- Section 2 -->
+    <!-- Section 3 -->
     <section class="dark:bg-gray-500">
+      
         <div class="container mx-auto text-center">
             <h6 class="text-3xl pb-6 font-bold  uppercase dark:text-white tracking-widest">device finder</h6>
             <a href="mobile-finder" class="href">
@@ -741,7 +748,7 @@
             </div>
             <hr class="bg-gray-200 lg:w-6/12 w-full md:my-10 my-8" />
             <div>
-                <hr class="bg-gray-200 lg:w-6/12 w-full md:my-10 my-8" />
+        
 
 
                 <!-- Connectivity Section -->
@@ -751,79 +758,7 @@
                         <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg4dark.svg" alt="materials" />
                         <p class="lg:text-2xl text-xl lg:leading-6 leading-5 font-medium ">Connectivity</p>
                     </div>
-                    <div>
-                        <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
-                            <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
-                                <div class="inline-block">
-                                    <div class="flex space-x-6 justify-center items-center">
-                                        <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox11" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Size
-                                            <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                            </svg></button>
-
-                                        <!-- Dropdown menu -->
-                                        <div id="dropdownDefaultCheckbox11" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
-                                            <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                                                <li>
-                                                    <div class="flex items-center">
-                                                        <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                        <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="flex items-center">
-                                                        <input checked="" id="checkbox-item-2" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                        <label for="checkbox-item-2" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Checked state</label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="flex items-center">
-                                                        <input id="checkbox-item-3" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                        <label for="checkbox-item-3" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex justify-center items-center">
-                                <div class="inline-block">
-                                    <div class="flex space-x-6 justify-center items-center">
-                                        <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox12" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Multiple
-                                            <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                            </svg></button>
-
-                                        <!-- Dropdown menu -->
-                                        <div id="dropdownDefaultCheckbox12" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
-                                            <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                                                <li>
-                                                    <div class="flex items-center">
-                                                        <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                        <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="flex items-center">
-                                                        <input checked="" id="checkbox-item-2" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                        <label for="checkbox-item-2" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Checked state</label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="flex items-center">
-                                                        <input id="checkbox-item-3" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                        <label for="checkbox-item-3" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                   
                     <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
                         <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
                             <div class="inline-block">

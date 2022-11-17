@@ -38,16 +38,33 @@
     <!-- Section 2 -->
 
     <!-- Section 3 -->
-    <section class="dark:bg-gray-500 pt-24">
+    <section class="dark:bg-gray-500 pt-2">
       
 <div class="dark:bg-gray-500 pt-24">
   <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
     <h2 class="dark:text-white text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
     @for($i = 0; $i < 8; $i++) 
     <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-      <div class="group relative">
-        <div class="aspect-w-1 aspect-h-1 w-full    xl:aspect-w-7 xl:aspect-h-8">
-          <img src="img/phone/iphone14.png" alt="Front of men&#039;s Basic Tee in black." class=" object-contain object-center ">
+      <div class="group relative hover:border rounded-2xl hover:opacity-75">
+        <div class="aspect-w-1 aspect-h-1 w-full    xl:aspect-w-7 xl:aspect-h-8 ">
+          <img src="img/phone/iphone14.png" alt="ip14" class=" object-contain object-center">
+        </div>
+        <div class="mt-4 flex flex-col text-center ">
+          <div class="">
+            <h3 class="dark:text-white text-sm text-gray-700">
+              <a href="/phone-profile">
+                <span aria-hidden="true" class=" absolute inset-0   "></span>
+                iPhone 14 Pro Max
+              </a>
+            </h3>
+            <p class="mt-1 text-sm dark:text-white text-gray-500">Black</p>
+          </div>
+          <p class="text-sm font-medium dark:text-white text-gray-900">$35</p>
+        </div>
+      </div>
+      <div class="group relative hover:border rounded-2xl hover:opacity-75">
+      <div class="aspect-w-1 aspect-h-1 w-full    xl:aspect-w-7 xl:aspect-h-8">
+          <img src="img/phone/iphone14.png" alt="ip14" class=" object-contain object-center ">
         </div>
         <div class="mt-4 flex flex-col text-center">
           <div>
@@ -62,9 +79,9 @@
           <p class="text-sm font-medium dark:text-white text-gray-900">$35</p>
         </div>
       </div>
-      <div class="group relative">
+      <div class="group relative hover:border rounded-2xl hover:opacity-75">
       <div class="aspect-w-1 aspect-h-1 w-full    xl:aspect-w-7 xl:aspect-h-8">
-          <img src="img/phone/iphone14.png" alt="Front of men&#039;s Basic Tee in black." class=" object-contain object-center ">
+          <img src="img/phone/iphone14.png" alt="ip14" class=" object-contain object-center ">
         </div>
         <div class="mt-4 flex flex-col text-center">
           <div>
@@ -79,26 +96,9 @@
           <p class="text-sm font-medium dark:text-white text-gray-900">$35</p>
         </div>
       </div>
-      <div class="group relative">
+      <div class="group relative hover:border rounded-2xl hover:opacity-75">
       <div class="aspect-w-1 aspect-h-1 w-full    xl:aspect-w-7 xl:aspect-h-8">
-          <img src="img/phone/iphone14.png" alt="Front of men&#039;s Basic Tee in black." class=" object-contain object-center ">
-        </div>
-        <div class="mt-4 flex flex-col text-center">
-          <div>
-            <h3 class="dark:text-white text-sm text-gray-700">
-              <a href="/phone-profile">
-                <span aria-hidden="true" class=" absolute inset-0"></span>
-                iPhone 14 Pro Max
-              </a>
-            </h3>
-            <p class="mt-1 text-sm dark:text-white text-gray-500">Black</p>
-          </div>
-          <p class="text-sm font-medium dark:text-white text-gray-900">$35</p>
-        </div>
-      </div>
-      <div class="group relative">
-      <div class="aspect-w-1 aspect-h-1 w-full    xl:aspect-w-7 xl:aspect-h-8">
-          <img src="img/phone/iphone14.png" alt="Front of men&#039;s Basic Tee in black." class=" object-contain object-center ">
+          <img src="img/phone/iphone14.png" alt="ip14" class=" object-contain object-center ">
         </div>
         <div class="mt-4 flex flex-col text-center">
           <div>

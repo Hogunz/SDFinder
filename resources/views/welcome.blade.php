@@ -3,7 +3,7 @@
   <section class=" dark:bg-gray-500 pt-12 font-sans">
     <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
       <div class="mr-auto place-self-center lg:col-span-7">
-        <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white text-black">Choose a Device, <span class="text-blue-600  "><br> Make it Real.</span></h1>
+        <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white text-black">Choose a Device. <span class="text-indigo-600 dark:text-blue-600  "><br>Make it Real.</span></h1>
         <p class="max-w-2xl mb-6 font-light  lg:mb-8 md:text-lg lg:text-xl text-gray-800 dark:text-gray-400 ">From phones to laptops , we’ll help you
           find the best device for you.</p>
         <form class=" ">
@@ -227,4 +227,4 @@
 
 
 
-</x-guest-layout>
+</x-guest-layout> 

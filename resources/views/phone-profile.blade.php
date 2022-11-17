@@ -29,9 +29,7 @@ height: 350px;
     <div class="container mx-auto relative overflow-hidden ">
       <div class="mx-auto max-w-7xl ">
         <div class="relative z-10 bg-white  pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
-          <svg class="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white lg:block" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            <polygon points="50,0 100,0 50,100 0,100" />
-          </svg>
+          
 
           <div>
             <div class="relative px-4 pt-6 sm:px-6 lg:px-8">
@@ -62,8 +60,8 @@ height: 350px;
           </main>
         </div>
       </div>
-      <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full" src="https://www.rappler.com/tachyon/2022/09/iPhone-14-Pro-2.png" alt="">
+      <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 dark:bg-white p-8">
+        <img class=" h-56 w-full object-contain sm:h-72 md:h-96 lg:h-full lg:w-full" src="https://smart.com.ph/Postpaid/images/default-source/iphone14/pro-max/ip14-pro-max-purple.png" alt="">
       </div>
     </div>
 
@@ -74,7 +72,7 @@ height: 350px;
 
     <div class="container mx-auto">
       <div class="embed-responsive embed-responsive-16by9 relative w-full overflow-hidden" style="padding-top: 56.25%">
-        <iframe class="embed-responsive-item  absolute top-0 right-0 bottom-0 left-0 w-full h-full" src="https://www.youtube.com/embed/FT3ODSg1GFE?autoplay=1&mute=1&loop=1" style="border:none; pointer-events:none;" allow="autoplay"></iframe>
+        <iframe class="embed-responsive-item  absolute top-0 right-0 bottom-0 left-0 w-full h-full" src="https://www.youtube.com/embed/FT3ODSg1GFE?autoplay=1&mute=1&loop=1" style="border:none; pointer-events:none;" allow="autoplay;loop;"></iframe>
       </div>
     </div>
   </section>
