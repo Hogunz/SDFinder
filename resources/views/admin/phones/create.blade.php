@@ -175,8 +175,8 @@
                         <div>
                             <h2>Chipset</h2>
                             <select name="" id="">
-                                @foreach (['Snapdragon'] as $chipset)
-                                    <option value="{{ $chipset }}">{{ $chipset }}</option>
+                                @foreach ($chipsets as $chipset)
+                                    <option value="{{ $chipset->id }}">{{ $chipset->name }}</option>
                                 @endforeach
                             </select>
                         </div>

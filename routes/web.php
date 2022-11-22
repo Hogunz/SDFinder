@@ -56,7 +56,6 @@ Route::get('/vendor-dashboard', function () {
 Route::name('admin.')->prefix('admin/')->group(function () {
     Route::resource('brands', BrandController::class);
     Route::resource('chipsets', ChipsetController::class);
-    Route::resource('gpus', GpuController::class);
 
     Route::resource('os', OperatingSystemController::class)->parameters([
         'os' => 'operating_system',
@@ -66,6 +65,7 @@ Route::name('admin.')->prefix('admin/')->group(function () {
         'os' => 'operating_system',
         'version' => 'operating_system_version'
     ])->shallow();
+
     Route::resource('phones', PhoneController::class);
 });
 
