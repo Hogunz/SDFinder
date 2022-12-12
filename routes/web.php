@@ -22,12 +22,7 @@ use App\Http\Controllers\Admin\PhoneController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/register', function () {
-    return view('register');
-});
+
 Route::get('/mobile-finder', function () {
     return view('mobile-finder');
 });
@@ -43,14 +38,17 @@ Route::get('/brands', function () {
 Route::get('/phone-profile', function () {
     return view('phone-profile');
 });
-Route::get('/store-profile', function () {
+
+
+Route::name('vendor.')->prefix('vendor/')->group(function() {
+    Route::get('/dashboard', function () {
+        return view('vendors.dashboard');
+    })->name('dashboard');
+});
+
+Route::get('/profile', function () {
     return view('store-profile');
 });
-
-Route::get('/vendor-dashboard', function () {
-    return view('vendor-dashboard');
-});
-
 
 
 Route::name('admin.')->prefix('admin/')->group(function () {

@@ -29,20 +29,20 @@ class UsersSeeder extends Seeder
             'password' => Hash::make('vendor'),
         ]);
 
-        $user = User::create([
-            'name' => 'user',
-            'email' => 'user@gmail.com',
-            'password' => Hash::make('user'),
-        ]);
+        // $user = User::create([
+        //     'name' => 'user',
+        //     'email' => 'user@gmail.com',
+        //     'password' => Hash::make('user'),
+        // ]);
 
         //Create roles
         Role::create(['name' => 'admin']);
         Role::create(['name' => 'vendor']);
-        Role::create(['name' => 'user']);
+        // Role::create(['name' => 'user']);
 
         //Assigning roles to user
         $adminUser->assignRole('admin');
         $vendorUser->assignRole('vendor');
-        $user->assignRole('user');
+        // $user->assignRole('user');
     }
 }

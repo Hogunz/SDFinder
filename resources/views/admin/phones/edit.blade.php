@@ -14,9 +14,9 @@
 
                     <div>
                         <h1 class="text-lg font-bold">Brand</h1>
-                        <select name="brand_id" id="" class="w-full block">
+                        <select name="brand_id" id="" value="{{ old('brand_id') }}" class="w-full block">
                             @foreach ($brands as $brand)
-                            <option value="{{ $brand->id }}" {{ old('brand_id') == $brand->id ? 'selected' : '' }}>{{ $brand->name }}</option>
+                            <option value="{{ $brand->id }}">{{ $brand->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -44,10 +44,12 @@
 
                         <template x-for="(network, index) in networks" :key="index">
                             <div class="flex space-x-2">
-                                <x-input type="checkbox" x-bind:value="network" x-bind:id="network" name="networks[]" />
+                                <x-input type="checkbox" x-bind:value="network" x-bind:id="network" name="networks[]" ></x-input>
                                 <x-label x-text="network" x-bind:for="network"></x-label>
                             </div>
                         </template>
+
+
                     </div>
                 </div>
             </div>
@@ -59,11 +61,11 @@
                     <div>
                         <h2 class="mt-2">Dimensions</h2>
                         <div class="flex space-x-2 items-center">
-                            <x-input type="number" class="w-24 block text-sm" name="length" value="{{ old('length') }}" />
+                            <x-input type="number" class="w-24 block text-sm" name="length" value="{{ old('length') }}"></x-input>
                             <span>x</span>
-                            <x-input type="number" class="w-24 block text-sm" name="width" value="{{ old('width') }}" />
+                            <x-input type="number" class="w-24 block text-sm" name="width" value="{{ old('width') }}"></x-input>
                             <span>x</span>
-                            <x-input type="number" class="w-24 block text-sm" name="thickness" value="{{ old('thickness') }}" />
+                            <x-input type="number" class="w-24 block text-sm" name="thickness" value="{{ old('thickness') }}"></x-input>
                             <span>mm</span>
                         </div>
 
@@ -212,11 +214,13 @@
                     </div>
 
                     <div x-data="{
-                        variants: [{ram: '1',storage: '1',},],
-                        old: {{ old('variants', 0) }},
-                    }" x-init="
-                        variants = old != 0 ? old : [{ram: '1',storage: '1',},]
-                    ">
+                        variants: [
+                            {
+                                ram: '1',
+                                storage: '1',
+                            },
+                        ]
+                    }">
                     <div class="flex space-x-2 items-center">
 
                         <h2 class="">Variants</h2>
@@ -271,16 +275,8 @@
                 <h1 class="text-lg font-bold">Main Camera</h1>
                 <div>
                     <div x-data="{
-                        cameras: {{ old('camera_count') ?? 1 }},
-                        camera_resolutions: [],
-                        old: {{ old('camera_resolutions', 0) }},
-                    }" x-init="
-                        camera_resolutions = old != 0 ? old : ['']
-
-                        $watch('cameras', function () {
-                            camera_resolutions = Array(cameras).fill('')
-                        })
-                    " class="grid grid-cols-2 gap-4">
+                        cameras: 1
+                    }" class="grid grid-cols-2 gap-4">
                         <div>
                             <div class="flex space-x-2 items-center">
                                 <h2>Cameras: </h2>
@@ -292,11 +288,11 @@
                             </div>
 
                             <div>
-                                <template x-for="(camera_resolution, index) in camera_resolutions" :key="index">
+                                <template x-for="i in cameras">
                                     <div class="mt-2">
                                         <div class="flex space-x-4 items-center">
                                             <h2>Resolution (in MP): </h2>
-                                            <x-input type="text" name="camera_resolutions[]" x-model="camera_resolution" class="text-sm col-span-2"></x-input>
+                                            <x-input type="text" name="camera_resolutions[]" class="text-sm col-span-2"></x-input>
                                         </div>
                                     </div>
                                 </template>
@@ -319,17 +315,8 @@
             <div class="border p-6 mt-2">
                 <h1 class="text-lg font-bold">Selfie Camera</h1>
                 <div x-data="{
-                    cameras: {{ old('selfie_camera_count') ?? 1 }},
-                    selfie_camera_resolutions: [],
-                    old: {{ old('selfie_camera_resolutions', 0) }} ?? false,
-                }" x-init="
-
-                    selfie_camera_resolutions = old != 0 ? old : ['']
-
-                    $watch('cameras', function () {
-                        selfie_camera_resolutions = Array(cameras).fill('');
-                    })
-                ">
+                    cameras: 1
+                }">
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <div class="flex space-x-2 items-center">
@@ -342,17 +329,17 @@
                             </div>
 
                             <div class="flex space-x-2 mt-2">
-                                <x-input type="checkbox" value="1" id="pop-up" name="selfie_pop_up" checked="{{ old('selfie_pop_up') }}"></x-input>
+                                <x-input type="checkbox" value="1" id="pop-up" name="selfie_pop_up"></x-input>
                                 <x-label value="Pop-up Camera" for="pop-up"></x-label>
                             </div>
                         </div>
 
                         <div>
-                            <template x-for="(selfie_camera_resolution, index) in selfie_camera_resolutions" :key="index">
+                            <template x-for="i in cameras">
                                 <div class="flex space-x-4 items-center mt-2">
 
                                     <h2>Resolution (in MP): </h2>
-                                    <x-input type="text" name="selfie_camera_resolutions[]" x-model="selfie_camera_resolution" class="text-sm"></x-input>
+                                    <x-input type="text" name="selfie_camera_resolutions[]" class="text-sm"></x-input>
 
                                 </div>
                             </template>
@@ -369,16 +356,16 @@
                     <div>
                         <h2>Loud Speaker</h2>
                         <select name="loud_speaker" id="" class="text-sm">
-                            <option value="1" {{ old('loud_speaker') == 1 ? 'selected' : '' }}>Yes</option>
-                            <option value="0" {{ old('loud_speaker') == 0 ? 'selected' : '' }}>No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select>
                     </div>
 
                     <div>
                         <h2>3.5mm jack</h2>
                         <select name="jack" id="" class="text-sm">
-                            <option value="1" {{ old('jack') == 1 ? 'selected' : '' }}>Yes</option>
-                            <option value="0" {{ old('jack') == 0 ? 'selected' : '' }}>No</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
                         </select>
                     </div>
                 </div>
