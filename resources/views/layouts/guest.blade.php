@@ -87,8 +87,8 @@
 <body class="dark:bg-gray-500">
 
     <div class="flex flex-col h-screen justify-between font-sans bg-scroll scroll-smooth">
-        <header>@include('layouts.guest-navigation')</header>
         <main>
+            <header>@include('layouts.guest-navigation')</header>
             {{ $slot }}
         </main>
         @include('layouts.guest-footer')

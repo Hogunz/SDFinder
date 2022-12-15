@@ -159,19 +159,22 @@
                                             </x-slot>
 
                                             <x-slot name="content">
-                                                <x-dropdown-link :href="route('vendor.dashboard')">
-                                                    Dashboard
-                                                </x-dropdown-link>
-                                                <!-- Authentication -->
-                                                <form method="POST" action="{{ route('logout') }}">
-                                                    @csrf
+                                                <div class="divide-y">
 
-                                                    <x-dropdown-link :href="route('logout')"
-                                                        onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                                        {{ __('Log Out') }}
+                                                    <x-dropdown-link :href="route('vendor.dashboard')">
+                                                        Dashboard
                                                     </x-dropdown-link>
-                                                </form>
+                                                    <!-- Authentication -->
+                                                    <form method="POST" action="{{ route('logout') }}">
+                                                        @csrf
+
+                                                        <x-dropdown-link :href="route('logout')"
+                                                            onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                                            {{ __('Log Out') }}
+                                                        </x-dropdown-link>
+                                                    </form>
+                                                </div>
                                             </x-slot>
                                         </x-dropdown>
                                     </div>

@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\GpuController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ChipsetController;
 use App\Http\Controllers\Admin\OperatingSystemController;
 use App\Http\Controllers\Admin\OperatingSystemVersionController;
 use App\Http\Controllers\Admin\PhoneController;
+use App\Http\Controllers\FinderController;
+use App\Http\Controllers\Vendor\PhoneController as VendorPhoneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +24,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/mobile-finder', function () {
-    return view('mobile-finder');
-});
+Route::get('/mobile-finder', [FinderController::class, 'phoneFinder'])->name('mobile.finder');
+
 Route::get('/tablet-finder', function () {
     return view('tablet-finder');
 });
@@ -44,6 +44,8 @@ Route::name('vendor.')->prefix('vendor/')->group(function() {
     Route::get('/dashboard', function () {
         return view('vendors.dashboard');
     })->name('dashboard');
+
+    Route::resource('phones', VendorPhoneController::class);
 });
 
 Route::get('/profile', function () {

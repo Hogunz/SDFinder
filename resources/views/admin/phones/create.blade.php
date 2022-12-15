@@ -38,9 +38,9 @@
                 <div>
                     <h1 class="text-lg font-bold">Network</h1>
                     <h2>Technology</h2>
-                    <div class="flex space-x-4 mt-2" x-data="{
-                        networks: ['2G', '3G', '4G', '5G'],
-                    }">
+                    <div class="flex space-x-4 mt-2" x-data='{
+                        networks: @json($networks)
+                    }'>
 
                         <template x-for="(network, index) in networks" :key="index">
                             <div class="flex space-x-2">
@@ -94,11 +94,11 @@
 
                     <div>
                         <h2 class="text-lg font-bold">SIM</h2>
-                        <div x-data="{
+                        <div x-data='{
                             multiple: 1,
-                            multiples: ['Single', 'Dual', 'Triple', 'Quad'],
-                            sims: ['Mini', 'Micro', 'Nano']
-                        }">
+                            multiples: @json($multiples),
+                            sims: @json($sims)
+                        }'>
                             <select name="sim_count" id="" x-model.number="multiple" class="w-full block">
                                 <template x-for="(multiple, index) in multiples" :key="index">
                                     <option x-bind:value="index + 1" x-text="multiple"></option>
@@ -128,7 +128,7 @@
                     <div>
                         <h2>Type</h2>
                         <select name="display_type" id="" class="w-full block text-sm">
-                            @foreach (['IPS', 'OLED'] as $type)
+                            @foreach ($types as $type)
                                 <option value="{{ $type }}">{{ $type }}</option>
                             @endforeach
                         </select>
@@ -153,10 +153,9 @@
                     <div>
                         <h2>Resolution</h2>
                         <select name="resolution" id="" class="w-full block text-sm">
-                            <option value="hd">HD</option>
-                            <option value="fhd">FHD</option>
-                            <option value="2k">2K, Quad HD</option>
-                            <option value="4k">4K, Ultra HD</option>
+                            @foreach ($resolutions as $i => $resolution)
+                                <option value="{{ $i }}">{{ $resolution }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -230,7 +229,7 @@
                                     <h2 class="text-sm">RAM</h2>
                                     <div class="flex items-center space-x-2">
                                         <select id="" x-bind:name="`variants[`+ variantIndex +`][ram]`" class="w-40 text-sm" x-model="variant.ram">
-                                            @foreach (['1', '2', '3', '4', '6', '8', '10', '12', '16'] as $ram)
+                                            @foreach ($rams as $ram)
                                                 <option value="{{ $ram }}">{{ $ram }}</option>
                                             @endforeach
                                         </select>
@@ -242,7 +241,7 @@
                                     <h2 class="text-sm">Storage</h2>
                                     <div class="flex items-center space-x-2">
                                         <select id="" x-bind:name="`variants[`+ variantIndex +`][storage]`" class="w-40 text-sm" x-model="variant.storage">
-                                            @foreach (['1', '2', '4', '8', '16', '32', '64', '128', '256', '512', '1024'] as $storage)
+                                            @foreach ($storages as $storage)
                                                 <option value="{{ $storage }}">{{ $storage }}</option>
                                             @endforeach
                                         </select>

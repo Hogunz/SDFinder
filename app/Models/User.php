@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Admin\Phone;
+use App\Models\Vendor\PhoneUser;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
@@ -41,5 +43,11 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'phones.pivot.variant' => 'array'
     ];
+
+    public function phones()
+    {
+        return $this->belongsToMany(Phone::class, 'phone_user')->using(PhoneUser::class)->withPivot(['variant', 'price'])->withTimestamps();
+    }
 }

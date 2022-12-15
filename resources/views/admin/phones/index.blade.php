@@ -18,7 +18,7 @@
                         <td class="px-6 py-3 text-center whitespace-nowrap">{{ $phone->name }}</td>
                         <td class="px-6 py-3 text-center">{{ $phone->brand->name }}</td>
                         <td class="px-6 py-3 text-center">
-                            <img src="{{ asset('storage/' . $phone->img) }}" class="w-24 h-52 object-cover mx-auto">
+                            <img src="{{ asset('storage/' . $phone->img) }}" class=" w-32 h-52 object-cover mx-auto">
                         </td>
                         <td class="px-6 py-3 text-center">
                             <form action="{{ route('admin.phones.destroy', $phone) }}" method="post">
