@@ -72,6 +72,7 @@ Route::name('admin.')->prefix('admin/')->group(function () {
         'os' => 'operating_system',
         'version' => 'operating_system_version'
     ])->shallow();
+
     Route::resource('phones', PhoneController::class);
 });
 

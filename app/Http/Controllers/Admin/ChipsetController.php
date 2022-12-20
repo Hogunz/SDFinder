@@ -39,7 +39,10 @@ class ChipsetController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'no_of_cores' => 'required',
+            'cpu' => 'required',
+            'gpu' => 'required'
         ]);
 
         Chipset::create($validated);

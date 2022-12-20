@@ -25,6 +25,9 @@
                 <thead>
                     <tr>
                         <th class="px-6 py-2">Name</th>
+                        <th class="px-6 py-2">Cores</th>
+                        <th class="px-6 py-2">CPU</th>
+                        <th class="px-6 py-2">GPU</th>
                         <th class="px-6 py-2">
                             <span class="sr-only">
                                 Action
@@ -36,6 +39,9 @@
                     @foreach ($chipsets as $chipset)
                         <tr>
                             <td class="px-6 py-2">{{ $chipset->name }}</td>
+                            <td class="px-6 py-2">{{ $chipset->no_of_cores }}</td>
+                            <td class="px-6 py-2">{{ $chipset->cpu }}</td>
+                            <td class="px-6 py-2">{{ $chipset->gpu }}</td>
                             <td class="px-6 py-2">
                                 <x-button type="button">Edit</x-button>
 

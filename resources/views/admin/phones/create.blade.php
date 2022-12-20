@@ -151,15 +151,37 @@
                         </template>
                     </select>
                 </div>
+                        <div>
+                            <h2>OS</h2>
+                            <select name="" id="" x-model="selectedOs" x-on:change="getVersions()">
+                                <option value="" hidden>Select OS</option>
+                                <template x-for="(os, index) in operatingSystems" :key="index">
+                                    <option :value="os.id" x-text="os.name"></option>
+                                </template>
+                            </select>
+                        </div>
+
+                        <div>
+                            <h2>OS Version</h2>
+                            <select name="" id="" x-model="selectedVersion">
+                                <option value="">Select OS</option>
+                                <template x-for="(version, index) in versions" :key="index">
+                                    <option :value="version.id" x-text="version.name"></option>
+                                </template>
+                            </select>
+                        </div>
 
 
-                <div>
-                    <h2>Chipset</h2>
-                    <select name="" id="">
-                        @foreach (['Snapdragon'] as $chipset)
-                        <option value="{{ $chipset }}">{{ $chipset }}</option>
-                        @endforeach
-                    </select>
+                        <div>
+                            <h2>Chipset</h2>
+                            <select name="" id="">
+                                @foreach ($chipsets as $chipset)
+                                    <option value="{{ $chipset->id }}">{{ $chipset->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
