@@ -57,7 +57,7 @@
           </div>
         </div>
         <a href="/">
-          <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 rounded-md flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
+          <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 rounded-md flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
             <div class="flex items-center">
 
               <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/light-with-button-svg3.svg" alt="logo" />

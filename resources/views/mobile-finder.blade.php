@@ -1,10 +1,4 @@
 <x-guest-layout>
-
-
-
-
-
-
     <!-- Section 1 -->
     <section class="container mx-auto dark:bg-gray-500 pt-24">
         <header>
@@ -28,16 +22,18 @@
         </header>
     </section>
     <!-- Section 1 -->
-<!-- Section 2 -->
-<div class="flex space-x-0 mx-auto container  ">
-<x-input placeholder="Pre-defined">asdasd</x-input>
-<x-button>Search</x-button>
-</div>
+    <!-- Section 2 -->
+    <div class="flex space-x-0 mx-auto container  ">
+        <select class="w-64 mb-4" name="" id="">
+            <option value="2">Test</option>
+            <option value="1">test1</option>
+        </select>
+    </div>
 
-<!-- Section 2 -->
+    <!-- Section 2 -->
     <!-- Section 3 -->
     <section class="dark:bg-gray-500">
-      
+
         <div class="container mx-auto text-center">
             <h6 class="text-3xl pb-6 font-bold  uppercase dark:text-white tracking-widest">device finder</h6>
             <a href="mobile-finder" class="href">
@@ -149,24 +145,24 @@
                         </div>
                         <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
 
-<button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox16" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Price
-    <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg></button>
+                            <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox16" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Price
+                                <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg></button>
 
-<!-- Dropdown menu -->
-<div id="dropdownDefaultCheckbox16" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
-    <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-        @for($i = 0; $i < 12; $i++) <li>
-            <div class="flex items-center">
-                <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">asdasdasd checkbox</label>
-            </div>
-            </li>
-            @endfor
-    </ul>
-</div>
-</div>
+                            <!-- Dropdown menu -->
+                            <div id="dropdownDefaultCheckbox16" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
+                                <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
+                                    @for($i = 0; $i < 12; $i++) <li>
+                                        <div class="flex items-center">
+                                            <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                            <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">asdasdasd checkbox</label>
+                                        </div>
+                                        </li>
+                                        @endfor
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <hr class="bg-gray-200 lg:w-6/12 w-full md:my-10 my-8" />
@@ -348,48 +344,48 @@
                         </div>
                     </div>
                     <div class="flex space-x-6 justify-center items-center">
-                                <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox6" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Chipset
-                                    <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg></button>
+                        <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox6" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Chipset
+                            <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg></button>
 
-                                <!-- Dropdown menu -->
-                                <div id="dropdownDefaultCheckbox6" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
-                                    <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                                        @for($i = 0; $i < 20; $i++) <li>
-                                            <div class="flex items-center">
-                                                <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
-                                            </div>
-                                            </li>
-                                            @endfor
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="flex space-x-6 justify-center items-center">
-                                <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox17" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">CPU Cores
-                                    <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg></button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownDefaultCheckbox6" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
+                            <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
+                                @for($i = 0; $i < 20; $i++) <li>
+                                    <div class="flex items-center">
+                                        <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                        <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
+                                    </div>
+                                    </li>
+                                    @endfor
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex space-x-6 justify-center items-center">
+                        <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox17" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">CPU Cores
+                            <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg></button>
 
-                                <!-- Dropdown menu -->
-                                <div id="dropdownDefaultCheckbox17" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
-                                    <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                                        @for($i = 0; $i < 5; $i++) <li>
-                                            <div class="flex items-center">
-                                                <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
-                                            </div>
-                                            </li>
-                                            @endfor
-                                    </ul>
-                                </div>
-                            </div>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownDefaultCheckbox17" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
+                            <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
+                                @for($i = 0; $i < 5; $i++) <li>
+                                    <div class="flex items-center">
+                                        <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                        <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
+                                    </div>
+                                    </li>
+                                    @endfor
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
+
             <div>
-                
+
                 <hr class="bg-gray-200 lg:w-6/12 w-full md:my-10 my-8" />
                 <!-- Memory Section -->
                 <div>
@@ -399,73 +395,73 @@
                         <p class="lg:text-2xl text-xl lg:leading-6 leading-5 font-medium ">Memory</p>
                     </div>
                     <div class="md:flex md:space-x-6 mt-8 grid grid-cols-4 gap-y-8 flex-wrap">
-                    <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
-                        <div class="inline-block">
-                            <div class="flex space-x-6 justify-center items-center">
-                                <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox4" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">RAM
-                                    <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg></button>
+                        <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
+                            <div class="inline-block">
+                                <div class="flex space-x-6 justify-center items-center">
+                                    <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox4" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">RAM
+                                        <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg></button>
 
-                                <!-- Dropdown menu -->
-                                <div id="dropdownDefaultCheckbox4" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
-                                    <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                                        @for($i = 0; $i < 8; $i++) <li>
-                                            <div class="flex items-center">
-                                                <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
-                                            </div>
-                                            </li>
-                                            @endfor
-                                    </ul>
+                                    <!-- Dropdown menu -->
+                                    <div id="dropdownDefaultCheckbox4" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
+                                        <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
+                                            @for($i = 0; $i < 8; $i++) <li>
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                    <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
+                                                </div>
+                                                </li>
+                                                @endfor
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="flex justify-center items-center">
-                        <div class="inline-block">
-                            <div class="flex space-x-6 justify-center items-center">
-                                <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox5" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Card Slot
-                                    <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg></button>
+                        <div class="flex justify-center items-center">
+                            <div class="inline-block">
+                                <div class="flex space-x-6 justify-center items-center">
+                                    <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox5" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Card Slot
+                                        <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg></button>
 
-                                <!-- Dropdown menu -->
-                                <div id="dropdownDefaultCheckbox5" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
-                                    <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                                        @for($i = 0; $i < 8; $i++) <li>
-                                            <div class="flex items-center">
-                                                <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
-                                            </div>
-                                            </li>
-                                            @endfor
-                                    </ul>
+                                    <!-- Dropdown menu -->
+                                    <div id="dropdownDefaultCheckbox5" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
+                                        <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
+                                            @for($i = 0; $i < 8; $i++) <li>
+                                                <div class="flex items-center">
+                                                    <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                    <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
+                                                </div>
+                                                </li>
+                                                @endfor
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="flex space-x-6 justify-center items-center">
-                                <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox6" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Storage
-                                    <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg></button>
+                        <div class="flex space-x-6 justify-center items-center">
+                            <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox6" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Storage
+                                <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg></button>
 
-                                <!-- Dropdown menu -->
-                                <div id="dropdownDefaultCheckbox6" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
-                                    <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                                        @for($i = 0; $i < 20; $i++) <li>
-                                            <div class="flex items-center">
-                                                <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
-                                            </div>
-                                            </li>
-                                            @endfor
-                                    </ul>
-                                </div>
+                            <!-- Dropdown menu -->
+                            <div id="dropdownDefaultCheckbox6" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
+                                <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
+                                    @for($i = 0; $i < 20; $i++) <li>
+                                        <div class="flex items-center">
+                                            <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                            <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
+                                        </div>
+                                        </li>
+                                        @endfor
+                                </ul>
                             </div>
-                           
-                </div>
+                        </div>
+
+                    </div>
                     <hr class="bg-gray-200 lg:w-6/12 w-full md:my-10 my-8" />
                     <!-- Display Section -->
                     <div>
@@ -480,7 +476,7 @@
                                     <div class="flex space-x-6 justify-center items-center">
                                         <div>
 
-                                          
+
                                             <div class="md:flex md:space-x-6 mt-8 grid md:grid-cols-3 gap-y-8 flex-wrap">
                                                 <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
                                                     <div class="inline-block">
@@ -557,7 +553,7 @@
                                                     </div>
 
                                                 </div>
-                                               
+
                                             </div>
                                             <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
                                                 <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
@@ -604,331 +600,331 @@
                             <p class="lg:text-2xl text-xl lg:leading-6 leading-5 font-medium ">Main Camera</p>
                         </div>
                         <div class="md:flex md:space-x-6 mt-8 grid md:grid-cols-3 gap-y-8 flex-wrap">
-                                                <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
-                                                    <div class="inline-block">
-                                                        <div class="flex space-x-6 justify-start items-center">
-                                                            <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox8" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Resolution
-                                                                <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                                                </svg></button>
+                            <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
+                                <div class="inline-block">
+                                    <div class="flex space-x-6 justify-start items-center">
+                                        <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox8" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Resolution
+                                            <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                            </svg></button>
 
-                                                            <!-- Dropdown menu -->
-                                                            <div id="dropdownDefaultCheckbox8" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
-                                                                <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                                                                    @for($i = 0; $i < 2; $i++) <li>
-                                                                        <div class="flex items-center">
-                                                                            <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                                            <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
-                                                                        </div>
-                                                                        </li>
-                                                                        @endfor
-                                                                </ul>
-                                                            </div>
-                                                        </div>
+                                        <!-- Dropdown menu -->
+                                        <div id="dropdownDefaultCheckbox8" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
+                                            <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
+                                                @for($i = 0; $i < 2; $i++) <li>
+                                                    <div class="flex items-center">
+                                                        <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
                                                     </div>
-                                                </div>
-                                                <div class="flex justify-center items-center">
-                                                    <div class="inline-block">
-                                                        <div class="flex space-x-6 justify-center items-center">
-                                                            <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox9" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Video
-                                                                <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                                                </svg></button>
-
-                                                            <!-- Dropdown menu -->
-                                                            <div id="dropdownDefaultCheckbox9" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
-                                                                <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                                                                    @for($i = 0; $i < 2; $i++) <li>
-                                                                        <div class="flex items-center">
-                                                                            <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                                            <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
-                                                                        </div>
-                                                                        </li>
-                                                                        @endfor
-                                                                </ul>
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-                                                <div class="flex justify-center items-center">
-                                                    <div class="inline-block">
-                                                        <div class="flex space-x-6 justify-center items-center">
-                                                            <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox9" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Camera
-                                                                <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                                                </svg></button>
-
-                                                            <!-- Dropdown menu -->
-                                                            <div id="dropdownDefaultCheckbox9" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
-                                                                <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                                                                    @for($i = 0; $i < 9; $i++) <li>
-                                                                        <div class="flex items-center">
-                                                                            <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                                            <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
-                                                                        </div>
-                                                                        </li>
-                                                                        @endfor
-                                                                </ul>
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-                                               
-                                            </div>
-
-                <hr class="bg-gray-200 lg:w-6/12 w-full md:my-10 my-8" />
-                <!-- Selfie Camera Section -->
-                <div>
-                    <div class="flex space-x-2 text-gray-800 dark:text-white">
-                        <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg4.svg" alt="materials" />
-                        <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg4dark.svg" alt="materials" />
-                        <p class="lg:text-2xl text-xl lg:leading-6 leading-5 font-medium ">Selfie Camera</p>
-                    </div>
-                    <div class="md:flex md:space-x-6 mt-8 grid md:grid-cols-3 gap-y-8 flex-wrap">
-                                                <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
-                                                    <div class="inline-block">
-                                                        <div class="flex space-x-6 justify-start items-center">
-                                                            <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox8" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Resolution
-                                                                <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                                                </svg></button>
-
-                                                            <!-- Dropdown menu -->
-                                                            <div id="dropdownDefaultCheckbox8" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
-                                                                <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                                                                    @for($i = 0; $i < 2; $i++) <li>
-                                                                        <div class="flex items-center">
-                                                                            <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                                            <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
-                                                                        </div>
-                                                                        </li>
-                                                                        @endfor
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                               
-                </div>
-            </div>
-
-            <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
-                <div class="flex justify-center items-center">
-                    <div class="inline-block">
-                        <div class="flex space-x-6 justify-center items-center">
-                            <div class="form-check">
-                                <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="popupcamera" id="popupcamera">
-                                <label class="form-check-label inline-block text-gray-600" for="popupcamera">
-                                    Pop-Up Camera
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex justify-center items-center">
-                    <div class="inline-block">
-                        <div class="flex space-x-6 justify-center items-center">
-                            <div class="form-check">
-                                <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="dualcamera" id="dualcamera">
-                                <label class="form-check-label inline-block text-gray-600" for="dualcamera">
-                                    Dual Camera
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-            <hr class="bg-gray-200 lg:w-6/12 w-full md:my-10 my-8" />
-            <div>
-        
-
-
-                <!-- Connectivity Section -->
-                <div>
-                    <div class="flex space-x-2 text-gray-800 dark:text-white">
-                        <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg4.svg" alt="materials" />
-                        <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg4dark.svg" alt="materials" />
-                        <p class="lg:text-2xl text-xl lg:leading-6 leading-5 font-medium ">Connectivity</p>
-                    </div>
-                   
-                    <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
-                        <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
-                            <div class="inline-block">
-                                <div class="flex space-x-6 justify-start items-center">
-                                    <div class="form-check">
-                                        <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="fontflash" id="fontflash">
-                                        <label class="form-check-label inline-block text-gray-600" for="fontflash">
-                                            GPS
-                                        </label>
+                                                    </li>
+                                                    @endfor
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="flex justify-center items-center">
+                                <div class="inline-block">
+                                    <div class="flex space-x-6 justify-center items-center">
+                                        <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox9" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Video
+                                            <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                            </svg></button>
+
+                                        <!-- Dropdown menu -->
+                                        <div id="dropdownDefaultCheckbox9" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
+                                            <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
+                                                @for($i = 0; $i < 2; $i++) <li>
+                                                    <div class="flex items-center">
+                                                        <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
+                                                    </div>
+                                                    </li>
+                                                    @endfor
+                                            </ul>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="flex justify-center items-center">
+                                <div class="inline-block">
+                                    <div class="flex space-x-6 justify-center items-center">
+                                        <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox9" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Camera
+                                            <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                            </svg></button>
+
+                                        <!-- Dropdown menu -->
+                                        <div id="dropdownDefaultCheckbox9" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
+                                            <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
+                                                @for($i = 0; $i < 9; $i++) <li>
+                                                    <div class="flex items-center">
+                                                        <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                        <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
+                                                    </div>
+                                                    </li>
+                                                    @endfor
+                                            </ul>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
                         </div>
-                        <div class="flex justify-center items-center">
-                            <div class="inline-block">
-                                <div class="flex space-x-6 justify-center items-center">
-                                    <div class="form-check">
-                                        <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="popupcamera" id="popupcamera">
-                                        <label class="form-check-label inline-block text-gray-600" for="popupcamera">
-                                            NFC
-                                        </label>
+
+                        <hr class="bg-gray-200 lg:w-6/12 w-full md:my-10 my-8" />
+                        <!-- Selfie Camera Section -->
+                        <div>
+                            <div class="flex space-x-2 text-gray-800 dark:text-white">
+                                <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg4.svg" alt="materials" />
+                                <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg4dark.svg" alt="materials" />
+                                <p class="lg:text-2xl text-xl lg:leading-6 leading-5 font-medium ">Selfie Camera</p>
+                            </div>
+                            <div class="md:flex md:space-x-6 mt-8 grid md:grid-cols-3 gap-y-8 flex-wrap">
+                                <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
+                                    <div class="inline-block">
+                                        <div class="flex space-x-6 justify-start items-center">
+                                            <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox8" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Resolution
+                                                <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                                </svg></button>
+
+                                            <!-- Dropdown menu -->
+                                            <div id="dropdownDefaultCheckbox8" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
+                                                <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
+                                                    @for($i = 0; $i < 2; $i++) <li>
+                                                        <div class="flex items-center">
+                                                            <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                            <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
+                                                        </div>
+                                                        </li>
+                                                        @endfor
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
+                            <div class="flex justify-center items-center">
+                                <div class="inline-block">
+                                    <div class="flex space-x-6 justify-center items-center">
+                                        <div class="form-check">
+                                            <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="popupcamera" id="popupcamera">
+                                            <label class="form-check-label inline-block text-gray-600" for="popupcamera">
+                                                Pop-Up Camera
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="flex justify-center items-center">
-                            <div class="inline-block">
-                                <div class="flex space-x-6 justify-center items-center">
-                                    <div class="form-check">
-                                        <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="dualcamera" id="dualcamera">
-                                        <label class="form-check-label inline-block text-gray-600" for="dualcamera">
-                                            FM RADIO
-                                        </label>
+                            <div class="flex justify-center items-center">
+                                <div class="inline-block">
+                                    <div class="flex space-x-6 justify-center items-center">
+                                        <div class="form-check">
+                                            <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="dualcamera" id="dualcamera">
+                                            <label class="form-check-label inline-block text-gray-600" for="dualcamera">
+                                                Dual Camera
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
+
                         </div>
+                        <hr class="bg-gray-200 lg:w-6/12 w-full md:my-10 my-8" />
+                        <div>
 
-                    </div>
 
-                    <hr class="bg-gray-200 lg:w-6/12 w-full md:my-10 my-8" />
-                    <!--Battery Section -->
-                    <div>
-                        <div class="flex space-x-2 text-gray-800 dark:text-white">
-                            <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg4.svg" alt="materials" />
-                            <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg4dark.svg" alt="materials" />
-                            <p class="lg:text-2xl text-xl lg:leading-6 leading-5 font-medium ">Battery</p>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
-                    <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
-                        <div class="inline-block">
-                            <div class="flex space-x-6 justify-start items-center">
-                                <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox13" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Removable
-                                    <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg></button>
 
-                                <!-- Dropdown menu -->
-                                <div id="dropdownDefaultCheckbox13" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
-                                    <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                                        @for($i = 0; $i < 2; $i++) <li>
-                                            <div class="flex items-center">
-                                                <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
+                            <!-- Connectivity Section -->
+                            <div>
+                                <div class="flex space-x-2 text-gray-800 dark:text-white">
+                                    <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg4.svg" alt="materials" />
+                                    <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg4dark.svg" alt="materials" />
+                                    <p class="lg:text-2xl text-xl lg:leading-6 leading-5 font-medium ">Connectivity</p>
+                                </div>
+
+                                <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
+                                    <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
+                                        <div class="inline-block">
+                                            <div class="flex space-x-6 justify-start items-center">
+                                                <div class="form-check">
+                                                    <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="fontflash" id="fontflash">
+                                                    <label class="form-check-label inline-block text-gray-600" for="fontflash">
+                                                        GPS
+                                                    </label>
+                                                </div>
                                             </div>
-                                            </li>
-                                            @endfor
-                                    </ul>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-center items-center">
+                                        <div class="inline-block">
+                                            <div class="flex space-x-6 justify-center items-center">
+                                                <div class="form-check">
+                                                    <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="popupcamera" id="popupcamera">
+                                                    <label class="form-check-label inline-block text-gray-600" for="popupcamera">
+                                                        NFC
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-center items-center">
+                                        <div class="inline-block">
+                                            <div class="flex space-x-6 justify-center items-center">
+                                                <div class="form-check">
+                                                    <input class="form-check-input appearance h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="dualcamera" id="dualcamera">
+                                                    <label class="form-check-label inline-block text-gray-600" for="dualcamera">
+                                                        FM RADIO
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <hr class="bg-gray-200 lg:w-6/12 w-full md:my-10 my-8" />
+                                <!--Battery Section -->
+                                <div>
+                                    <div class="flex space-x-2 text-gray-800 dark:text-white">
+                                        <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg4.svg" alt="materials" />
+                                        <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/filter1-svg4dark.svg" alt="materials" />
+                                        <p class="lg:text-2xl text-xl lg:leading-6 leading-5 font-medium ">Battery</p>
+                                    </div>
+
                                 </div>
                             </div>
+                            <div class="md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
+                                <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
+                                    <div class="inline-block">
+                                        <div class="flex space-x-6 justify-start items-center">
+                                            <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox13" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Removable
+                                                <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                                </svg></button>
 
-                        </div>
-                    </div>
-                    <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
-                        <div class="inline-block">
-                            <div class="flex space-x-6 justify-start items-center">
-                                <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox14" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Wired Charging
-                                    <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg></button>
-
-                                <!-- Dropdown menu -->
-                                <div id="dropdownDefaultCheckbox14" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
-                                    <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                                        @for($i = 0; $i < 9; $i++) <li>
-                                            <div class="flex items-center">
-                                                <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
+                                            <!-- Dropdown menu -->
+                                            <div id="dropdownDefaultCheckbox13" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
+                                                <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
+                                                    @for($i = 0; $i < 2; $i++) <li>
+                                                        <div class="flex items-center">
+                                                            <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                            <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
+                                                        </div>
+                                                        </li>
+                                                        @endfor
+                                                </ul>
                                             </div>
-                                            </li>
-                                            @endfor
-                                    </ul>
+                                        </div>
+
+                                    </div>
                                 </div>
+                                <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
+                                    <div class="inline-block">
+                                        <div class="flex space-x-6 justify-start items-center">
+                                            <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox14" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Wired Charging
+                                                <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                                </svg></button>
+
+                                            <!-- Dropdown menu -->
+                                            <div id="dropdownDefaultCheckbox14" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
+                                                <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
+                                                    @for($i = 0; $i < 9; $i++) <li>
+                                                        <div class="flex items-center">
+                                                            <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                            <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
+                                                        </div>
+                                                        </li>
+                                                        @endfor
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
+                                    <div class="inline-block">
+                                        <div class="flex space-x-6 justify-start items-center">
+                                            <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox14" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Wireless Charging
+                                                <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                                </svg></button>
+
+                                            <!-- Dropdown menu -->
+                                            <div id="dropdownDefaultCheckbox14" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
+                                                <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
+                                                    @for($i = 0; $i < 9; $i++) <li>
+                                                        <div class="flex items-center">
+                                                            <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                            <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
+                                                        </div>
+                                                        </li>
+                                                        @endfor
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
+                                    <div class="inline-block">
+                                        <div class="flex space-x-6 justify-start items-center">
+                                            <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox14" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Capacity
+                                                <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                                </svg></button>
+
+                                            <!-- Dropdown menu -->
+                                            <div id="dropdownDefaultCheckbox14" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
+                                                <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
+                                                    @for($i = 0; $i < 9; $i++) <li>
+                                                        <div class="flex items-center">
+                                                            <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                                            <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
+                                                        </div>
+                                                        </li>
+                                                        @endfor
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
                             </div>
 
-                        </div>
-                    </div>
-                    <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
-                        <div class="inline-block">
-                            <div class="flex space-x-6 justify-start items-center">
-                                <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox14" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Wireless Charging
-                                    <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg></button>
+                            <!-- Apply Filter Button (Large Screen) -->
 
-                                <!-- Dropdown menu -->
-                                <div id="dropdownDefaultCheckbox14" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
-                                    <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                                        @for($i = 0; $i < 9; $i++) <li>
-                                            <div class="flex items-center">
-                                                <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
-                                            </div>
-                                            </li>
-                                            @endfor
-                                    </ul>
-                                </div>
+                            <div class="hidden md:block absolute right-0 bottom-0 md:py-10 lg:px-20 md:px-6 py-9 px-4">
+                                <button onclick="applyFilters()" class="hover:bg-gray-700 dark:bg-white dark:text-gray-800 dark:hover:bg-gray-100 focus:ring focus:ring-offset-2 focus:ring-gray-800 text-base leading-4 font-medium py-4 px-10 text-white bg-gray-800">Show</button>
                             </div>
 
+                            <!-- Apply Filter Button (Table or lower Screen) -->
+
+                            <div class="block md:hidden w-full mt-10">
+                                <button onclick="applyFilters()" class="w-full hover:bg-gray-700 dark:bg-white dark:text-gray-800 dark:hover:bg-gray-100 focus:ring focus:ring-offset-2 focus:ring-gray-800 text-base leading-4 font-medium py-4 px-10 text-white bg-gray-800">Show</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex space-x-2 md:justify-center md:items-center items-center justify-start">
-                        <div class="inline-block">
-                            <div class="flex space-x-6 justify-start items-center">
-                                <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox14" class="  dark:text-gray-300 font-normal text-gray-600  hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Capacity
-                                    <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg></button>
 
-                                <!-- Dropdown menu -->
-                                <div id="dropdownDefaultCheckbox14" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 1210px);">
-                                    <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-                                        @for($i = 0; $i < 9; $i++) <li>
-                                            <div class="flex items-center">
-                                                <input id="checkbox-item-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                                <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default checkbox</label>
-                                            </div>
-                                            </li>
-                                            @endfor
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                </div>
-
-            </div>
-
-            <!-- Apply Filter Button (Large Screen) -->
-
-            <div class="hidden md:block absolute right-0 bottom-0 md:py-10 lg:px-20 md:px-6 py-9 px-4">
-                <button onclick="applyFilters()" class="hover:bg-gray-700 dark:bg-white dark:text-gray-800 dark:hover:bg-gray-100 focus:ring focus:ring-offset-2 focus:ring-gray-800 text-base leading-4 font-medium py-4 px-10 text-white bg-gray-800">Show</button>
-            </div>
-
-            <!-- Apply Filter Button (Table or lower Screen) -->
-
-            <div class="block md:hidden w-full mt-10">
-                <button onclick="applyFilters()" class="w-full hover:bg-gray-700 dark:bg-white dark:text-gray-800 dark:hover:bg-gray-100 focus:ring focus:ring-offset-2 focus:ring-gray-800 text-base leading-4 font-medium py-4 px-10 text-white bg-gray-800">Show</button>
-            </div>
-        </div>
-        </div>
-
-        <style>
-            .checkbox:checked+.check-icon {
-                display: flex;
-            }
-        </style>
+                    <style>
+                        .checkbox:checked+.check-icon {
+                            display: flex;
+                        }
+                    </style>
 
 
 

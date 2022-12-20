@@ -67,10 +67,10 @@
             <div class="border  dark:border-transparent  border-zinc-200 row-span-3 w-96 px-8 py-8">
 
                 <figure class="max-w-lg pb-4">
-                    <img class="max-w-full h-auto rounded-lg" src="https://cdn3.vectorstock.com/i/1000x1000/25/47/mobile-ads-vector-24992547.jpg" alt="image description">
+                    <img class="max-w-full h-auto rounded-lg" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/02/shoemint-2.gif?auto=format&q=60&fit=max&w=930" alt="image description">
                 </figure>
                 <figure class="max-w-lg pb-4">
-                    <img class="max-w-full h-auto rounded-lg" src="https://www.pngitem.com/pimgs/m/32-329840_mobile-web-ads-mobile-ads-png-transparent-png.png" alt="image description">
+                    <img class="max-w-full h-auto rounded-lg" src="https://mailbakery.s3.amazonaws.com/wp-content/uploads/2015/06/26160331/last-call-contemporary.gif" alt="image description">
                 </figure>
             </div>
 
@@ -90,20 +90,102 @@
                         <h2 class="font-semibold dark:text-white lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9 text-gray-800 md:w-full w-9/12 mx-auto">Company Album</h2>
                         <p class="font-normal text-base leading-6 dark:text-gray-400 text-gray-600 mt-4 lg:w-5/12 md:w-9/12 mx-auto">Follow us on <span class="underline cursor-pointer">http://www.pccartelcomputers.com/</span> and tag us to get featured on our timeline</p>
                     </div>
-                    <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:grap-8 md:gap-6 gap-4 mt-10">
-                        @for($i = 0; $i < 8; $i++) <div class="relative group">
-                            <img src="https://i.ibb.co/QHS8Ngp/pexels-alana-sousa-3294250-1.png" alt="A picture of a sitting dog" class="lg:block hidden w-full" />
-                            <img src="https://i.ibb.co/mNPBgQN/pexels-alana-sousa-3294250-1-1.png" alt="A picture of a sitting dog" class="lg:hidden block w-full" />
-                            <div class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full"></div>
-                    </div>
-                    @endfor
-                </div>
+                    <div
+  id="carouselDarkVariant"
+  class="carousel slide carousel-fade carousel-dark relative"
+  data-bs-ride="carousel"
+>
+  <!-- Indicators -->
+  <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+    <button
+      data-bs-target="#carouselDarkVariant"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      data-bs-target="#carouselDarkVariant"
+      data-bs-slide-to="1"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      data-bs-target="#carouselDarkVariant"
+      data-bs-slide-to="2"
+      aria-label="Slide 1"
+    ></button>
+  </div>
+
+  <!-- Inner -->
+  <div class="carousel-inner relative w-full overflow-hidden">
+    <!-- Single item -->
+    <div class="carousel-item active relative float-left w-full">
+      <img
+        src="https://lh5.googleusercontent.com/p/AF1QipNzYnhAoIOwnr9vPz1JK4iPDrpyXSGyJCj6QHN_=w1080-k-no"
+        class="block w-full"
+        alt="Motorbike Smoke"
+      />
+      <div class="carousel-caption hidden md:block absolute text-center">
+        <h5 class="text-xl">First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+
+    <!-- Single item -->
+    <div class="carousel-item relative float-left w-full">
+      <img
+        src="https://lh5.googleusercontent.com/p/AF1QipOAXfUWaIzRUp7vbrwJgBAwv0p0oDgL2FUQdk-2=w1080-k-no"
+        class="block w-full"
+        alt="Mountaintop"
+      />
+      <div class="carousel-caption hidden md:block absolute text-center">
+        <h5 class="text-xl">Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+
+    <!-- Single item -->
+    <div class="carousel-item relative float-left w-full">
+      <img
+        src="http://photos.wikimapia.org/p/00/01/70/03/32_big.jpg"
+        class="block w-full"
+        alt="Woman Reading a Book"
+      />
+      <div class="carousel-caption hidden md:block absolute text-center">
+        <h5 class="text-xl">Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Inner -->
+
+  <!-- Controls -->
+  <button
+    class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+    type="button"
+    data-bs-target="#carouselDarkVariant"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+    type="button"
+    data-bs-target="#carouselDarkVariant"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 
                 <hr class="my-8 h-px bg-gray-200 border-0 dark:bg-gray-700">
 
                 <iframe class="w-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.271183019917!2d120.33991921536096!3d16.051411444177468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x339167fd132ad42b%3A0xa16f95fe87a2cdbc!2sOCTAGON!5e0!3m2!1sen!2sph!4v1667443542989!5m2!1sen!2sph" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <!-- Article -->
+                   <script src="https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=YOUR_API_KEY"></script>
+                    <!-- Article -->
 
 
             </div>

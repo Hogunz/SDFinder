@@ -29,7 +29,7 @@ height: 350px;
     <div class="container mx-auto relative overflow-hidden ">
       <div class="mx-auto max-w-7xl ">
         <div class="relative z-10 bg-white  pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
-          
+
 
           <div>
             <div class="relative px-4 pt-6 sm:px-6 lg:px-8">
@@ -72,7 +72,7 @@ height: 350px;
 
     <div class="container mx-auto">
       <div class="embed-responsive embed-responsive-16by9 relative w-full overflow-hidden" style="padding-top: 56.25%">
-        <iframe class="embed-responsive-item  absolute top-0 right-0 bottom-0 left-0 w-full h-full" src="https://www.youtube.com/embed/FT3ODSg1GFE?autoplay=1&mute=1&loop=1" style="border:none; pointer-events:none;" allow="autoplay;loop;"></iframe>
+        <iframe class="embed-responsive-item  absolute top-0 right-0 bottom-0 left-0 w-full h-full" src="https://www.youtube.com/embed/FT3ODSg1GFE?autoplay=1&mute=1&loop=1&playlist=FT3ODSg1GFE" style="border:none; pointer-events:none;" allow="autoplay;loop;"></iframe>
       </div>
     </div>
   </section>
@@ -98,7 +98,15 @@ height: 350px;
         <p class="my-4 text-lg text-gray-400"><strong class="font-semibold text-gray-900 dark:text-white">Front camera:</strong> Wide (main): 12 MP, f/1.9, 23mm, 1/3.6", PDAF, OIS (unconfirmed); Depth: SL 3D.</p>
         <p class="my-4 text-lg text-gray-400"><strong class="font-semibold text-gray-900 dark:text-white">Video capture:</strong> Rear camera: 4K@24/25/30/60fps, 1080p@25/30/60/120/240fps, 10-bit HDR, Dolby Vision HDR (up to 60fps), ProRes, Cinematic mode (4K@24/30fps), stereo sound rec; Front camera: 4K@24/25/30/60fps, 1080p@25/30/60/120fps, gyro-EIS.</p>
         <p class="my-4 text-lg text-gray-400"><strong class="font-semibold text-gray-900 dark:text-white">Battery:</strong> 4323mAh; Fast charging, USB Power Delivery 2.0, MagSafe fast wireless charging 15W, Qi wireless charging 7.5W.</p>
-        <p class=" text-lg text-gray-400"><strong class="font-semibold text-gray-900 dark:text-white">Misc:</strong> Face ID, accelerometer, gyro, proximity, compass, barometer; NFC; stereo speakers; Ultra Wideband (UWB) support, Emergency SOS via satellite (SMS sending/receiving);, Apple Pay (Visa, MasterCard, AMEX certified).</p>
+        <p class=" text-lg text-gray-400"><strong class="font-semibold text-gray-900 dark:text-white">Misc:</strong> Face ID, accelerometer, gyro, proximity, compass, barometer; NFC; stereo speakers; Ultra Wideband (UWB) support, Emergency SOS via satellite (SMS sending/receiving); Apple Pay (Visa, MasterCard, AMEX certified).</p>
+        <hr>
+        <div class="flex justify-between ...">
+          <div class="order-first font-extrabold text-"></div>
+          <div>
+            <span class="text-lg font-extrabold">Source: </span>
+            <a class="hover:text-blue-600 hover:underline underline-offset-1" href="https://www.gsmarena.com/xiaomi_redmi_note_12_explorer-11953.php">https://www.gsmarena.com/xiaomi_redmi_note_12_explorer-11953.php </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

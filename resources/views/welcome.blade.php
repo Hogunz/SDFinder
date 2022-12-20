@@ -25,25 +25,48 @@
     </div>
   </section>
   <!-- Section 1 -->
-  <!-- Section 2 -->
+    <!-- Section 2 -->
+    <div class="container mx-auto text-center ">
+
+<div class="bg-transparent dark:bg-gray">
+
+  <div class="mx-auto max-w-2xl py-16 px-4 sm:py-6 sm:px-6 lg:max-w-7xl lg:px-8">
+    <h6 class="text-2xl pb-6 font-bold dark:text-gray-300 text-gray-800  tracking-widest ">This Month's Picks</h6>
+    <div class="bg-transparent dark:bg-gray">
+      <div class="mx-auto max-w-2xl py-16 px-4 sm:py-4 sm:px-6 lg:max-w-7xl lg:px-8">
+        <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          @for($i = 0; $i < 4; $i++) <a href="phone-profile" class="group">
+            <div class="aspect-w-1 aspect-h-1 w-full xl:aspect-w-7 xl:aspect-h-8">
+              <img src="img/welcome_page/smartphone_head.png" alt="" class="  object-contain object-center ">
+            </div>
+            <h3 class="mt-4 text-sm text-gray-800  dark:text-white">iPhone 14 </h3>
+         
+            </a>
+            @endfor
+
+            <!-- More products... -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Section 2 -->
+  <!-- Section 3 -->
   <div class="container mx-auto text-center ">
 
     <div class="bg-transparent dark:bg-gray">
-
       <div class="mx-auto max-w-2xl py-16 px-4 sm:py-6 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h6 class="text-2xl pb-6 font-bold dark:text-gray-300 text-white  tracking-widest ">This Month's Picks</h6>
+        <h6 class="text-2xl pb-6 font-bold dark:text-gray-300 text-gray-800  tracking-widest ">Featured Stores</h6>
         <div class="bg-transparent dark:bg-gray">
           <div class="mx-auto max-w-2xl py-16 px-4 sm:py-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-              @for($i = 0; $i < 4; $i++) <a href="phone-profile" class="group">
-                <div class="aspect-w-1 aspect-h-1 w-full xl:aspect-w-7 xl:aspect-h-8">
-                  <img src="img/welcome_page/smartphone_head.png" alt="" class="  object-contain object-center ">
+              @for($i = 0; $i < 4; $i++) <a href="store-profile" class="group">
+                <div class="aspect-w-1 aspect-h-1 w-full xl:aspect-w-7 xl:aspect-h-8   ">
+                  <img src="https://ph-test-11.slatic.net/shop/9be6f1633a5313add38a96a50960e59c.jpeg" alt=""  class="hover:mix-blend-multiply  object-contain object-center ">
                 </div>
-                <h3 class="mt-4 text-sm text-gray-800  dark:text-white">iPhone 14 </h3>
-                <p class="mt-1 text-lg font-medium text-gray-800  dark:text-white">$10000</p>
                 </a>
                 @endfor
-
                 <!-- More products... -->
             </div>
           </div>
@@ -51,8 +74,8 @@
       </div>
     </div>
   </div>
-  <!-- Section 2 -->
   <!-- Section 3 -->
+  <!-- Section 4 -->
   <section class="pt-2">
 
     <div class="container mx-auto   text-center">
@@ -65,7 +88,7 @@
           <div class="flex items-strech justify-center flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8">
             <div class="flex flex-col md:flex-row items-strech justify-between bg-gray-50 dark:bg-gray-800 py-6 px-6 md:py-12 lg:px-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12">
               <div class="flex flex-col justify-center md:w-1/2">
-                <h1 class="text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white">ADS</h1>
+                <h1 class="text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white ">ADS</h1>
                 <p class="text-base lg:text-xl text-gray-800 dark:text-white mt-2">Save upto <span class="font-bold">50%</span></p>
               </div>
               <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center md:justify-end">
@@ -87,9 +110,9 @@
       </header>
 
       <!-- Background image -->
-      <div class="relative overflow-hidden bg-no-repeat bg-cover rounded-3xl" style="
+      <div class="relative overflow-hidden bg-no-repeat bg-center bg-cover rounded-3xl" style="
     background-position: 50%;
-    background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/146.webp');
+    background-image: url('https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     height: 300px;
   ">
         <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed">
@@ -126,15 +149,15 @@
 
     </div>
   </section>
-  <!-- Section 3 -->
   <!-- Section 4 -->
+  <!-- Section 5 -->
   <section class="pt-2">
     <div class="container mx-auto text-center ">
       <header class="pb-6">
         <!-- Background image -->
-        <div class="relative overflow-hidden bg-no-repeat bg-cover rounded-3xl " style="
+        <div class="relative overflow-hidden bg-no-repeat bg-center bg-cover rounded-3xl " style="
     background-position: 50%;
-    background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/146.webp');
+    background-image: url('https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     height: 300px;
   ">
           <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed">
@@ -182,15 +205,15 @@
 
     </div>
   </section>
-  <!-- Section 4 -->
   <!-- Section 5 -->
+  <!-- Section 6 -->
   <section class="pt-6">
     <div class="container mx-auto text-center">
       <header class="pb-6">
         <!-- Background image -->
-        <div class="relative overflow-hidden bg-no-repeat bg-cover rounded-3xl" style="
+        <div class="relative overflow-hidden bg-no-repeat bg-center bg-cover rounded-3xl" style="
     background-position: 50%;
-    background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/146.webp');
+    background-image: url('https://images.pexels.com/photos/129208/pexels-photo-129208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     height: 300px;
   ">
           <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed">
@@ -223,7 +246,7 @@
       </div>
     </div>
   </section>
-  <!-- Section 5 -->
+  <!-- Section 6 -->
 
 
 

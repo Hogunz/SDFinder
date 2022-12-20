@@ -47,16 +47,22 @@ Route::get('/store-profile', function () {
     return view('store-profile');
 });
 
-Route::get('/vendor-dashboard', function () {
+Route::get('/vendor/dashboard', function () {
     return view('vendor-dashboard');
 });
+Route::get('/vendor/dashboard/create', function () {
+    return view('vendor-dashboard-create');
+});
+Route::get('/vendor-dashboard-store', function () {
+    return view('vendor-dashboard-store');
+});
+
 
 
 
 Route::name('admin.')->prefix('admin/')->group(function () {
     Route::resource('brands', BrandController::class);
     Route::resource('chipsets', ChipsetController::class);
-    Route::resource('gpus', GpuController::class);
 
     Route::resource('os', OperatingSystemController::class)->parameters([
         'os' => 'operating_system',
