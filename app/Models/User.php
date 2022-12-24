@@ -6,6 +6,7 @@ use App\Models\Admin\Phone;
 use App\Models\Vendor\PhoneUser;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use App\Models\Vendor\VendorInformation;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -45,6 +46,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'phones.pivot.variant' => 'array'
     ];
+
+    public function vendorInformation()
+    {
+        return $this->hasOne(VendorInformation::class);
+    }
 
     public function phones()
     {

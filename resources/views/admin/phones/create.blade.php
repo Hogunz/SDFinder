@@ -59,17 +59,17 @@
                     <div>
                         <h2 class="mt-2">Dimensions</h2>
                         <div class="flex space-x-2 items-center">
-                            <x-input type="number" class="w-24 block text-sm" name="length" value="{{ old('length') }}" />
+                            <x-input type="number" step="0.1" min="0" class="w-24 block text-sm" name="length" value="{{ old('length') }}" />
                             <span>x</span>
-                            <x-input type="number" class="w-24 block text-sm" name="width" value="{{ old('width') }}" />
+                            <x-input type="number" step="0.1" min="0" class="w-24 block text-sm" name="width" value="{{ old('width') }}" />
                             <span>x</span>
-                            <x-input type="number" class="w-24 block text-sm" name="thickness" value="{{ old('thickness') }}" />
+                            <x-input type="number" step="0.1" min="0" class="w-24 block text-sm" name="thickness" value="{{ old('thickness') }}" />
                             <span>mm</span>
                         </div>
 
                         <div class="mt-2">
                             <h2>Weight</h2>
-                            <x-input type="number" name="weight" class="text-sm" value="{{ old('weight') }}"></x-input>
+                            <x-input type="number" step="0.1" min="0" name="weight" class="text-sm" value="{{ old('weight') }}"></x-input>
                             <span>g</span>
                         </div>
 
@@ -388,15 +388,15 @@
                 <div class="grid grid-cols-4 gap-4">
                     <div>
                         <h2>Capacity (in mAh): </h2>
-                        <x-input type="number" min="0" name="battery_capacity" class="text-sm" value="{{ old('battery_capacity') }}"></x-input>
+                        <x-input type="number" step="0.1" min="0" name="battery_capacity" class="text-sm" value="{{ old('battery_capacity') }}"></x-input>
                     </div>
                     <div>
                         <h2>Wired Charging Power (in W): </h2>
-                        <x-input type="number" min="0" name="wired_charging_power" class="text-sm" value="{{ old('wired_charging_power') }}"></x-input>
+                        <x-input type="number" step="0.1" min="0" name="wired_charging_power" class="text-sm" value="{{ old('wired_charging_power') }}"></x-input>
                     </div>
                     <div>
                         <h2>Wireless Charging Power (in W): </h2>
-                        <x-input type="number" min="0" name="wireless_charging_power" class="text-sm" value="{{ old('wireless_charging_power') }}"></x-input>
+                        <x-input type="number" step="0.1" min="0" name="wireless_charging_power" class="text-sm" value="{{ old('wireless_charging_power') }}"></x-input>
                     </div>
                     <div>
                         <h2>Removable</h2>

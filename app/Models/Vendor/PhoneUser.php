@@ -16,7 +16,7 @@ class PhoneUser extends Pivot
         'variant' => 'array',
     ];
 
-    public function getPriceAttribute()
+    public function getPriceStringAttribute()
     {
         return "Php ". number_format($this->attributes['price'], 2, '.', ',');
     }

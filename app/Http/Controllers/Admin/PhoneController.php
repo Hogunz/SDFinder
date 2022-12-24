@@ -22,9 +22,9 @@ class PhoneController extends Controller
         '2k' => '2K, Quad HD',
         '4k' => '4K, Ultra HD'
     ];
-    private $rams = ['1', '2', '3', '4', '6', '8', '10', '12', '16'];
-    private $storages = ['1', '2', '4', '8', '16', '32', '64', '128', '256', '512', '1024'];
 
+    private $rams = ['1', '2', '3', '4', '6', '8', '10', '12', '16'];
+    private $storages = ['1', '2', '4', '8', '16', '32', '64', '128', '256', '512', '1024', '2048'];
 
     public function index()
     {
@@ -46,6 +46,7 @@ class PhoneController extends Controller
         $resolutions = $this->resolutions;
         $rams = $this->rams;
         $storages = $this->storages;
+
 
         return view('admin.phones.create', compact(
             'brands',

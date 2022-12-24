@@ -2,9 +2,12 @@
 
 namespace App\Models\Admin;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
+use App\Models\Vendor\PhoneUser;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Admin\OperatingSystemVersion;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Phone extends Model
 {
@@ -23,5 +26,20 @@ class Phone extends Model
 
     public function brand(){
         return $this->belongsTo(Brand::class);
+    }
+
+    public function chipset()
+    {
+        return $this->belongsTo(Chipset::class);
+    }
+
+    public function operatingSystemVersion()
+    {
+        return $this->belongsTo(OperatingSystemVersion::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'phone_user')->using(PhoneUser::class)->withPivot(['variant', 'price'])->withTimestamps();
     }
 }

@@ -44,7 +44,6 @@
                             <td class="px-6 py-2">{{ $chipset->gpu }}</td>
                             <td class="px-6 py-2">
                                 <x-button type="button">Edit</x-button>
-
                             </td>
                         </tr>
                     @endforeach

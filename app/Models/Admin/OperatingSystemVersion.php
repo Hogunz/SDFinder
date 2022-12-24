@@ -11,4 +11,8 @@ class OperatingSystemVersion extends Model
 
     protected $fillable = ['name'];
 
+    public function operatingSystem()
+    {
+        return $this->belongsTo(OperatingSystem::class, 'operating_system_id');
+    }
 }
