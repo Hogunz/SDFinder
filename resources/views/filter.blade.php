@@ -21,9 +21,10 @@
                 <div class="w-full mt-2" x-data="range()">
                     <h4>Price Range:</h4>
                     <div class="text-sm flex space-x-2 items-center mb-2">
-                        <x-input type="number" x-model.number="minPrice" name="price[]" min="0" class="text-sm" @blur="minTrigger()" />
+                        <x-input type="number" x-model.number="minPrice" name="price[min]" min="0" class="text-sm" @blur="minTrigger()" />
                         <span> - </span>
-                        <x-input type="number" x-model.number="maxPrice" name="price[]" x-bind:max="max" class="text-sm" @blur="maxTrigger()" />
+                        <x-input type="number" x-model.number="maxPrice" name="price[max]" min="0" class="text-sm" @blur="maxTrigger()" />
+                        <x-button type="button" @click="clearPrice()">Clear</x-button>
                     </div>
                 </div>
             </div>
@@ -304,15 +305,23 @@
 <script>
     function range()  {
         return {
-            minPrice: 0,
-            maxPrice: {{ $max }},
-            min: 0,
-            max: {{ $max }},
+            minPrice: '',
+            maxPrice: '',
+
             minTrigger() {
-                this.minPrice = Math.min(this.minPrice, this.maxPrice - 100)
+                if(this.maxPrice !== '') {
+
+                    this.minPrice = Math.min(this.minPrice, this.maxPrice - 100)
+                    this.minPrice = this.minPrice < 0 ? 0 : this.minPrice
+                }
             },
             maxTrigger() {
-                this.maxPrice = Math.max(this.maxPrice, this.minPrice + 100)
+                if(this.minPrice !== '')
+                    this.maxPrice = Math.max(this.maxPrice, this.minPrice + 100)
+            },
+            clearPrice() {
+                this.minPrice = ''
+                this.maxPrice = ''
             }
         }
     }

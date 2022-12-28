@@ -93,7 +93,7 @@
                             class="focus:text-gray-700 border-b-2 border-transparent focus:border-gray-600 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out hover:font-extrabold ">
                             Home
                         </a>
-                        <a href="/mobile-finder"
+                        <a href="{{ route('mobile.viewPhones') }}"
                             class="focus:text-gray-700 border-b-2 border-transparent focus:border-gray-600 flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out hover:font-extrabold ">
                             Device Finder
                         </a>
@@ -144,7 +144,7 @@
                                         <x-dropdown align="right" width="48">
                                             <x-slot name="trigger">
                                                 <button
-                                                    class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                                    class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-100 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                                                     <div>{{ Auth::user()->name }}</div>
 
                                                     <div class="ml-1">

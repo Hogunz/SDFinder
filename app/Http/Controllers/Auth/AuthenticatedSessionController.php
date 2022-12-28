@@ -35,7 +35,6 @@ class AuthenticatedSessionController extends Controller
         if(Auth::user()->hasRole('vendor'))
             return redirect()->route('vendor.dashboard');
 
-
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 

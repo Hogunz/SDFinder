@@ -11,4 +11,12 @@ class Chipset extends Model
 
     protected $fillable = ['name', 'no_of_cores', 'cpu', 'gpu'];
 
+    public function getDescriptionAttribute()
+    {
+
+        $cpu = "{$this->no_of_cores} Cores {$this->cpu}";
+        $gpu = $this->gpu;
+
+        return trim("{$this->name}: $cpu; $gpu");
+    }
 }

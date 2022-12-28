@@ -1,29 +1,54 @@
 <x-guest-layout>
-    <div class="mx-auto py-12 px-6 bg-slate-100 max-w-7xl rounded">
-        <div class="mb-2">
-            <a href="{{ route('mobile.finder') }}">
-                <x-button>Search Again</x-button>
-            </a>
-        </div>
-        <div class="grid grid-cols-4 gap-4">
+    <div class="mx-auto py-12 max-w-7xl rounded dark:bg-gray-500 container">
 
-            @foreach ($phones as $phone)
-
-                <div class="bg-white rounded p-6 shadow-lg flex flex-col justify-between">
-                    <a href="{{ route('mobile.viewPhone', $phone) }}">
-                        <div>
-                            <img src="{{ asset('storage/'.$phone->img) }}" alt="" class="w-full h-52 object-fit">
-                            <h1 class="font-bold text-lg uppercase break-words">{{ $phone->name }}</h1>
-                        </div>
-                        <div class="flex flex-col justify-end">
-                            <div>
-                                <h3 class="uppercase text-sm italic">{{ $phone->brand->name }}</h3>
-                            </div>
-                        </div>
+        <div class="flex flex-row gap-4">
+            <div class="shrink-0">
+                <div class="shadow-lg">
+                    <a href="{{ route('mobile.finder') }}" class="block w-full text-center bg-blue-500 hover:bg-blue-700 text-white py-3">
+                        Phone Filter
                     </a>
 
+                    <div class="grid grid-cols-3 divide-x divide-gray-700 w-full h-full justify-items-center">
+                        @foreach ($brands as $brand)
+
+                            <div class="w-full block">
+
+                                <a href="{{ route('mobile.viewPhones', ['brands' => [$brand->id]]) }}" class="block w-full text-center text-sm uppercase hover:bg-blue-700 hover:text-white px-5 py-3">
+                                    <span class="tracking-tighter leading-tight">
+                                        {{ $brand->name }}
+                                    </span>
+                                </a>
+                            </div>
+
+
+                        @endforeach
+                    </div>
+
+
+                    <a href="{{ route('mobile.viewPhones') }}" class="block w-full text-center bg-blue-500 hover:bg-blue-700 text-white py-3">All Brands</a>
                 </div>
-            @endforeach
+
+
+            </div>
+            <div>
+                <div class=" grid md:grid-cols-2 lg:grid-cols-5 gap-2">
+
+                    @foreach ($phones as $phone)
+
+                        <a href="{{ route('mobile.viewPhone', $phone) }}" class="rounded p-6 shadow-lg relative group">
+
+                            <div>
+                                <img src="{{ asset('storage/'.$phone->img) }}" alt="" class="w-full h-40 object-center object-contain">
+                            </div>
+                            <div class="font-bold uppercase break-words text-center text-sm">{{ $phone->name }}</div>
+
+
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+
         </div>
+
     </div>
 </x-guest-layout>

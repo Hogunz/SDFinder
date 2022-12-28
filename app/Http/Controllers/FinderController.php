@@ -108,11 +108,22 @@ class FinderController extends Controller
         }
 
         //Price
-        if($request->price) {
-            $phones->whereHas('users', function ($query) use ($request) {
-                $query->whereBetween('price', $request->price);
-            });
+        if($request->price){
+            if($request->price['min'] || $request->price['max'] ) {
+                $phones->whereHas('users', function ($query) use ($request) {
+                    if($request->price['min'] && $request->price['max']) {
+                        $query->whereBetween('price', $request->price);
+                    }else if($request->price['min']) {
+                        $query->where('price', '>=', $request->price['min']);
+                    }else if($request->price['max']) {
+                        $query->where('price', '<=', $request->price['max']);
+                    }else {
+                        return false;
+                    }
+                });
+            }
         }
+
 
         //Networks
         if($request->networks) {
@@ -202,12 +213,13 @@ class FinderController extends Controller
         }
 
         $phones = $phones->get();
+        $brands = Brand::all();
 
-        return view('view-phones', compact('phones'));
+        return view('view-phones', compact('phones', 'brands'));
     }
 
     public function viewPhone(Phone $phone)
     {
-        return view('view-phone', compact('phone'));
+        return view('phone-profile', compact('phone'));
     }
 }

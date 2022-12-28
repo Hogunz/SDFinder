@@ -24,9 +24,9 @@ class CreatePhonesTable extends Migration
             $table->float('width');
             $table->float('thickness');
             $table->float('weight');
-            $table->string('front_material');
-            $table->string('back_material');
-            $table->string('frame_material');
+            $table->string('front_material')->nullable();
+            $table->string('back_material')->nullable();
+            $table->string('frame_material')->nullable();
             $table->integer('sim_count');
             $table->json('sims');
             $table->string('display_type');
@@ -48,9 +48,9 @@ class CreatePhonesTable extends Migration
             $table->boolean('jack')->default(0);
             $table->integer('battery_capacity');
             $table->integer('wired_charging_power');
-            $table->integer('wireless_charging_power');
+            $table->integer('wireless_charging_power')->nullable();
             $table->boolean('removable_battery')->default(0);
-            $table->longText('description');
+            $table->longText('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
