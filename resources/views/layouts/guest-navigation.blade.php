@@ -116,9 +116,11 @@
                                                 alt="search">
                                         </a>
                                     </div>
-                                    <input
-                                        class="border border-gray-100 focus:outline-none focus:border-indigo-700 w-56 rounded text-sm text-gray-500 placeholder-gray-600  pl-8 py-2"
-                                        type="text" placeholder="Search">
+                                    <form action="{{ route('mobile.viewPhones') }}" method="get">
+                                        <input
+                                            class="border border-gray-100 focus:outline-none focus:border-indigo-700 w-56 rounded text-sm text-gray-500 placeholder-gray-600  pl-8 py-2"
+                                            type="text" placeholder="Search" name="search">
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -366,9 +368,12 @@
                                             src="https://tuk-cdn.s3.amazonaws.com/can-uploader/light-with-button-svg16.svg"
                                             alt="search" />
                                     </div>
-                                    <input
-                                        class="focus:ring-2 focus:ring-gray-600 bg-gray-100 focus:outline-none rounded w-full text-sm text-gray-500 pl-10 py-2"
-                                        type="text" placeholder="Search" />
+                                    <form action="{{ route('mobile.viewPhones') }}" method="get">
+
+                                        <input
+                                            class="focus:ring-2 focus:ring-gray-600 bg-gray-100 focus:outline-none rounded w-full text-sm text-gray-500 pl-10 py-2"
+                                            type="text" placeholder="Search" name="search" />
+                                    </form>
                                 </div>
                             </div>
                             <div class="border-t border-gray-300">

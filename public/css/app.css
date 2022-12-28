@@ -2301,6 +2301,10 @@ input[type="range"]::-ms-fill-lower {
   top: 0px;
   bottom: 0px;
 }
+.inset-x-0 {
+  left: 0px;
+  right: 0px;
+}
 .left-0 {
   left: 0px;
 }
@@ -2354,6 +2358,12 @@ input[type="range"]::-ms-fill-lower {
 }
 .col-span-3 {
   grid-column: span 3 / span 3;
+}
+.col-span-full {
+  grid-column: 1 / -1;
+}
+.col-auto {
+  grid-column: auto;
 }
 .row-span-3 {
   grid-row: span 3 / span 3;
@@ -2762,6 +2772,9 @@ input[type="range"]::-ms-fill-lower {
 .grid-cols-6 {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
+.grid-cols-none {
+  grid-template-columns: none;
+}
 .grid-rows-3 {
   grid-template-rows: repeat(3, minmax(0, 1fr));
 }
@@ -2809,6 +2822,9 @@ input[type="range"]::-ms-fill-lower {
 }
 .justify-items-center {
   justify-items: center;
+}
+.justify-items-stretch {
+  justify-items: stretch;
 }
 .gap-8 {
   gap: 2rem;

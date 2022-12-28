@@ -124,7 +124,6 @@ class FinderController extends Controller
             }
         }
 
-
         //Networks
         if($request->networks) {
             $phones->whereJsonContains('networks', $request->networks);
@@ -184,8 +183,8 @@ class FinderController extends Controller
         if($request->types) {
             $phones->whereIn('display_type', $request->types);
         }
-        //Resolution
 
+        //Resolution
         if($request->resolutions) {
             $phones->whereIn('resolution', $request->resolutions);
         }
@@ -210,6 +209,10 @@ class FinderController extends Controller
         //Dual Cam
         if(!is_null($request->dualCamera)) {
             $phones->where('selfie_camera_count', $request->dualCamera);
+        }
+
+        if($request->search) {
+            $phones->where('name', 'like', "%{$request->search}%");
         }
 
         $phones = $phones->get();

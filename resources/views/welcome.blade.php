@@ -9,7 +9,7 @@
                 <p class="max-w-2xl mb-6 font-light  lg:mb-8 md:text-lg lg:text-xl text-gray-800 dark:text-gray-400 ">
                     From phones to laptops , we’ll help you
                     find the best device for you.</p>
-                <form class=" ">
+                <form method="get" action="{{ route('mobile.viewPhones') }}">
                     <label for="default-search"
                         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
                     <div class="relative">
@@ -20,11 +20,13 @@
                                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
                         </div>
-                        <input type="search" id="default-search"
-                            class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border  border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="What kind of Device you want to find?" required>
-                        <button type="submit"
-                            class="  absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 text-white dark:focus:ring-blue-300">Search</button>
+
+                            <input type="text" id="default-search" name="search"
+                                class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border  border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="What kind of Device you want to find?" required>
+                            <button type="submit"
+                                class="absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 text-white dark:focus:ring-blue-300">Search</button>
+
                     </div>
                 </form>
             </div>
