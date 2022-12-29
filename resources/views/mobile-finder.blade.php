@@ -1,10 +1,5 @@
 <x-guest-layout>
 
-
-
-
-
-
     <!-- Section 1 -->
     <section class="container mx-auto dark:bg-gray-500 pt-24">
         <header>
