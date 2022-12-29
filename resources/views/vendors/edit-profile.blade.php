@@ -2,7 +2,7 @@
     <div class="mt-2">
         <h1 class="font-bold text-lg">Create Profile</h1>
 
-        <form action="{{ route('vendor.profile.update') }}" method="post">
+        <form action="{{ route('vendor.profile.update') }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('put')
             <div class="mt-2">
