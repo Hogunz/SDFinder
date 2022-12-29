@@ -19,12 +19,12 @@
 
         <!-- Page Content -->
         <main class="max-w-7xl p-12 mx-auto">
-            <form action="{{ route('admin.brands.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('admin.brands.update', $brand) }}" method="post" enctype="multipart/form-data">
                 @csrf
-
+                @method('put')
                 <div class="mt-1">
                     <x-label for="name" value="Name"></x-label>
-                    <x-input type="text" name="name" class="w-full block"></x-input>
+                    <x-input type="text" name="name" class="w-full block" value="{{ $brand->name }}"></x-input>
                 </div>
 
                 <div class="mt-1">

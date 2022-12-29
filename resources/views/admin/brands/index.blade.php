@@ -37,7 +37,9 @@
                         <tr>
                             <td class="px-6 py-2">{{ $brand->name }}</td>
                             <td class="px-6 py-2">
-                                <x-button type="button">Edit</x-button>
+                                <a href="{{ route('admin.brands.edit', $brand) }}">
+                                    <x-button type="button">Edit</x-button>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

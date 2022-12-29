@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ChipsetController;
 use App\Http\Controllers\Admin\OperatingSystemController;
 use App\Http\Controllers\Vendor\VendorInformationController;
 use App\Http\Controllers\Admin\OperatingSystemVersionController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Vendor\PhoneController as VendorPhoneController;
 
 /*
@@ -22,27 +23,18 @@ use App\Http\Controllers\Vendor\PhoneController as VendorPhoneController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [DashboardController::class, 'welcome']);
+Route::get('/brands', [DashboardController::class, 'brands']);
 
 Route::get('/mobile-finder', [FinderController::class, 'phoneFinder'])->name('mobile.finder');
 Route::get('/mobile-finder-2', [FinderController::class, 'phoneFinderOld'])->name('mobile.finder.old');
 Route::get('/mobile-finder/view', [FinderController::class, 'viewPhones'])->name('mobile.viewPhones');
 Route::get('/mobile-finder/{phone}/view', [FinderController::class, 'viewPhone'])->name('mobile.viewPhone');
 
-Route::get('/tablet-finder', function () {
-    return view('tablet-finder');
-});
 Route::get('/reviews', function () {
     return view('reviews');
 });
-Route::get('/brands', function () {
-    return view('brands');
-});
-Route::get('/phone-profile', function () {
-    return view('phone-profile');
-});
+
 
 
 Route::name('vendor.')->prefix('vendor/')->group(function() {
@@ -64,6 +56,10 @@ Route::get('/profile/{user}', function (User $user) {
 
 
 Route::name('admin.')->prefix('admin/')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+
     Route::resource('brands', BrandController::class);
     Route::resource('chipsets', ChipsetController::class);
 

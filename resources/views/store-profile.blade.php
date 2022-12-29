@@ -33,7 +33,7 @@
                 <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
                     <div id="slider" class="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
                         @foreach($user->phones->unique() as $phone)
-                            <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+                            <div class="flex flex-col flex-shrink-0 relative w-full sm:w-auto">
                                 <img src="{{ asset('storage/'.$phone->img) }}" alt="black chair and white table" class="object-contain h-48 w-96 object-center" />
                                 <div class="bg-gray-800  bg-opacity-0 absolute w-full h-full p-6">
                                     <div class="flex h-full items-end pb-6">
@@ -44,12 +44,13 @@
                         @endforeach
                     </div>
                 </div>
+                <button aria-label="slide forward" class="absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
+                    <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
             </div>
-            <button aria-label="slide forward" class="absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
-                <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </button>
+
         </div>
 
     </section>
@@ -73,7 +74,7 @@
                 <div class="col-span-2  p-8 ">
                     <h1 class="font-bold text-2xl text-left text-gray-800 dark:text-white">STORE OVERVIEW</h1>
                     <h2 class="font-bold text-base text-left text-gray-800 dark:text-white pt-6">BASIC INFORMATION </h2>
-                    <p class="text-lg text-justify indent-8 text-gray-600 dark:text-gray-400"> {{ $user->vendorInformation->information }}</p>
+                    <p class="text-lg text-justify indent-8 text-gray-600 dark:text-gray-400"> {!! $user->vendorInformation->information !!}</p>
                 </div>
                 <hr class="my-8 h-px bg-gray-200 border-0 dark:bg-gray-700">
                 <div class="2xl:container 2xl:mx-auto md:py-12 lg:px-20 md:px-6 py-9 px-4">
@@ -84,8 +85,8 @@
                     <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:grap-8 md:gap-6 gap-4 mt-10">
                         @foreach($user->vendorInformation->galleries as $gallery)
                             <div class="relative group">
-                                <img src="{{ asset('storage/'.$gallery) }}" alt="A picture of a sitting dog" class="lg:block hidden w-full" />
-                                <img src="{{ asset('storage/'.$gallery) }}" alt="A picture of a sitting dog" class="lg:hidden block w-full" />
+                                <img src="{{ asset('storage/'.$gallery) }}" alt="A picture of a sitting dog" class="lg:block hidden w-full object-fit object-center" />
+                                <img src="{{ asset('storage/'.$gallery) }}" alt="A picture of a sitting dog" class="lg:hidden block w-full object-fit object-center" />
                                 <div class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full"></div>
                             </div>
                         @endforeach
@@ -96,7 +97,7 @@
 
                 <hr class="my-8 h-px bg-gray-200 border-0 dark:bg-gray-700">
 
-                <iframe class="w-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.271183019917!2d120.33991921536096!3d16.051411444177468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x339167fd132ad42b%3A0xa16f95fe87a2cdbc!2sOCTAGON!5e0!3m2!1sen!2sph!4v1667443542989!5m2!1sen!2sph" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe class="w-full mt-2 h-80" src="{{ $user->vendorInformation->embed_google_map }}" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <!-- Article -->
 
 

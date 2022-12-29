@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Admin\Brand;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class BrandController extends Controller
 {
@@ -39,9 +40,12 @@ class BrandController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required',
+            'image' => ['required', 'image'],
         ]);
 
-        Brand::create($validated);
+        $path = $request->file('image')->store('brands', 'public');
+
+        Brand::create(collect($validated)->merge(['image' => $path])->toArray());
 
         return redirect()->route('admin.brands.index')->with('status', 'Brand Successfully created');
     }
@@ -65,7 +69,7 @@ class BrandController extends Controller
      */
     public function edit(Brand $brand)
     {
-        //
+        return view('admin.brands.edit', compact('brand'));
     }
 
     /**
@@ -77,7 +81,25 @@ class BrandController extends Controller
      */
     public function update(Request $request, Brand $brand)
     {
-        //
+
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+        if($request->file('image'))
+        {
+            if(Storage::exists($brand->image))
+                Storage::delete($brand->image);
+
+            $path = $request->file('image')->store('brands', 'public');
+            $brand->image = $path;
+        }
+
+        $brand->name = $request->name;
+        $brand->save();
+
+
+        return redirect()->route('admin.brands.index')->with('status', 'Brand Successfully updated');
     }
 
     /**

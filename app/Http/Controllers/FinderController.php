@@ -108,10 +108,20 @@ class FinderController extends Controller
         }
 
         //Price
-        if($request->price) {
-            $phones->whereHas('users', function ($query) use ($request) {
-                $query->whereBetween('price', $request->price);
-            });
+        if($request->price){
+            if($request->price['min'] || $request->price['max'] ) {
+                $phones->whereHas('users', function ($query) use ($request) {
+                    if($request->price['min'] && $request->price['max']) {
+                        $query->whereBetween('price', $request->price);
+                    }else if($request->price['min']) {
+                        $query->where('price', '>=', $request->price['min']);
+                    }else if($request->price['max']) {
+                        $query->where('price', '<=', $request->price['max']);
+                    }else {
+                        return false;
+                    }
+                });
+            }
         }
 
         //Networks
@@ -173,8 +183,8 @@ class FinderController extends Controller
         if($request->types) {
             $phones->whereIn('display_type', $request->types);
         }
-        //Resolution
 
+        //Resolution
         if($request->resolutions) {
             $phones->whereIn('resolution', $request->resolutions);
         }
@@ -201,13 +211,18 @@ class FinderController extends Controller
             $phones->where('selfie_camera_count', $request->dualCamera);
         }
 
-        $phones = $phones->get();
+        if($request->search) {
+            $phones->where('name', 'like', "%{$request->search}%");
+        }
 
-        return view('view-phones', compact('phones'));
+        $phones = $phones->get();
+        $brands = Brand::all();
+
+        return view('view-phones', compact('phones', 'brands'));
     }
 
     public function viewPhone(Phone $phone)
     {
-        return view('view-phone', compact('phone'));
+        return view('phone-profile', compact('phone'));
     }
 }

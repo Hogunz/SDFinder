@@ -1,6 +1,6 @@
 <x-guest-layout>
-    <x-auth-validation-errors></x-auth-validation-errors>
     <div class="max-w-7xl p-12 mx-auto border shadow-sm rounded">
+        <x-auth-validation-errors></x-auth-validation-errors>
         <form action="{{ route('admin.phones.store') }}" method="post" enctype="multipart/form-data">
             @csrf
 
@@ -90,6 +90,13 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="mt-2">
+                            <h2 class="text-lg font-bold">Body Additional Description</h2>
+                            <div>
+                                <x-input type="text" name="body_description" class="w-full block text-sm col-span-2" value="{{ old('body_description') }}"></x-input>
+                            </div>
+                        </div>
                     </div>
 
                     <div>
@@ -159,6 +166,13 @@
                         </select>
                     </div>
                 </div>
+
+                <div class="mt-2">
+                    <h2 class="text-lg font-bold">Display Additional Description</h2>
+                    <div>
+                        <x-input type="text" name="display_description" class="w-full block text-sm col-span-2" value="{{ old('display_description') }}" placeholder="AMOLED, Corning Gorilla Glass 5, 3.26 inches, 382 x 720 pixels, 250 PPI, 800 nits (HBM), 900 nits (peak)"></x-input>
+                    </div>
+                </div>
             </div>
 
             <div class="border p-6 mt-2">
@@ -212,19 +226,24 @@
 
                     <div x-data="{
                         variants: [{ram: '1',storage: '1',},],
-                        old: {{ old('variants', 0) }},
-                    }" x-init="
-                        variants = old != 0 ? old : [{ram: '1',storage: '1',},]
-                    ">
+                        addVariant() {
+                            this.variants.push({ ram: '1', storage: '1',})
+                        },
+                        deleteVariant(index){
+                            this.variants.splice(index, 1)
+                        }
+                    }" >
                     <div class="flex space-x-2 items-center">
 
                         <h2 class="">Variants</h2>
 
-                        <x-button type="button" class="text-xs" @click="variants.push({ ram: '1', storage: '1',})">Add</x-button>
+                        <div>
+                            <button type="button" class="text-xs bg-green-500 hover:bg-green-700 h-7 w-7 rounded text-white" @click="addVariant">+</button>
+                        </div>
                     </div>
 
                         <template x-for="(variant, variantIndex) in variants" :key="variantIndex">
-                            <div class="grid grid-cols-3 gap-4 items-end">
+                            <div class="grid grid-cols-3 gap-4 items-center">
                                 <div>
                                     <h2 class="text-sm">RAM</h2>
                                     <div class="flex items-center space-x-2">
@@ -251,10 +270,8 @@
 
                                 </div>
 
-                                <div>
-                                    <x-button type="button" class="ml-3 bg-red-500 hover:bg-red-700" x-show="variants.length > 1"
-                                        @click="variants.splice(variantIndex, 1)"
-                                        >Delete</x-button>
+                                <div x-show="variants.length > 1">
+                                    <button type="button" class="text-xs bg-red-500 hover:bg-red-700 h-7 w-7 text-center rounded text-white" @click="deleteVariant(variantIndex)">-</button>
                                 </div>
                             </div>
 
@@ -271,10 +288,8 @@
                 <div>
                     <div x-data="{
                         cameras: {{ old('camera_count') ?? 1 }},
-                        camera_resolutions: [],
-                        old: {{ old('camera_resolutions', 0) }},
+                        camera_resolutions: [ [] ],
                     }" x-init="
-                        camera_resolutions = old != 0 ? old : ['']
 
                         $watch('cameras', function () {
                             camera_resolutions = Array(cameras).fill('')
@@ -311,6 +326,12 @@
                         </div>
                     </div>
                 </div>
+                <div class="mt-2">
+                    <h2 class="text-lg font-bold">Camera Additional Description</h2>
+                    <div>
+                        <x-input type="text" name="camera_description" class="w-full block text-sm col-span-2" value="{{ old('camera_description') }}" placeholder="LED flash, HDR, panorama"></x-input>
+                    </div>
+                </div>
             </div>
 
 
@@ -319,11 +340,9 @@
                 <h1 class="text-lg font-bold">Selfie Camera</h1>
                 <div x-data="{
                     cameras: {{ old('selfie_camera_count') ?? 1 }},
-                    selfie_camera_resolutions: [],
-                    old: {{ old('selfie_camera_resolutions', 0) }} ?? false,
+                    selfie_camera_resolutions: [ [] ],
                 }" x-init="
 
-                    selfie_camera_resolutions = old != 0 ? old : ['']
 
                     $watch('cameras', function () {
                         selfie_camera_resolutions = Array(cameras).fill('');
@@ -341,7 +360,8 @@
                             </div>
 
                             <div class="flex space-x-2 mt-2">
-                                <x-input type="checkbox" value="1" id="pop-up" name="selfie_pop_up" checked="{{ old('selfie_pop_up') }}"></x-input>
+
+                                <x-input type="checkbox" value="1" id="pop-up" name="selfie_pop_up" :checked="old('selfie_pop_up') " />
                                 <x-label value="Pop-up Camera" for="pop-up"></x-label>
                             </div>
                         </div>
@@ -357,6 +377,12 @@
                             </template>
                         </div>
 
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <h2 class="text-lg font-bold">Selfie Camera Additional Description</h2>
+                    <div>
+                        <x-input type="text" name="selfie_cameras_description" class="w-full block text-sm col-span-2" value="{{ old('selfie_cameras_description') }}" placeholder="Panorama, 1080p@30fps"></x-input>
                     </div>
                 </div>
 
@@ -385,6 +411,7 @@
 
             <div class="border p-6 mt-2">
                 <h1 class="text-lg font-bold">Battery</h1>
+
                 <div class="grid grid-cols-4 gap-4">
                     <div>
                         <h2>Capacity (in mAh): </h2>
@@ -406,6 +433,64 @@
                         </select>
                     </div>
                 </div>
+                <div class="mt-2">
+                    <h2 class="text-lg font-bold">Battery Additional Description</h2>
+                    <div>
+                        <x-input type="text" name="battery_description" class="w-full block text-sm col-span-2" value="{{ old('battery_description') }}"></x-input>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border p-6 mt-2" x-data="{
+                features: [  ],
+                addFeature() {
+                    this.features.push({key: '', value: ''})
+                },
+                deleteFeature(index) {
+                    this.features.splice(index, 1)
+                }
+            }">
+                <div class="flex space-x-2 items-end">
+                    <h1 class="text-lg font-bold">Features</h1>
+                    <div>
+                        <button type="button" class="text-xs bg-green-500 hover:bg-green-700 h-7 w-7 rounded text-white" @click="addFeature">+</button>
+                    </div>
+                </div>
+                <template x-for="(feature, index) in features" :key="index">
+                    <div class="flex space-x-2 mt-2">
+                        <x-input type="text" x-bind:name="`features[`+ index +`][key]`" placeholder="Sensors"></x-input>
+                        <x-input type="text" x-bind:name="`features[`+ index +`][value]`" placeholder="Fingerprint (side-mounted), accelerometer, dual gyro, dual proximity, compass, color spectrum" class="w-full"></x-input>
+                        <div>
+                            <button type="button" class="text-xs bg-red-500 hover:bg-red-700 h-7 w-7 text-center rounded text-white" @click="deleteFeature(index)">-</button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <div class="border p-6 mt-2" x-data="{
+                miscs: [  ],
+                addMisc() {
+                    this.miscs.push({key: '', value: ''})
+                },
+                deleteMisc(index) {
+                    this.miscs.splice(index, 1)
+                }
+            }">
+                <div class="flex space-x-2 items-end">
+                    <h1 class="text-lg font-bold">Misc</h1>
+                    <div>
+                        <button type="button" class="text-xs bg-green-500 hover:bg-green-700 h-7 w-7 text-center rounded text-white" @click="addMisc">+</button>
+                    </div>
+                </div>
+                <template x-for="(misc, index) in miscs" :key="index">
+                    <div class="flex space-x-2 mt-2 items-center">
+                        <x-input type="text" x-bind:name="`miscs[`+ index +`][key]`" placeholder="Colors"></x-input>
+                        <x-input type="text" x-bind:name="`miscs[`+ index +`][value]`" placeholder="Black, Gold, Violet" class="w-full"></x-input>
+                        <div>
+                            <button type="button" class="text-xs bg-red-500 hover:bg-red-700 h-7 w-7 text-center rounded text-white" @click="deleteMisc(index)">-</button>
+                        </div>
+                    </div>
+                </template>
             </div>
 
             <div class="border p-6 mt-2" x-data="{ description: ''}">
@@ -415,7 +500,6 @@
             </div>
 
             <div class="mt-2 float-right">
-
                 <x-button>Create</x-button>
             </div>
         </form>

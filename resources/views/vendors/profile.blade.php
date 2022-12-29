@@ -29,13 +29,13 @@
             </div>
             <hr>
             <p class="indent-3">
-                {{ auth()->user()->vendorInformation->information }}
+                {!! auth()->user()->vendorInformation->information !!}
             </p>
             <h1 class="mt-10 uppercase font-bold text-center">Galleries</h1>
             <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:grap-8 md:gap-6 gap-4">
                 @foreach (auth()->user()->vendorInformation->galleries as $gallery)
-                    <img src="{{ asset('storage/'.$gallery) }}" alt="A picture of a sitting dog" class="lg:block hidden w-full h-52 object-contain" />
-                    <img src="{{ asset('storage/'.$gallery) }}" alt="A picture of a sitting dog" class="lg:hidden block w-full h-52 object-contain" />
+                    <img src="{{ asset('storage/'.$gallery) }}" alt="A picture of a sitting dog" class="lg:block hidden w-full h-52 object-fit" />
+                    <img src="{{ asset('storage/'.$gallery) }}" alt="A picture of a sitting dog" class="lg:hidden block w-full h-52 object-fit" />
                 @endforeach
             </div>
 

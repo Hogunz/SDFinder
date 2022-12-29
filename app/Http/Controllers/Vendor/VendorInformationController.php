@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Vendor;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Vendor\VendorInformation;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Vendor\VendorInformation;
 
 class VendorInformationController extends Controller
 {
@@ -56,7 +57,7 @@ class VendorInformationController extends Controller
             'type' => $request->type,
             'main_products' => $request->products,
             'website' => $request->website,
-            'information' => $request->information,
+            'information' => nl2br($request->information),
             'embed_google_map' => $request->embed_google_map,
         ]);
 
@@ -84,27 +85,12 @@ class VendorInformationController extends Controller
      */
     public function update(Request $request)
     {
+
         $id = Auth::id();
-        if($request->file('avatar')) {
+        $vendorInformation = Auth::user()->vendorInformation;
 
-            $path = $request->file('avatar')->store("store/$id", 'public');
-            Auth::user()->vendorInformation()->update([
-                'avatar' => $path,
-            ]);
-        }
 
-        if($request->file('galleries')) {
-
-            foreach($request->file('galleries') as $gallery)
-            {
-                $galleries_path[] = $gallery->store("store/$id", 'public');
-            }
-            Auth::user()->vendorInformation()->update([
-                'galleries' => $galleries_path,
-            ]);
-        }
-
-        Auth::user()->vendorInformation()->update([
+        $vendorInformation->update([
             'street' => $request->street,
             'city' => $request->city,
             'province' => $request->province,
@@ -113,9 +99,35 @@ class VendorInformationController extends Controller
             'type' => $request->type,
             'main_products' => $request->products,
             'website' => $request->website,
-            'information' => $request->information,
-            'embed_google_map' => $request->embed_google_map,
+            'information' => nl2br($request->information),
+            'embed_google_map' => $request->embed_google_map
         ]);
+
+        if($request->file('avatar')) {
+
+            if(Storage::exists($vendorInformation->avatar))
+                Storage::delete($vendorInformation->avatar);
+            $path = $request->file('avatar')->store("store/$id", 'public');
+
+            $vendorInformation->update([
+                'avatar' => $path,
+            ]);
+        }
+
+        if($request->file('galleries')) {
+            foreach($vendorInformation->galleries as $g) {
+                if(Storage::exists($g))
+                Storage::delete($g);
+            }
+            foreach($request->file('galleries') as $gallery)
+            {
+                $galleries_path[] = $gallery->store("store/$id", 'public');
+            }
+            $vendorInformation->update([
+                'galleries' => $galleries_path,
+            ]);
+        }
+
 
         return redirect()->route('vendor.profile.index');
     }

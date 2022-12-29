@@ -20,7 +20,10 @@
                         <td class="px-6 py-3 text-center">
                             <img src="{{ asset('storage/' . $phone->img) }}" class=" w-32 h-52 object-cover mx-auto">
                         </td>
-                        <td class="px-6 py-3 text-center">
+                        <td class="px-6 py-3 text-center flex space-x-2">
+                            <a href="{{ route('admin.phones.edit', $phone) }}">
+                                    <x-button type="button">Edit</x-button>
+                            </a>
                             <form action="{{ route('admin.phones.destroy', $phone) }}" method="post">
                                 @csrf
                                 @method('delete')
