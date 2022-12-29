@@ -16,7 +16,7 @@ class PhoneController extends Controller
     private $networks = ['2G', '3G', '4G', '5G'];
     private $multiples = ['Single', 'Dual', 'Triple', 'Quad'];
     private $sims = ['Nano', 'Micro', 'Mini'];
-    private $types = ['IPS', 'OLED'];
+    private $types = ['IPS', 'OLED', 'AMOLED','IPS LCD'];
     private $resolutions = [
         'hd' => 'HD',
         'fhd' => 'FHD',
@@ -65,6 +65,7 @@ class PhoneController extends Controller
 
     public function store(Request $request)
     {
+        
         $request->validate([
             'name' => ['required'],
             'brand_id' => ['required'],
@@ -122,6 +123,7 @@ class PhoneController extends Controller
         }
 
         Phone::create([
+            
             'name' => $request->name,
             'brand_id' => $request->brand_id,
             'img' => $path,
@@ -157,6 +159,7 @@ class PhoneController extends Controller
             'wired_charging_power' => $request->wired_charging_power,
             'wireless_charging_power' => $request->wireless_charging_power,
             'removable_battery' => $request->removable_battery,
+            'description'=> $request->description,
             'body_description' => $request->body_description,
             'display_description' => $request->display_description,
             'camera_description' => $request->camera_description,

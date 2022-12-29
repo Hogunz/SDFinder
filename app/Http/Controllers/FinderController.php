@@ -14,7 +14,7 @@ class FinderController extends Controller
     private $networks = ['2G', '3G', '4G', '5G'];
     private $multiples = [1 => 'Single', 2 => 'Dual', 3 => 'Triple', 4 => 'Quad'];
     private $sims = ['Nano', 'Micro', 'Mini'];
-    private $types = ['IPS', 'OLED'];
+    private $types = ['IPS', 'OLED', 'AMOLED','IPS LCD'];
     private $resolutions = [
         'hd' => 'HD',
         'fhd' => 'FHD',
