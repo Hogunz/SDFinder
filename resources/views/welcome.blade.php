@@ -52,10 +52,10 @@
                                 <a href="{{ route('mobile.viewPhone', $phone) }}" class="group">
                                     <div class="aspect-w-1 aspect-h-1 w-full xl:aspect-w-7 xl:aspect-h-8">
                                         <img src="{{ asset('storage/'.$phone->img) }}" alt=""
-                                            class="  object-contain object-center ">
+                                            class=" p-8 object-scale-down h-48 w-96 object-center ">
                                     </div>
                                     <h3 class="mt-4 text-sm text-gray-800  dark:text-white">{{ $phone->name }} </h3>
-                                    <p class="mt-1 text-lg font-medium text-gray-800  dark:text-white"></p>
+                                        
                                 </a>
                             @endforeach
 
@@ -136,10 +136,9 @@
                             <a href="{{ route('mobile.viewPhone', $phone) }}" class="group ">
                                 <div class="aspect-w-1 aspect-h-1 w-full xl:aspect-w-7 xl:aspect-h-8">
                                     <img src="{{ asset('storage/'.$phone->img) }}" alt=""
-                                        class=" object-contain object-center ">
+                                        class="p-8 object-scale-down h-48 w-96 object-center ">
                                 </div>
                                 <h3 class="mt-4 text-sm text-gray-800 dark:text-white">{{ $phone->name }}</h3>
-                                <p class="mt-1 text-lg font-medium text-gray-800  dark:text-white">$48</p>
                             </a>
                         @endforeach
 
@@ -183,10 +182,9 @@
                             <a href="#" class="group ">
                                 <div class="aspect-w-1 aspect-h-1 w-full    xl:aspect-w-7 xl:aspect-h-8">
                                     <img src="img/welcome_page/smartphone_head.png" alt=""
-                                        class="object-contain object-center ">
+                                        class="p-8 object-scale-down h-48 w-96 object-center ">
                                 </div>
                                 <h3 class="mt-4 text-sm text-gray-800 dark:text-white">HP Pavilion Plus 14</h3>
-                                <p class="mt-1 text-lg font-medium text-gray-800  dark:text-white">$48</p>
                             </a>
                         @endfor
 

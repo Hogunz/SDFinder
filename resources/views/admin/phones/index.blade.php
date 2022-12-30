@@ -17,8 +17,8 @@
                         <td class="px-6 py-3 text-center">{{ $loop->iteration }}</td>
                         <td class="px-6 py-3 text-center whitespace-nowrap">{{ $phone->name }}</td>
                         <td class="px-6 py-3 text-center">{{ $phone->brand->name }}</td>
-                        <td class="px-6 py-3 text-center">
-                            <img src="{{ asset('storage/' . $phone->img) }}" class=" w-32 h-52 object-cover mx-auto">
+                        <td class="px-6 py-3 text-center ">
+                            <img src="{{ asset('storage/' . $phone->img) }}" class=" w-32 h-52 object-contain mx-auto">
                         </td>
                         <td class="px-6 py-3 text-center flex space-x-2">
                             <a href="{{ route('admin.phones.edit', $phone) }}">

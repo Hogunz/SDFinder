@@ -3,7 +3,7 @@
     <div class="mx-auto py-12 px-6 bg-slate-100 max-w-7xl rounded" x-data>
 
         <form action="{{ route('mobile.viewPhones') }}" method="get" id="filter">
-            <h1 class="uppercase font-bold text-xl tracking-wide">Phone Filter</h1>
+            <h1 class="uppercase font-bold text-xl tracking-wide">Device Filter</h1>
 
             <div>
                 <h2 class="text-lg font-semibold">General</h2>

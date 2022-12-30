@@ -5,7 +5,7 @@
             <div class="shrink-0">
                 <div class="shadow-lg">
                     <a href="{{ route('mobile.finder') }}" class="block w-full text-center bg-blue-500 hover:bg-blue-700 text-white py-3 tracking-tight">
-                        PHONE FILTER
+                        DEVICE FILTER
                     </a>
 
                     <div class="grid grid-cols-3 divide-x divide-gray-700 w-full h-full justify-items-stretch">

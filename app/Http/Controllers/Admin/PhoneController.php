@@ -16,7 +16,7 @@ class PhoneController extends Controller
     private $networks = ['2G', '3G', '4G', '5G'];
     private $multiples = ['Single', 'Dual', 'Triple', 'Quad'];
     private $sims = ['Nano', 'Micro', 'Mini'];
-    private $types = ['IPS', 'OLED', 'AMOLED','IPS LCD'];
+    private $types = ['IPS', 'OLED', 'AMOLED','IPS LCD','None'];
     private $resolutions = [
         'hd' => 'HD',
         'fhd' => 'FHD',

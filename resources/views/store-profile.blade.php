@@ -63,10 +63,10 @@
             <div class="border  dark:border-transparent  border-zinc-200 row-span-3 w-96 px-8 py-8">
 
                 <figure class="max-w-lg pb-4">
-                    <img class="max-w-full h-auto rounded-lg" src="https://cdn3.vectorstock.com/i/1000x1000/25/47/mobile-ads-vector-24992547.jpg" alt="image description">
+                    <img class="max-w-full h-auto rounded-lg" src="https://storage.pixteller.com/designs/designs-videos/2090558-5fe0b83524270/thumb.gif" alt="image description">
                 </figure>
                 <figure class="max-w-lg pb-4">
-                    <img class="max-w-full h-auto rounded-lg" src="https://www.pngitem.com/pimgs/m/32-329840_mobile-web-ads-mobile-ads-png-transparent-png.png" alt="image description">
+                    <img class="max-w-full h-auto rounded-lg" src="https://storage.pixteller.com/designs/designs-videos/2086175-5fe0b8374c636/thumb.webp" alt="image description">
                 </figure>
             </div>
 

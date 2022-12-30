@@ -56,7 +56,7 @@
                             </div>
                             <div class="mt-4 flex flex-col text-center ">
                                 <div>
-                                    <h3 class="dark:text-white  font-extrabold tracking-widest text-sm text-gray-700">
+                                    <h3 class="mt-4 text-sm text-gray-800 dark:text-white">
                                         <a href="{{ route('mobile.viewPhones', ['brands' => [$brand->id]]) }}">
                                             <span aria-hidden="true" class="mb-6 absolute inset-0"></span>
                                             {{ $brand->name }}
