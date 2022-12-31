@@ -6,9 +6,12 @@ use App\Http\Controllers\FinderController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\PhoneController;
 use App\Http\Controllers\Admin\ChipsetController;
+use App\Http\Controllers\Admin\GraphicsCardController;
+use App\Http\Controllers\Admin\LaptopController;
 use App\Http\Controllers\Admin\OperatingSystemController;
 use App\Http\Controllers\Vendor\VendorInformationController;
 use App\Http\Controllers\Admin\OperatingSystemVersionController;
+use App\Http\Controllers\Admin\ProcessorController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Vendor\PhoneController as VendorPhoneController;
 
@@ -60,6 +63,7 @@ Route::name('admin.')->prefix('admin/')->group(function () {
         return view('admin.dashboard');
     })->name('dashboard');
 
+    //Phones
     Route::resource('brands', BrandController::class);
     Route::resource('chipsets', ChipsetController::class);
 
@@ -73,6 +77,11 @@ Route::name('admin.')->prefix('admin/')->group(function () {
     ])->shallow();
 
     Route::resource('phones', PhoneController::class);
+
+    //Laptop
+    Route::resource('processors', ProcessorController::class);
+    Route::resource('graphics_cards', GraphicsCardController::class);
+    Route::resource('laptops', LaptopController::class);
 });
 
 

@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-layout>
     <div class="max-w-7xl p-12 mx-auto border shadow-sm rounded">
         <x-auth-validation-errors></x-auth-validation-errors>
         <form action="{{ route('admin.phones.update', $phone) }}" method="post" enctype="multipart/form-data">
@@ -523,7 +523,7 @@
     </div>
 
 
-</x-guest-layout>
+</x-app-layout>
 
 <script>
     function os()

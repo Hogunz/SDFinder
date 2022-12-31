@@ -1,7 +1,7 @@
 <x-app-layout>
 
-
     <div class="min-h-screen bg-gray-100">
+
         <!-- Page Content -->
         <main class="max-w-7xl p-12 mx-auto">
             <a href="{{ route('admin.brands.create') }}" class="bg-green-500 px-2 py-1 rounded shadow-sm text-white">Create</a>
@@ -18,11 +18,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($brands as $brand)
+                    @foreach ($laptops as $laptop)
                         <tr>
-                            <td class="px-6 py-2">{{ $brand->name }}</td>
+                            <td class="px-6 py-2">{{ $laptop->name }}</td>
                             <td class="px-6 py-2">
-                                <a href="{{ route('admin.brands.edit', $brand) }}">
+                                <a href="{{ route('admin.laptops.edit', $laptop) }}">
                                     <x-button type="button">Edit</x-button>
                                 </a>
                             </td>
@@ -32,5 +32,4 @@
             </table>
         </main>
     </div>
-
 </x-app-layout>

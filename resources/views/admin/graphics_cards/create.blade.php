@@ -3,8 +3,17 @@
 
         <!-- Page Content -->
         <main class="max-w-7xl p-12 mx-auto">
-            <form action="{{ route('admin.os.version.store', $operatingSystem) }}" method="post">
+            <form action="{{ route('admin.graphics_cards.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
+
+                <div class="mt-1">
+                    <x-label for="name" value="Brand"></x-label>
+                    <x-select name="brand" class="w-full block">
+                        @foreach ($brands as $brand)
+                            <option value="{{ $brand }}">{{ $brand }}</option>
+                        @endforeach
+                    </x-select>
+                </div>
 
                 <div class="mt-1">
                     <x-label for="name" value="Name"></x-label>
