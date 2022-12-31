@@ -163,7 +163,7 @@
                                             <x-slot name="content">
                                                 <div class="divide-y">
 
-                                                    <x-dropdown-link :href="route('vendor.dashboard')">
+                                                    <x-dropdown-link href="/dashboard">
                                                         Dashboard
                                                     </x-dropdown-link>
                                                     <!-- Authentication -->

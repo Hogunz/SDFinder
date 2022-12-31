@@ -3,6 +3,7 @@
 namespace App\Models\Admin;
 
 use App\Models\User;
+use App\Models\Review;
 use App\Models\Vendor\PhoneUser;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Admin\OperatingSystemVersion;
@@ -44,6 +45,12 @@ class Phone extends Model
     {
         return $this->belongsToMany(User::class, 'phone_user')->using(PhoneUser::class)->withPivot(['variant', 'price'])->withTimestamps();
     }
+
+    public function review()
+    {
+        return $this->morphOne(Review::class, 'reviewable');
+    }
+
 
     public function setDescriptionAttribute($value)
     {

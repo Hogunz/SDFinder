@@ -8,6 +8,7 @@ use App\Models\Admin\Phone;
 use Illuminate\Http\Request;
 use App\Models\Admin\Chipset;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Admin\OperatingSystem;
 use Illuminate\Support\Facades\Storage;
 
@@ -65,7 +66,7 @@ class PhoneController extends Controller
 
     public function store(Request $request)
     {
-        
+
         $request->validate([
             'name' => ['required'],
             'brand_id' => ['required'],
@@ -123,7 +124,7 @@ class PhoneController extends Controller
         }
 
         Phone::create([
-            
+
             'name' => $request->name,
             'brand_id' => $request->brand_id,
             'img' => $path,
@@ -177,7 +178,7 @@ class PhoneController extends Controller
 
     public function show(Phone $phone)
     {
-
+        return view('admin.phones.show', compact('phone'));
     }
 
     public function edit(Phone $phone)
@@ -341,5 +342,17 @@ class PhoneController extends Controller
         $phone->delete();
 
         return redirect()->route('admin.phones.index')->with('status', 'Phone successfully deleted');
+    }
+
+    public function review(Request $request, Phone $phone)
+    {
+        $phone->review()->updateOrCreate(
+            ['reviewable_id' => $phone->id, 'reviewable_type' => 'App\Models\Admin\Phone'],
+        [
+            'review' => $request->review,
+            'user_id' => Auth::id(),
+        ]);
+
+        return back()->with('status', 'Phone successfully reviewed');
     }
 }

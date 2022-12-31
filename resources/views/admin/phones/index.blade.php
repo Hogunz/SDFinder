@@ -22,7 +22,10 @@
                         </td>
                         <td class="px-6 py-3 text-center flex space-x-2">
                             <a href="{{ route('admin.phones.edit', $phone) }}">
-                                    <x-button type="button">Edit</x-button>
+                                <x-button type="button">Edit</x-button>
+                            </a>
+                            <a href="{{ route('admin.phones.show', $phone) }}">
+                                <x-button type="button">Create Review</x-button>
                             </a>
                             <form action="{{ route('admin.phones.destroy', $phone) }}" method="post">
                                 @csrf

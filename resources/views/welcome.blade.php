@@ -55,7 +55,7 @@
                                             class=" p-8 object-scale-down h-48 w-96 object-center ">
                                     </div>
                                     <h3 class="mt-4 text-sm text-gray-800  dark:text-white">{{ $phone->name }} </h3>
-                                        
+
                                 </a>
                             @endforeach
 
@@ -178,15 +178,15 @@
                 <div class="mx-auto max-w-2xl py-16 px-4 sm:py-6 sm:px-6 lg:max-w-7xl lg:px-8">
                     <div
                         class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-                        @for ($i = 0; $i < 4; $i++)
+                        @foreach ($laptops as $laptop)
                             <a href="#" class="group ">
                                 <div class="aspect-w-1 aspect-h-1 w-full    xl:aspect-w-7 xl:aspect-h-8">
-                                    <img src="img/welcome_page/smartphone_head.png" alt=""
+                                    <img src="{{ asset('storage/'.$laptop->image) }}" alt=""
                                         class="p-8 object-scale-down h-48 w-96 object-center ">
                                 </div>
-                                <h3 class="mt-4 text-sm text-gray-800 dark:text-white">HP Pavilion Plus 14</h3>
+                                <h3 class="mt-4 text-sm text-gray-800 dark:text-white">{{ $laptop->name }}</h3>
                             </a>
-                        @endfor
+                        @endforeach
 
 
                         <!-- More products... -->
