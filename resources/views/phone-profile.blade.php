@@ -2,23 +2,15 @@
     <!-- Section 1 -->
     <section class="dark:bg-gray-500 pt-6">
 
-        <div class="container mx-auto pt-24 text-center ">
+        <div class="container mx-auto pt-6 text-center ">
             <header class="pb-6">
                 <!-- Background image -->
-                <div class="relative overflow-hidden bg-no-repeat bg-cover rounded-3xl"
+                <div class="flex flex-row relative overflow-hidden bg-no-repeat bg-contain rounded-3xl"
                     style="
                         background-position: 50%;
-                        background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/146.webp');
-                        height: 350px;
-                    ">
-                    <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-                        style="background-color: rgba(0, 0, 0, 0.75)">
-                        <div class="flex justify-center items-center h-full">
-                            <div class="text-center text-white px-6 md:px-12">
-                                <h1 class="text-5xl font-bold mt-0 mb-6">Ads</h1>
-                            </div>
-                        </div>
-                    </div>
+                        background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ec7e0379342789.5cc04099cb9e5.gif');
+                        height: 350px;">
+                    
                 </div>
                 <!-- Background image -->
             </header>
