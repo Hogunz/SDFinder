@@ -34,13 +34,14 @@ Route::get('/mobile-finder-2', [FinderController::class, 'phoneFinderOld'])->nam
 Route::get('/mobile-finder/view', [FinderController::class, 'viewPhones'])->name('mobile.viewPhones');
 Route::get('/mobile-finder/{phone}/view', [FinderController::class, 'viewPhone'])->name('mobile.viewPhone');
 
-Route::get('/reviews', function () {
-    return view('reviews');
-});
+Route::get('/reviews', [DashboardController::class, 'reviews']);
+Route::get('/profile/{user}', function (User $user) {
+    return view('store-profile', compact('user'));
+})->name('store.profile');
 
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth');
 
-
-Route::name('vendor.')->prefix('vendor/')->group(function() {
+Route::name('vendor.')->prefix('vendor/')->middleware('auth')->group(function() {
     Route::get('/dashboard', function () {
         return view('vendors.dashboard');
     })->name('dashboard');
@@ -51,14 +52,10 @@ Route::name('vendor.')->prefix('vendor/')->group(function() {
     Route::get('/profile/edit', [VendorInformationController::class, 'edit'])->name('profile.edit');
     Route::put('/profile/update', [VendorInformationController::class, 'update'])->name('profile.update');
     Route::resource('phones', VendorPhoneController::class);
+
 });
 
-Route::get('/profile/{user}', function (User $user) {
-    return view('store-profile', compact('user'));
-})->name('store.profile');
-
-
-Route::name('admin.')->prefix('admin/')->group(function () {
+Route::name('admin.')->prefix('admin/')->middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
@@ -82,12 +79,11 @@ Route::name('admin.')->prefix('admin/')->group(function () {
     Route::resource('processors', ProcessorController::class);
     Route::resource('graphics_cards', GraphicsCardController::class);
     Route::resource('laptops', LaptopController::class);
+
+    Route::put('/review-phone/{phone}', [PhoneController::class, 'review'])->name('review.phone');
+    Route::put('/review-laptop/{laptop}', [LaptopController::class, 'review'])->name('review.laptop');
 });
 
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 
 require __DIR__.'/auth.php';

@@ -104,6 +104,14 @@
         </div>
     </section>
     <!-- Section 5 -->
+    <section class="dark:bg-gray-500 pt-6">
+        <div class="md:container py-6 px-24 md:mx-auto">
+            <h2 class="text-4xl font-extrabold dark:text-white">Reviews</h2>
+            <p class="my-4 text-lg text-gray-400">
+                {!! optional($phone->review)->review ?? "No Reviews Yet" !!}
+            </p>
+        </div>
+    </section>
     <!-- Section 6 -->
     <section class="bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-600 pt-6 pb-6">
         <div class="container mx-auto">

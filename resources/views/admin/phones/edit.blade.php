@@ -14,11 +14,11 @@
 
                     <div>
                         <h1 class="text-lg font-bold">Brand</h1>
-                        <select name="brand_id" id="" class="w-full block">
+                        <x-select name="brand_id" id="" class="w-full block">
                             @foreach ($brands as $brand)
                             <option value="{{ $brand->id }}" {{ $phone->brand_id == $brand->id ? 'selected' : '' }}>{{ $brand->name }}</option>
                             @endforeach
-                        </select>
+                        </x-select>
                     </div>
                 </div>
 
@@ -115,20 +115,20 @@
                                 this.selectedSims = @json($phone->sims)
                             }
                         }'>
-                            <select name="sim_count" id="" x-model.number="multiple" class="w-full block">
+                            <x-select name="sim_count" id="" x-model.number="multiple" class="w-full block">
                                 <template x-for="(multiple, index) in multiples" :key="index">
                                     <option x-bind:value="index + 1" x-text="multiple"></option>
                                 </template>
-                            </select>
+                            </x-select>
                             <div class="mt-2">
                                 <template x-for="(i, mIndex) in multiple" :key="mIndex">
                                     <div class="grid grid-cols-3 gap-4 mt-2 items-center">
                                         <span class="text-sm" x-text="`SIM` + i + `: `"></span>
-                                        <select name="sims[]" id="" class="w-full block col-span-2 text-sm" x-model="selectedSims[mIndex]">
+                                        <x-select name="sims[]" id="" class="w-full block col-span-2 text-sm" x-model="selectedSims[mIndex]">
                                             <template x-for="(sim, index) in sims" :key="index">
                                                 <option x-bind:value="sim" x-text="sim"></option>
                                             </template>
-                                        </select>
+                                        </x-select>
                                     </div>
                                 </template>
                             </div>
@@ -143,11 +143,11 @@
                 <div class="grid grid-rows-2 grid-flow-col gap-4">
                     <div>
                         <h2>Type</h2>
-                        <select name="display_type" id="" class="w-full block text-sm">
+                        <x-select name="display_type" id="" class="w-full block text-sm">
                             @foreach ($types as $type)
                                 <option value="{{ $type }}" {{ $phone->display_type == $type ? 'selected' : '' }}>{{ $type }}</option>
                             @endforeach
-                        </select>
+                        </x-select>
                     </div>
 
                     <div>
@@ -168,11 +168,11 @@
 
                     <div>
                         <h2>Resolution</h2>
-                        <select name="resolution" id="" class="w-full block text-sm">
+                        <x-select name="resolution" id="" class="w-full block text-sm">
                             @foreach ($resolutions as $i => $resolution)
                                 <option value="{{ $i }}" {{ $i == $phone->resolution ? 'selected' : '' }}>{{ $resolution }}</option>
                             @endforeach
-                        </select>
+                        </x-select>
                     </div>
                 </div>
 
@@ -191,32 +191,32 @@
 
                     <div>
                         <h2>OS</h2>
-                        <select name="" id="" x-model="selectedOs" x-on:change="getVersions()" class="w-full block text-sm">
+                        <x-select name="" id="" x-model="selectedOs" x-on:change="getVersions()" class="w-full block text-sm">
                             <option value="" hidden>Select OS</option>
                             <template x-for="(os, index) in operatingSystems" :key="index">
                                 <option :value="os.id" x-text="os.name"></option>
                             </template>
-                        </select>
+                        </x-select>
                     </div>
 
                     <div>
                         <h2>OS Version</h2>
-                        <select name="operating_system_version_id" id="" x-model="selectedVersion" class="w-full block text-sm">
+                        <x-select name="operating_system_version_id" id="" x-model="selectedVersion" class="w-full block text-sm">
                             <option value="">Select OS</option>
                             <template x-for="(version, index) in versions" :key="index">
                                 <option :value="version.id" x-text="version.name"></option>
                             </template>
-                        </select>
+                        </x-select>
                     </div>
 
 
                     <div>
                         <h2>Chipset</h2>
-                        <select name="chipset_id" id="" class="w-full block text-sm">
+                        <x-select name="chipset_id" id="" class="w-full block text-sm">
                             @foreach ($chipsets as $chipset)
                                 <option value="{{ $chipset->id }}">{{ $chipset->name }}</option>
                             @endforeach
-                        </select>
+                        </x-select>
                     </div>
 
                 </div>
@@ -227,10 +227,10 @@
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <h2>Card Slot</h2>
-                        <select name="card_slot" id="" class="text-sm">
+                        <x-select name="card_slot" id="" class="text-sm">
                             <option value="0">No</option>
                             <option value="1">Yes</option>
-                        </select>
+                        </x-select>
                     </div>
 
                     <div x-data='{
@@ -256,11 +256,11 @@
                                 <div>
                                     <h2 class="text-sm">RAM</h2>
                                     <div class="flex items-center space-x-2">
-                                        <select id="" x-bind:name="`variants[`+ variantIndex +`][ram]`" class="w-40 text-sm" x-model="variant.ram">
+                                        <x-select id="" x-bind:name="`variants[`+ variantIndex +`][ram]`" class="w-40 text-sm" x-model="variant.ram">
                                             @foreach ($rams as $ram)
                                                 <option value="{{ $ram }}">{{ $ram }}</option>
                                             @endforeach
-                                        </select>
+                                        </x-select>
                                         <span class="text-sm">GB</span>
                                     </div>
 
@@ -268,11 +268,11 @@
                                 <div>
                                     <h2 class="text-sm">Storage</h2>
                                     <div class="flex items-center space-x-2">
-                                        <select id="" x-bind:name="`variants[`+ variantIndex +`][storage]`" class="w-40 text-sm" x-model="variant.storage">
+                                        <x-select id="" x-bind:name="`variants[`+ variantIndex +`][storage]`" class="w-40 text-sm" x-model="variant.storage">
                                             @foreach ($storages as $storage)
                                                 <option value="{{ $storage }}">{{ $storage }}</option>
                                             @endforeach
-                                        </select>
+                                        </x-select>
                                         <span class="text-sm">GB</span>
                                     </div>
 
@@ -313,11 +313,11 @@
                         <div>
                             <div class="flex space-x-2 items-center">
                                 <h2>Cameras: </h2>
-                                <select name="camera_count" id="" x-model.number="cameras" class="text-sm" @change="resetCameras" >
+                                <x-select name="camera_count" id="" x-model.number="cameras" class="text-sm" @change="resetCameras" >
                                     <template x-for="i in 5">
                                         <option :value="i" x-text="i"></option>
                                     </template>
-                                </select>
+                                </x-select>
                             </div>
 
                             <div>
@@ -369,11 +369,11 @@
                         <div>
                             <div class="flex space-x-2 items-center">
                                 <h2>Cameras: </h2>
-                                <select name="selfie_camera_count" id="" x-model.number="cameras" class="text-sm" @change="resetCameras">
+                                <x-select name="selfie_camera_count" id="" x-model.number="cameras" class="text-sm" @change="resetCameras">
                                     <template x-for="i in 2">
                                         <option :value="i" x-text="i"></option>
                                     </template>
-                                </select>
+                                </x-select>
                             </div>
 
                             <div class="flex space-x-2 mt-2">
@@ -410,18 +410,18 @@
                 <div class="grid grid-cols-2">
                     <div>
                         <h2>Loud Speaker</h2>
-                        <select name="loud_speaker" id="" class="text-sm">
+                        <x-select name="loud_speaker" id="" class="text-sm">
                             <option value="1" {{ $phone->loud_speaker == 1 ? 'selected' : '' }}>Yes</option>
                             <option value="0" {{ $phone->loud_speaker == 0 ? 'selected' : '' }}>No</option>
-                        </select>
+                        </x-select>
                     </div>
 
                     <div>
                         <h2>3.5mm jack</h2>
-                        <select name="jack" id="" class="text-sm">
+                        <x-select name="jack" id="" class="text-sm">
                             <option value="1" {{ $phone->jack == 1 ? 'selected' : '' }}>Yes</option>
                             <option value="0" {{ $phone->jack == 0 ? 'selected' : '' }}>No</option>
-                        </select>
+                        </x-select>
                     </div>
                 </div>
             </div>
@@ -444,10 +444,10 @@
                     </div>
                     <div>
                         <h2>Removable</h2>
-                        <select name="removable_battery" id="" class="w-full block text-sm">
+                        <x-select name="removable_battery" id="" class="w-full block text-sm">
                             <option value="0">No</option>
                             <option value="1">Yes</option>
-                        </select>
+                        </x-select>
                     </div>
                 </div>
                 <div class="mt-2">
