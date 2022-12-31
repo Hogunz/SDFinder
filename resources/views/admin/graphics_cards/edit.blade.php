@@ -7,13 +7,13 @@
                 @csrf
                 @method('put')
                 <div class="mt-1">
-                    <x-label for="name" value="Name"></x-label>
-                    <x-input type="text" name="name" class="w-full block" value="{{ $brand->name }}"></x-input>
+                    <x-label for="name" value="Name" class="dark:text-gray-300 mb-2"></x-label>
+                    <x-input type="text" name="name" class="w-full block text-black" value="{{ $brand->name }}"></x-input>
                 </div>
 
                 <div class="mt-1">
-                    <x-label for="image" value="Logo"></x-label>
-                    <x-input type="file" accepts="images/*" name="image" class="w-full block"></x-input>
+                    <x-label for="image" value="Logo" class="dark:text-gray-300 mb-2"></x-label>
+                    <x-input type="file" accepts="images/*" name="image" class="w-full block text-black"></x-input>
                 </div>
 
                 <div class="mt-1">
