@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="min-h-screen bg-gray-100">
+    <div class="min-h-screen ">
 
         <!-- Page Content -->
         <main class="max-w-7xl p-12 mx-auto">

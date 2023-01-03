@@ -3,7 +3,7 @@
 
         <!-- Page Content -->
         <main class="max-w-7xl p-12 mx-auto">
-            <a href="{{ route('admin.graphics_cards.create') }}" class="bg-green-500 px-2 py-1 rounded shadow-sm text-white">Create</a>
+            <a href="{{ route('admin.graphics_cards.create') }}" class="bg-green-500 hover:bg-green-700  px-2 py-1 rounded shadow-sm text-white">Create</a>
 
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 mt-2">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 text-center">
