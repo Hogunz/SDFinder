@@ -3,11 +3,11 @@
     <div class="container mx-auto py-4 ">
       <div class="bg-white dark:bg-gray-700 p-6 shadow-lg rounded-lg flex justify-between items-center">
         <div class="flex dark:text-white">
-          <div class="mr-4">
-            <img class="shadow sm:w-24 sm:h-24 w-24 h-24  bg-gray-100" src="https://ph-test-11.slatic.net/shop/9be6f1633a5313add38a96a50960e59c.jpeg" alt="Avatar" />
+          <div class="mr-4 h-full">
+            <img class="shadow h-full w-40   bg-gray-100" src="{{  asset('storage/'.$user->vendorInformation->avatar)  }}" alt="Avatar" />
           </div>
           <div>
-            <p class="text-4xl font-extrabold line-clamp-1 uppercase">{{ $user->name }}</p>
+            <p class="text-4xl font-extrabold line-clamp-1">{{ $user->name }}</p>
             <p class="text-gray-500">Address: {{ $user->vendorInformation->address }}</p>
             <p class="text-gray-500">Contact: {{ $user->vendorInformation->contact }}</p>
             <p class="text-gray-500 text-sm">{{ $user->vendorInformation->type }}</p>
@@ -80,7 +80,7 @@
                 <div class="2xl:container 2xl:mx-auto md:py-12 lg:px-20 md:px-6 py-9 px-4">
                     <div class="text-center">
                         <h2 class="font-semibold dark:text-white lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9 text-gray-800 md:w-full w-9/12 mx-auto">Company Album</h2>
-                        <p class="font-normal text-base leading-6 dark:text-gray-400 text-gray-600 mt-4 lg:w-5/12 md:w-9/12 mx-auto">Follow us on <span class="underline cursor-pointer">{{ $user->vendorInformation->website }}</span> and tag us to get featured on our timeline</p>
+                        <p class="font-normal text-base leading-6 dark:text-gray-400 text-gray-600 mt-4 lg:w-5/12 md:w-9/12 mx-auto">Follow us on <span class="underline cursor-pointer ">{{ $user->vendorInformation->website }}</span> and tag us to get featured on our timeline</p>
                     </div>
                     <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:grap-8 md:gap-6 gap-4 mt-10">
                         @foreach($user->vendorInformation->galleries as $gallery)
@@ -95,7 +95,7 @@
                 </div>
 
 
-                <hr class="my-8 h-px bg-gray-200 border-0 dark:bg-gray-700">
+                <hr class=" bg-gray-200 border-0 dark:bg-gray-700">
 
                 <iframe class="w-full mt-2 h-80" src="{{ $user->vendorInformation->embed_google_map }}" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <!-- Article -->

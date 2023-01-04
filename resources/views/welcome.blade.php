@@ -76,42 +76,15 @@
 
             <header class="pb-6">
                 <!-- Background image -->
-                <div class="container mx-auto py-9 md:py-12 px-4 md:px-6">
-                    <div
-                        class="flex items-strech justify-center flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8">
-                        <div
-                            class="flex flex-col md:flex-row items-strech justify-between bg-gray-50 dark:bg-gray-800 py-6 px-6 md:py-12 lg:px-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12">
-                            <div class="flex flex-col justify-center md:w-1/2">
-                                <h1 class="text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white"> </h1>
-                                <p class="text-base lg:text-xl text-gray-800 dark:text-white mt-2">Save upto <span
-                                        class="font-bold">50%</span></p>
-                            </div>
-                            <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center md:justify-end">
-                                <img src="https://i.ibb.co/J2BtZdg/Rectangle-56-1.png" alt="" class="" />
-                            </div>
-                        </div>
-                        <div
-                            class="md:w-4/12 lg:w-5/12 xl:w-4/12 2xl:w-3/12 bg-gray-50 dark:bg-gray-800 py-6 px-6 md:py-0 md:px-4 lg:px-6 flex flex-col justify-center relative">
-                            <div class="flex flex-col justify-center">
-                                <h1 class="text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white"> </h1>
-                                <p class="text-base lg:text-xl text-gray-800 dark:text-white">Save Upto <span
-                                        class="font-bold">30%</span></p>
-                            </div>
-                            <div class="flex justify-end md:absolute md:bottom-4 md:right-4 lg:bottom-0 lg:right-0">
-                                <img src="https://i.ibb.co/rGfP7mp/Rectangle-59-1.png" alt=""
-                                    class="md:w-20 md:h-20 lg:w-full lg:h-full" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+             
                 <!-- Background image -->
             </header>
 
             <!-- Background image -->
-            <div class="relative overflow-hidden bg-no-repeat bg-cover rounded-3xl"
+            <div class="relative overflow-hidden bg-no-repeat bg-cover bg-blend-multiply bg-center"
                 style="
     background-position: 50%;
-    background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/146.webp');
+    background-image: url('https://images.pexels.com/photos/2047909/pexels-photo-2047909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     height: 300px;
   ">
                 <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed">
@@ -157,10 +130,10 @@
         <div class="container mx-auto text-center">
             <header class="pb-6">
                 <!-- Background image -->
-                <div class="relative overflow-hidden bg-no-repeat bg-cover rounded-3xl"
+                <div class="relative overflow-hidden bg-no-repeat bg-cover bg-blend-multiply bg-center"
                     style="
     background-position: 50%;
-    background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/146.webp');
+    background-image: url('https://images.pexels.com/photos/129208/pexels-photo-129208.jpeg?auto=compress&cs=tinysrgb&w=1600');
     height: 300px;
   ">
                     <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed">
