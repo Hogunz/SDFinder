@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Review;
 use App\Models\Admin\Brand;
 use App\Models\Admin\Laptop;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class LaptopController extends Controller
      */
     public function index()
     {
-        $laptops = Laptop::all();
+        $laptops = Laptop::withTrashed()->get();
 
         return view('admin.laptops.index', compact('laptops'));
     }
@@ -161,9 +162,19 @@ class LaptopController extends Controller
      */
     public function destroy(Laptop $laptop)
     {
+        $laptop->review()->delete();
         $laptop->delete();
 
         return back()->with('status', 'Laptop successfully deleted');
+    }
+
+    public function restore($laptop)
+    {
+        Laptop::withTrashed()->find($laptop)->restore();
+
+        Review::withTrashed()->where('reviewable_id', $laptop)->where('reviewable_type', 'App\Models\Admin\Laptop')->restore();
+
+        return redirect()->route('admin.phones.index')->with('status', 'Phone successfully deleted');
     }
 
     public function review(Request $request, Laptop $laptop)

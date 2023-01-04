@@ -7,7 +7,7 @@
 
             <div class="mt-2">
                 <x-label for="contact" value="Avatar"></x-label>
-                <x-input type="file" name="avatar" class="w-full block mt-2"></x-input>
+                <x-input type="file" name="avatar" accept="image/*" class="w-full block mt-2"></x-input>
             </div>
 
             <div class="mt-2">
@@ -28,7 +28,7 @@
 
             <div class="mt-2">
                 <x-label for="contact" value="Galleries"></x-label>
-                <x-input type="file" name="galleries[]" multiple class="w-full block mt-2"></x-input>
+                <x-input type="file" name="galleries[]" accept="image/*" multiple class="w-full block mt-2"></x-input>
             </div>
 
             <div class="mt-2">

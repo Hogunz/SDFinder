@@ -21,17 +21,23 @@
                             <img src="{{ asset('storage/' . $phone->img) }}" class=" w-32 h-52 object-contain mx-auto">
                         </td>
                         <td class="px-6 py-3 text-center flex space-x-2">
-                            <a href="{{ route('admin.phones.edit', $phone) }}">
-                                <x-button type="button">Edit</x-button>
-                            </a>
-                            <a href="{{ route('admin.phones.show', $phone) }}">
-                                <x-button type="button">Create Review</x-button>
-                            </a>
-                            <form action="{{ route('admin.phones.destroy', $phone) }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <x-button type="submit">Delete</x-button>
-                            </form>
+                            @if(!$phone->trashed())
+                                <a href="{{ route('admin.phones.edit', $phone) }}">
+                                    <x-button type="button">Edit</x-button>
+                                </a>
+                                <a href="{{ route('admin.phones.show', $phone) }}">
+                                    <x-button type="button">Create Review</x-button>
+                                </a>
+                                <form action="{{ route('admin.phones.destroy', $phone) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <x-button type="submit">Delete</x-button>
+                                </form>
+                            @else
+                                <a href="{{ route('admin.phones.restore', $phone) }}">
+                                    <x-button type="button">Restore</x-button>
+                                </a>
+                            @endif
                         </td>
                     </tr>
                 @endforeach
