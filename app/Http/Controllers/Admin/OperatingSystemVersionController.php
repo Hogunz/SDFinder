@@ -66,7 +66,7 @@ class OperatingSystemVersionController extends Controller
      */
     public function edit(OperatingSystemVersion $operatingSystemVersion)
     {
-        //
+        return view('admin.operating_systems.versions.edit', compact('operatingSystemVersion'));
     }
 
     /**
@@ -78,7 +78,10 @@ class OperatingSystemVersionController extends Controller
      */
     public function update(Request $request, OperatingSystemVersion $operatingSystemVersion)
     {
-        //
+        $operatingSystemVersion ->update([
+            'name'=> $request-> name,
+        ]);
+            return redirect()->route('admin.os.show', $operatingSystemVersion->operatingSystem);
     }
 
     /**

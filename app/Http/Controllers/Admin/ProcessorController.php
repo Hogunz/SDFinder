@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class ProcessorController extends Controller
 {
 
-    private $brands = ['Amd', 'Intel', 'NVidia'];
+    private $brands = ['Amd', 'Intel', 'NVidia','Apple'];
 
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class ProcessorController extends Controller
     public function index()
     {
         $processors = Processor::all();
-
+        $processors = Processor::withTrashed()->get();
         return view('admin.processors.index', compact('processors'));
     }
 
@@ -73,7 +73,7 @@ class ProcessorController extends Controller
      */
     public function edit(Processor $processor)
     {
-        //
+        return view('admin.processors.edit', compact ('processor'));
     }
 
     /**
@@ -85,7 +85,15 @@ class ProcessorController extends Controller
      */
     public function update(Request $request, Processor $processor)
     {
-        //
+        $processor ->update([
+            'brand' => $request-> brand,
+            'name' => $request-> name,
+            'no_of_cores' => $request-> no_of_cores,
+            'no_of_threads' => $request-> no_of_threads,
+            'base_clock' => $request-> base_clock,
+            'max_boost_clock' => $request-> max_boost_clock,
+        ]);
+        return redirect()->route('admin.processors.index')->with('status', 'Processor Successfully Updated');
     }
 
     /**
@@ -96,6 +104,13 @@ class ProcessorController extends Controller
      */
     public function destroy(Processor $processor)
     {
-        //
+        $processor->delete();
+        return redirect()->route('admin.processors.index')->with('status', 'Processor Successfully Updated');
+    }
+    public function restore($id){
+        Processor::withTrashed()
+        ->where('id', $id)
+        ->restore();
+    return redirect()->route('admin.processors.index');
     }
 }

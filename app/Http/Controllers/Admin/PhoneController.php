@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Exception;
+use App\Models\Review;
 use App\Models\Admin\Brand;
 use App\Models\Admin\Phone;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ class PhoneController extends Controller
 
     public function index()
     {
-        $phones = Phone::all();
+        $phones = Phone::withTrashed()->get();
 
         return view("admin.phones.index", compact('phones'));
     }
@@ -339,9 +340,19 @@ class PhoneController extends Controller
 
     public function destroy(Phone $phone)
     {
+        $phone->review()->delete();
         $phone->delete();
 
         return redirect()->route('admin.phones.index')->with('status', 'Phone successfully deleted');
+    }
+
+    public function restore($phone)
+    {
+        Phone::withTrashed()->find($phone)->restore();
+
+        Review::withTrashed()->where('reviewable_id', $phone)->where('reviewable_type', 'App\Models\Admin\Phone')->restore();
+
+        return redirect()->route('admin.phones.index')->with('status', 'Phone successfully restored');
     }
 
     public function review(Request $request, Phone $phone)

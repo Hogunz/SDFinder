@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Review;
 use App\Models\Admin\Brand;
 use App\Models\Admin\Laptop;
 use Illuminate\Http\Request;
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LaptopController extends Controller
 {
-    private $types = ['IPS', 'OLED', 'AMOLED','IPS LCD','None'];
+    private $types = ['IPS', 'OLED', 'AMOLED','IPS LCD','Retina','None'];
     private $resolutions = [
         'hd' => 'HD',
         'fhd' => 'FHD',
@@ -26,7 +27,7 @@ class LaptopController extends Controller
      */
     public function index()
     {
-        $laptops = Laptop::all();
+        $laptops = Laptop::withTrashed()->get();
 
         return view('admin.laptops.index', compact('laptops'));
     }
@@ -107,7 +108,7 @@ class LaptopController extends Controller
             'display_type' => $request->display_type,
             'display_resolution' => $request->display_resolution,
             'display_description' => $request->display_description,
-            'camera' => $request->camera ?? null,
+            'camera' => $request->camera ?? 0,
             'camera_description' => $request->camera_description,
             'battery_capacity' => $request->battery_capacity,
             'battery_description' => $request->battery_description,
@@ -161,9 +162,19 @@ class LaptopController extends Controller
      */
     public function destroy(Laptop $laptop)
     {
+        $laptop->review()->delete();
         $laptop->delete();
 
         return back()->with('status', 'Laptop successfully deleted');
+    }
+
+    public function restore($laptop)
+    {
+        Laptop::withTrashed()->find($laptop)->restore();
+
+        Review::withTrashed()->where('reviewable_id', $laptop)->where('reviewable_type', 'App\Models\Admin\Laptop')->restore();
+
+        return redirect()->route('admin.laptops.index')->with('status', 'Phone successfully restored');
     }
 
     public function review(Request $request, Laptop $laptop)

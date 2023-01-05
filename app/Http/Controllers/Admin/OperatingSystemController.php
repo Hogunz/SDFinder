@@ -66,7 +66,7 @@ class OperatingSystemController extends Controller
      */
     public function edit(OperatingSystem $operatingSystem)
     {
-        //
+        return view('admin.operating_systems.edit', compact('operatingSystem'));
     }
 
     /**
@@ -78,7 +78,11 @@ class OperatingSystemController extends Controller
      */
     public function update(Request $request, OperatingSystem $operatingSystem)
     {
-        //
+        $operatingSystem->update([
+            'name' => $request->name,
+
+    ]);
+    return redirect()->route('admin.os.index')->with('status', 'Chipset Successfully Updated');
     }
 
     /**

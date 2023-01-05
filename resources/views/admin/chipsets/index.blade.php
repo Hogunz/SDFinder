@@ -25,7 +25,9 @@
                             <td class="px-6 py-3 text-center">{{ $chipset->cpu }}</td>
                             <td class="px-6 py-3 text-center">{{ $chipset->gpu }}</td>
                             <td class="px-6 py-3 text-center">
-                                <x-button type="button">Edit</x-button>
+                                <a href="{{ route('admin.chipsets.edit', $chipset->id) }}" class="href">
+                                    <x-button type="button">Edit</x-button>
+                                    </a>
                             </td>
                         </tr>
                     @endforeach
