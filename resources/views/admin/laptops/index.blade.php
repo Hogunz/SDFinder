@@ -39,7 +39,13 @@
                                 <a href="{{ route('admin.laptops.restore', $laptop) }}">
                                     <x-button type="button">Restore</x-button>
                                 </a>
+
                             @endif
+                            <form action="{{ route('admin.laptops.forceDelete', $laptop) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <x-button type="submit">Delete Permanently</x-button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

@@ -24,21 +24,22 @@
             <div class="mx-auto max-w-7xl  ">
                 <div class="relative z-10 bg-white  pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-full lg:pb-28 xl:pb-32 ">
                     <div>
-                <img class="h-56 w-full absolute  bg-no-repeat object-scale-down sm:h-72 md:h-96 lg:h-full lg:w-full"
-                    src="{{ asset('storage/'.$laptop->img) }}" alt="">
+                        <img class="h-56 w-full absolute  bg-no-repeat object-scale-down object-center sm:h-72 md:h-96 lg:h-full lg:w-full "
+                            src="{{ asset('storage/' . $laptop->img) }}" alt="">
                     </div>
-                        <div class="relative px-4 pt-6  sm:px-6 lg:px-8">
+                    <div class="relative px-4 pt-6  sm:px-6 lg:px-8">
                         <main class="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-                        <div class="sm:text-center lg:text-left">
-                            <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl h-6">
-                                <span class="block xl:inline">{{ $laptop->name }}</span>
-                            </h1>
-                            <p class="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0 break-words">
-                                {!! $laptop->description !!}
-                            </p>
-                        </div>
-                    </main>
-                        </div>
+                            <div class="sm:text-center lg:text-left">
+                                <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl h-6">
+                                    <span class="block xl:inline">{{ $laptop->name }}</span>
+                                </h1>
+                                <p
+                                    class="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0 break-words">
+                                    {!! $laptop->description !!}
+                                </p>
+                            </div>
+                        </main>
+                    </div>
 
                 </div>
             </div>
@@ -54,9 +55,26 @@
 
             <div class="container mx-auto">
                 <h2 class="text-4xl font-extrabold dark:text-white">Specifications</h2>
+                <p class="my-4 text-lg text-gray-400"><strong
+                    class="font-semibold text-gray-900 dark:text-white">GPU:</strong> {{ $laptop->gpu }}.</p>
+                <p class="my-4 text-lg text-gray-400"><strong
+                    class="font-semibold text-gray-900 dark:text-white">CPU:</strong> {{ $laptop->cpu }}.</p>
 
                 <p class="my-4 text-lg text-gray-400"><strong
-                        class="font-semibold text-gray-900 dark:text-white">Display:</strong> {{ $laptop->display }}.</p>
+                        class="font-semibold text-gray-900 dark:text-white">Display:</strong> {{ $laptop->display }}.
+                </p>
+                <p class="my-4 text-lg text-gray-400"><strong
+                    class="font-semibold text-gray-900 dark:text-white">Storage:</strong> {{ $laptop->storage_mem }}.
+            </p>
+            <p class="my-4 text-lg text-gray-400"><strong
+                class="font-semibold text-gray-900 dark:text-white">Battery:</strong> {{ $laptop->battery }}.
+        </p>
+        <p class="my-4 text-lg text-gray-400"><strong
+            class="font-semibold text-gray-900 dark:text-white">Camera:</strong> {{ $laptop->camera_display }}.
+    </p>
+    <p class="my-4 text-lg text-gray-400"><strong
+        class="font-semibold text-gray-900 dark:text-white">Features:</strong> {{ $laptop->features_display }}.
+</p>
 
             </div>
         </div>
@@ -66,12 +84,12 @@
         <div class="md:container py-6 px-24 md:mx-auto">
             <h2 class="text-4xl font-extrabold dark:text-white">Reviews</h2>
             <p class="my-4 text-lg text-gray-400">
-                {!! optional($laptop->review)->review ?? "No Reviews Yet" !!}
+                {!! optional($laptop->review)->review ?? 'No Reviews Yet' !!}
             </p>
         </div>
     </section>
     <!-- Section 6 -->
-    <section class="bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-600 pt-6 pb-6">
+    {{-- <section class="bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-600 pt-6 pb-6">
         <div class="container mx-auto">
             <h5 class="text-xl font-extrabold text-white dark:text-white">The stores where you buy you buy the product:
             </h5>
@@ -124,6 +142,6 @@
                 </div>
             </div>
         @endforelse
-    </section>
+    </section> --}}
     <!-- Section 6 -->
 </x-guest-layout>

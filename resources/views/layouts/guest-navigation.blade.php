@@ -80,7 +80,7 @@
                                 alt="logo" />
 
                             <h2 class="hidden sm:block text-base text-gray-700 font-bold leading-normal px-3 hover:text-red-600"
-                                style="font-family: 'BRONSON', sans-serif;
+                                style="font-family:  sans-serif;
                                                 ">
                                 SDFinder</h2>
                         </div>
@@ -332,7 +332,7 @@
                             <div class="border-t border-gray-300">
                                 <div class="w-full flex items-center justify-between pt-1">
                                     <div class="flex items-center">
-                                        <img alt="profile-pic" src="img/our_team/cj.jpg" tabindex="0"
+                                        <img alt="profile-pic" src=" " tabindex="0"
                                             class="focus:outline-none  w-8 h-8 rounded-md" />
                                         <p tabindex="0"
                                             class="focus:outline-none text-gray-800 text-base leading-4 ml-2">

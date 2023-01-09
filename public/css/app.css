@@ -2062,6 +2062,9 @@ input[type="range"]::-ms-fill-lower {
 .h-20 {
   height: 5rem;
 }
+.h-48 {
+  height: 12rem;
+}
 .h-4 {
   height: 1rem;
 }
@@ -2076,9 +2079,6 @@ input[type="range"]::-ms-fill-lower {
 }
 .h-16 {
   height: 4rem;
-}
-.h-48 {
-  height: 12rem;
 }
 .h-80 {
   height: 20rem;
@@ -2122,6 +2122,9 @@ input[type="range"]::-ms-fill-lower {
 .w-20 {
   width: 5rem;
 }
+.w-96 {
+  width: 24rem;
+}
 .w-64 {
   width: 16rem;
 }
@@ -2136,9 +2139,6 @@ input[type="range"]::-ms-fill-lower {
 }
 .w-auto {
   width: auto;
-}
-.w-96 {
-  width: 24rem;
 }
 .w-48 {
   width: 12rem;
@@ -2674,14 +2674,14 @@ input[type="range"]::-ms-fill-lower {
 .p-2 {
   padding: 0.5rem;
 }
+.p-8 {
+  padding: 2rem;
+}
 .p-1 {
   padding: 0.25rem;
 }
 .p-4 {
   padding: 1rem;
-}
-.p-8 {
-  padding: 2rem;
 }
 .p-2\.5 {
   padding: 0.625rem;

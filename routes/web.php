@@ -33,7 +33,8 @@ Route::get('/mobile-finder', [FinderController::class, 'phoneFinder'])->name('mo
 Route::get('/mobile-finder-2', [FinderController::class, 'phoneFinderOld'])->name('mobile.finder.old');
 Route::get('/mobile-finder/view', [FinderController::class, 'viewPhones'])->name('mobile.viewPhones');
 Route::get('/mobile-finder/{phone}/view', [FinderController::class, 'viewPhone'])->name('mobile.viewPhone');
-
+Route::get('/laptops-finder/view', [FinderController::class, 'viewLaptops'])->name('laptop.viewLaptops');
+Route::get('/laptops-finder/{laptop}/view', [FinderController::class, 'viewLaptop'])->name('laptop.viewLaptop');
 
 
 Route::get('/reviews', [DashboardController::class, 'reviews']);
@@ -87,9 +88,11 @@ Route::name('admin.')->prefix('admin/')->middleware(['auth', 'role:admin'])->gro
 
     Route::get('/phones/restore/{phone}', [PhoneController::class, 'restore'])->name('phones.restore');
     Route::get('/laptops/restore/{laptop}', [LaptopController::class, 'restore'])->name('laptops.restore');
+    Route::delete('/laptops/forceDelete/{laptop}', [LaptopController::class, 'forceDelete'])->name('laptops.forceDelete');
 
     Route::get('/processors/restore/{processor}', [ProcessorController::class, 'restore'])->name('processors.restore');
     Route::get('/brands/restore/{brand}', [BrandController::class, 'restore'])->name('brands.restore');
+
 });
 
 

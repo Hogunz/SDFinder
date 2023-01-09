@@ -152,7 +152,7 @@
                     <div
                         class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                         @foreach ($laptops as $laptop)
-                            <a href="" class="group ">
+                            <a href="{{ route('laptop.viewLaptop', $laptop) }}" class="group ">
                                 <div class="aspect-w-1 aspect-h-1 w-full    xl:aspect-w-7 xl:aspect-h-8">
                                     <img src="{{ asset('storage/'.$laptop->img) }}" alt=""
                                         class="p-8 object-scale-down h-48 w-96 object-center ">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin\Brand;
 use App\Models\Admin\Phone;
+use App\Models\Admin\Laptop;
 use Illuminate\Http\Request;
 use App\Models\Admin\Chipset;
 use App\Models\Vendor\PhoneUser;
@@ -95,6 +96,18 @@ class FinderController extends Controller
             'rams',
             'storages',
         ));
+    }
+    public function viewLaptops(Request $request )
+    {
+        $laptops = Laptop::all();
+        $brands = Brand::all();
+
+        if($request->brands) {
+            $laptops->whereIn('brand_id', $request->brands);
+
+        }
+        return view('view-laptops', compact('laptops','brands'));
+
     }
 
     public function viewPhones(Request $request)
@@ -225,4 +238,11 @@ class FinderController extends Controller
     {
         return view('phone-profile', compact('phone'));
     }
+    public function viewLaptop(Laptop $laptop)
+    {
+        return view('laptop-profile', compact('laptop'));
+    }
+
+
+
 }

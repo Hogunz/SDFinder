@@ -10,10 +10,11 @@ use App\Models\Admin\Processor;
 use App\Models\Admin\GraphicsCard;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class LaptopController extends Controller
 {
-    private $types = ['IPS', 'OLED', 'AMOLED','IPS LCD','Retina','None'];
+    private $types = ['IPS', 'OLED', 'AMOLED', 'IPS LCD', 'Retina', 'None'];
     private $resolutions = [
         'hd' => 'HD',
         'fhd' => 'FHD',
@@ -87,8 +88,7 @@ class LaptopController extends Controller
 
         $path = $request->file('image')->store('laptops', 'public');
 
-        foreach($request->file('galleries') as $gallery)
-        {
+        foreach ($request->file('galleries') as $gallery) {
             $galleries_path[] = $gallery->store('laptops', 'public');
         }
 
@@ -139,7 +139,22 @@ class LaptopController extends Controller
      */
     public function edit(Laptop $laptop)
     {
-        //
+        $brands = Brand::all();
+        $processors = Processor::all();
+        $graphicsCards = GraphicsCard::all();
+
+        $types = $this->types;
+        $resolutions = $this->resolutions;
+
+        return view('admin.laptops.edit', compact(
+            'laptop',
+            'brands',
+            'processors',
+            'graphicsCards',
+            'types',
+            'resolutions'
+
+        ));
     }
 
     /**
@@ -151,7 +166,80 @@ class LaptopController extends Controller
      */
     public function update(Request $request, Laptop $laptop)
     {
-        //
+        $request->validate([
+            'brand_id' => ['required'],
+            'name' => ['required'],
+            'image' => ['nullable', 'image'],
+            'galleries' => ['nullable', 'array'],
+            'galleries.*' => ['image'],
+            'processor_id' => ['required'],
+            'graphics_id' => ['nullable'],
+            'ram' => ['required'],
+            'storage' => ['required'],
+            'storage_description' => ['nullable'],
+            'screen_size' => ['required'],
+            'display_width' => ['required'],
+            'display_height' => ['required'],
+            'display_type' => ['required'],
+            'display_resolution' => ['required'],
+            'display_description' => ['nullable'],
+            'camera' => ['nullable'],
+            'camera_description' => ['nullable'],
+            'battery_capacity' => ['required'],
+            'battery_description' => ['nullable'],
+            'features' => ['nullable'],
+            'description' => ['nullable'],
+        ]);
+
+        if ($request->file('image')) {
+            $path = $request->file('image')->store('laptops', 'public');
+
+            if (Storage::exists($laptop->img)) {
+                Storage::delete($laptop->img);
+            }
+
+            $laptop->update([
+                'img' => $path,
+            ]);
+        }
+
+        if ($request->file('galleries')) {
+            foreach ($laptop->galleries as $g) {
+                if (Storage::exists($g))
+                    Storage::delete($g);
+            }
+            foreach ($request->file('galleries') as $gallery) {
+                $galleries_path[] = $gallery->store('laptops', 'public');
+            }
+
+            $laptop->update([
+                'galleries' => $galleries_path,
+            ]);
+        }
+
+        $laptop->update([
+            'brand_id' => $request->brand_id,
+            'name' => $request->name,
+            'processor_id' => $request->processor_id,
+            'graphics_card_id' => $request->graphics_card_id,
+            'ram' => $request->ram,
+            'storage' => $request->storage,
+            'storage_description' => $request->storage_description,
+            'screen_size' => $request->screen_size,
+            'display_width' => $request->display_width,
+            'display_height' => $request->display_height,
+            'display_type' => $request->display_type,
+            'display_resolution' => $request->display_resolution,
+            'display_description' => $request->display_description,
+            'camera' => $request->camera ?? 0,
+            'camera_description' => $request->camera_description,
+            'battery_capacity' => $request->battery_capacity,
+            'battery_description' => $request->battery_description,
+            'features' => $request->features,
+            'description' => $request->description,
+        ]);
+
+        return redirect()->route('admin.laptops.index')->with('status', 'Successfully edit laptop');
     }
 
     /**
@@ -181,11 +269,19 @@ class LaptopController extends Controller
     {
         $laptop->review()->updateOrCreate(
             ['reviewable_id' => $laptop->id, 'reviewable_type' => 'App\Models\Admin\Laptop'],
-        [
-            'review' => $request->review,
-            'user_id' => Auth::id(),
-        ]);
+            [
+                'review' => $request->review,
+                'user_id' => Auth::id(),
+            ]
+        );
 
         return back()->with('status', 'Laptop successfully reviewed');
+    }
+    public function forceDelete(Laptop $laptop)
+    {
+        $laptop->review()->forceDelete();
+        $laptop->forceDelete();
+
+        return back()->with('status', 'Laptop successfully deleted');
     }
 }
