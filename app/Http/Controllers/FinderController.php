@@ -7,8 +7,10 @@ use App\Models\Admin\Phone;
 use App\Models\Admin\Laptop;
 use Illuminate\Http\Request;
 use App\Models\Admin\Chipset;
+use App\Models\Admin\GraphicsCard;
 use App\Models\Vendor\PhoneUser;
 use App\Models\Admin\OperatingSystem;
+use App\Models\Admin\Processor;
 
 class FinderController extends Controller
 {
@@ -31,7 +33,10 @@ class FinderController extends Controller
         $brands = Brand::all();
         $operatingSystems = OperatingSystem::with(['versions'])->get();
         $chipsets = Chipset::all();
+        $cpus = Processor::all();
+        $gpus = GraphicsCard::all();
         $phones = Phone::all();
+
 
         $cores = $chipsets->pluck('no_of_cores')->unique()->sort();
         $cameraResolutions = $phones->pluck('camera_resolutions')->flatten()->unique()->sort();
@@ -56,6 +61,8 @@ class FinderController extends Controller
             'max',
             'operatingSystems',
             'chipsets',
+            'cpus',
+            'gpus',
             'cores',
             'networks',
             'multiples',
@@ -232,6 +239,48 @@ class FinderController extends Controller
         $brands = Brand::all();
 
         return view('view-phones', compact('phones', 'brands'));
+    }
+
+    public function viewMobiles(Request $request)
+    {
+        $brands = Brand::all();
+        $mobiles = [];
+
+        $phones = Phone::query();
+        $laptops = Laptop::query();
+
+        //Brands
+        if($request->brands) {
+            $phones->whereIn('brand_id', $request->brands);
+            $laptops->whereIn('brand_id', $request->brands);
+        }
+
+        $laptops = $laptops->get()->map(function ($laptop) {
+            $array = [];
+            $array['id'] = $laptop->id;
+            $array['name'] = strtoupper($laptop->name);
+            $array['url'] = "/laptop-finder/{$laptop->id}/view";
+            $array['img'] = $laptop->img;
+            $array['type'] = 'laptop';
+
+            return collect($array);
+        });
+        $phones = $phones->get()->map(function ($phone) {
+            $array = [];
+            $array['id'] = $phone->id;
+            $array['name'] = strtoupper($phone->name);
+            $array['url'] = "/mobile-finder/{$phone->id}/view";
+            $array['img'] = $phone->img;
+            $array['type'] = 'phone';
+
+            return collect($array);
+        });
+
+        $mobiles = $phones ? $phones->merge($laptops) : $laptops->merge($phones);
+        $mobiles = $mobiles->sortBy([ ['name', 'asc'] ])->toArray();
+
+
+        return view('view-mobiles', compact('brands', 'mobiles'));
     }
 
     public function viewPhone(Phone $phone)
