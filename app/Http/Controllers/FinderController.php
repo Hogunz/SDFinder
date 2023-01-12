@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin\Brand;
 use App\Models\Admin\Phone;
+use App\Models\Admin\Laptop;
 use Illuminate\Http\Request;
 use App\Models\Admin\Chipset;
 use App\Models\Vendor\PhoneUser;
@@ -153,7 +154,7 @@ class FinderController extends Controller
         }
         //Cores
         if($request->cores) {
-            $phones->whereHas('chipsets', function ($query) use ($request) {
+            $phones->whereHas('chipset', function ($query) use ($request) {
                 $query->whereIn('no_of_cores', $request->os);
             });
         }
@@ -224,5 +225,10 @@ class FinderController extends Controller
     public function viewPhone(Phone $phone)
     {
         return view('phone-profile', compact('phone'));
+    }
+
+    public function viewLaptop(Laptop $laptop)
+    {
+        return view('laptop-profile', compact('laptop'));
     }
 }
