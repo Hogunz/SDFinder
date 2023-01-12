@@ -123,7 +123,7 @@
                         </div>
                     </div>
                     <div>
-                        <div class="tracking-tighter">
+                        <div class=" font-semibold text-center text-gray-900 dark:text-white">
                             {{ $shop->pivot->price_string }}
                         </div>
                         <a href="{{ route('store.profile', $shop) }}">

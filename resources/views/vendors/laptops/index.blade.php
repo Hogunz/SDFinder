@@ -11,7 +11,7 @@
 
                     <div class="shadow-2xl drop-shadow-2xl flex flex-col justify-between">
                         <div class="text-center">
-                            <img src="{{ asset('storage/'.$laptop->img) }}" alt="" class="w-full h-80 object-contain object-center">
+                            <img src="{{ asset('storage/'.$laptop->img) }}" alt="" class="p-8 object-scale-down h-48 w-96 object-center">
                             <h1 class="font-bold text-lg uppercase break-words">{{ $laptop->name }}</h1>
                         </div>
                         <div class="flex flex-col justify-end text-center">

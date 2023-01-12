@@ -42,7 +42,7 @@
         <div class="bg-transparent dark:bg-gray">
 
             <div class="mx-auto max-w-2xl py-16 px-4 sm:py-6 sm:px-6 lg:max-w-7xl lg:px-8">
-                <h6 class="text-2xl pb-6 font-bold dark:text-gray-300 text-white  tracking-widest ">This Month's Picks
+                <h6 class="text-2xl pb-6 font-bold dark:text-gray-300 text-black  tracking-widest ">This Month's Picks
                 </h6>
                 <div class="bg-transparent dark:bg-gray">
                     <div class="mx-auto max-w-2xl py-16 px-4 sm:py-4 sm:px-6 lg:max-w-7xl lg:px-8">

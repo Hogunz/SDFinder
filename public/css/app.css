@@ -2117,6 +2117,9 @@ input[type="range"]::-ms-fill-lower{
 .h-1{
   height: 0.25rem;
 }
+.h-64{
+  height: 16rem;
+}
 .max-h-24{
   max-height: 6rem;
 }
