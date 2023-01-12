@@ -426,7 +426,7 @@ class FinderController extends Controller
             }
         }
 
-        if($phones->exists()) {
+        if($phones && $phones->exists()) {
             $phones = $phones->get()->map(function ($phone) {
                 $array = [];
                 $array['id'] = $phone->id;
@@ -439,7 +439,7 @@ class FinderController extends Controller
             });
         }
 
-        if($laptops->exists()) {
+        if($laptops && $laptops->exists()) {
             $laptops = $laptops->get()->map(function ($laptop) {
                 $array = [];
                 $array['id'] = $laptop->id;
@@ -452,9 +452,9 @@ class FinderController extends Controller
             });
         }
 
-        if($phones->count() > 0 || $laptops->count() == 0) $mobiles = $phones;
-        if($phones->count() == 0 || $laptops->count() > 0) $mobiles = $laptops;
-        if($phones->count() > 0 && $laptops->count() > 0) $mobiles = $phones->merge($laptops);
+        if(($phones && $phones->count() > 0) || ($laptops && $laptops->count() == 0)) $mobiles = $phones;
+        if(($phones && $phones->count() == 0) || ($laptops && $laptops->count() > 0)) $mobiles = $laptops;
+        if(($phones && $phones->count() > 0) && ($laptops && $laptops->count() > 0)) $mobiles = $phones->merge($laptops);
 
         $mobiles = $mobiles->count() > 0 ? $mobiles->sortBy([ ['name', 'asc'] ])->toArray() : [];
 
