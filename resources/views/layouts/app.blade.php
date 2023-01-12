@@ -111,7 +111,7 @@
 
                         <!-- Sidebar links -->
                         <nav aria-label="Main"
-                            class="dark:bg-indigo-600 border dark:border-none flex-1 w-64 px-2 py-4 space-y-2 overflow-y-hidden hover:overflow-y-auto">
+                            class="dark:bg-slate-600 border dark:border-none flex-1 w-64 px-2 py-4 space-y-2 overflow-y-hidden hover:overflow-y-auto">
                             <!-- Dashboards links -->
                             <div class="" x-data="{ isActive: false, open: false }">
                                 <!-- active & hover classes 'bg-indigo-100 dark:bg-indigo-600' -->
