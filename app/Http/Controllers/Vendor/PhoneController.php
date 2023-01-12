@@ -20,7 +20,7 @@ class PhoneController extends Controller
     {
         $brands = Brand::with([
             'phones',
-        ])->get();
+        ])->orderBy('name')->get();
         return view('vendors.phones.create', compact('brands'));
     }
 

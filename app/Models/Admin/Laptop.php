@@ -2,10 +2,12 @@
 
 namespace App\Models\Admin;
 
+use App\Models\User;
 use App\Models\Review;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Vendor\LaptopUser;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Laptop extends Model
 {
@@ -22,23 +24,31 @@ class Laptop extends Model
     {
         return $this->morphOne(Review::class, 'reviewable');
     }
+
     public function brand(){
         return $this->belongsTo(Brand::class);
     }
+
     public function graphicsCard(){
         return $this->belongsTo(GraphicsCard::class);
     }
+
     public function processor(){
         return $this->belongsTo(Processor::class);
     }
 
-    public function getgpuAttribute()
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'laptop_user')->using(LaptopUser::class)->withPivot(['price'])->withTimestamps();
+    }
+
+    public function getGpuAttribute()
     {
 
         $gpu = $this->graphicsCard->name;
         return $gpu;
     }
-    public function getcpuAttribute()
+    public function getCpuAttribute()
     {
         $cpu = $this->processor->name;
 
@@ -58,16 +68,19 @@ class Laptop extends Model
         $storage = "{$this->ram}GB, {$this->storage}GB Storage, {$this->storage_description} ";
        return $storage;
     }
+
     public function getBatteryAttribute()
     {
         $battery = "{$this->battery_capacity}Wh, {$this->battery_description}";
        return trim("$battery");
     }
+
     public function getCameraDisAttribute()
     {
         $camera = "{$this->camera}, {$this->camera_description}";
        return trim("$camera");
     }
+
     public function getFeaturesDisAttribute()
     {
         $feature = "{$this->features}, {$this->features_description}";

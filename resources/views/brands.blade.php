@@ -23,7 +23,7 @@
                 @foreach ($brands as $brand)
                 <div class="group relative p-8 bg-transparent">
                     <div class="aspect-w-1 aspect-h-1 mx-auto w-48  xl:aspect-w-7 xl:aspect-h-8">
-                        <img src="{{ asset('storage/'.$brand->image) }}" alt="Front of men&#039;s Basic Tee in black." class=" object-contain object-center ">
+                        <img src="{{ asset('storage/'.$brand->image) }}" alt="{{ $brand->name }}" title="{{ $brand->name }}" class=" object-contain object-center ">
                     </div>
                     <div class="mt-4 flex flex-col text-center ">
                         <div>

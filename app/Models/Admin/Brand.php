@@ -16,4 +16,9 @@ class Brand extends Model
     {
         return $this->hasMany(Phone::class);
     }
+
+    public function laptops()
+    {
+        return $this->hasMany(Laptop::class);
+    }
 }

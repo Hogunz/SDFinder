@@ -3,7 +3,7 @@
     <div class="container mx-auto relative overflow-hidden bg-no-repeat bg-cover bg-center"
                 style="
     background-image: url('https://www.boldbusiness.com/wp-content/uploads/2018/08/Amazon-Sponsored-Ads.gif');
-    height: 300px;
+    height: 164px;
     width: 900px;
   ">
             </div>
@@ -31,7 +31,7 @@
                     <div class="mt-4 flex flex-col text-center">
                         <div>
                             <h3 class="dark:text-white text-sm text-gray-700">
-                                <a href="#">
+                                <a href="{{ $review->reviewable_type == "App\Models\Admin\Phone" ? route('mobile.viewPhone', $review->reviewable->id) : route('laptop.viewLaptop', $review->reviewable->id) }}">
                                     <span aria-hidden="true" class=" absolute inset-0"></span>
                                     {{ $review->reviewable->name }}
                                 </a>
