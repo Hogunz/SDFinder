@@ -28,7 +28,7 @@ class Phone extends Model
     ];
 
     public function brand(){
-        return $this->belongsTo(Brand::class);
+        return $this->belongsTo(Brand::class)->withTrashed();
     }
 
     public function chipset()
