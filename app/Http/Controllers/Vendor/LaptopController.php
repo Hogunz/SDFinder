@@ -37,4 +37,5 @@ class LaptopController extends Controller
         return redirect()->route('vendor.laptops.index')->with('status', 'Successfully added laptop');
     }
 
+
 }

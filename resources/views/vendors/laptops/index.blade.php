@@ -23,6 +23,28 @@
                                 <h5>Storage: {{ $laptop->storage }} GB</h5>
                                 <p>{{ $laptop->pivot->price_string }}</p>
                             </div>
+                            <div class="p-8 space-y-2">
+                                @if(!$laptop->trashed())
+                                <a href="">
+                                    <x-button class="{{ route('vendor.laptops.edit') }}" type="button">Edit</x-button>
+                                </a>
+
+                                <form action="" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <x-button class="" type="submit">Delete</x-button>
+                                </form>
+                            @else
+                                <a href="">
+                                    <x-button class="" type="button">Restore</x-button>
+                                </a>
+                            @endif
+                            <form action="" method="post">
+                                @csrf
+                                @method('delete')
+                                <x-button class="" type="submit">Delete Permanently</x-button>
+                            </form>
+                            </div>
                         </div>
                     </div>
                 @endforeach
