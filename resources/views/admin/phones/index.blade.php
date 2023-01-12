@@ -39,6 +39,11 @@
                                     <x-button type="button">Restore</x-button>
                                 </a>
                             @endif
+                            <form action="{{ route('admin.phones.forceDelete', $phone) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <x-button type="submit">Delete Permanently</x-button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
