@@ -1,17 +1,16 @@
 <x-guest-layout>
     <div class="mx-auto py-12 max-w-7xl rounded dark:bg-gray-500 container" x-data="data">
+        @if(!request()->get('phone') && !request()->get('laptop'))
         <div class="flex justify-end">
-
             <div class="grid grid-cols-3 divide-x">
-
                 <button type="button" @click="filter(1)" class="uppercase bg-blue-500 hover:bg-blue-700 text-white py-3 px-2">Phones</button>
                 <button type="button" @click="filter(2)" class="uppercase bg-blue-500 hover:bg-blue-700 text-white py-3 px-2">Laptops</button>
                 <button type="button" @click="filter(0)" class="uppercase bg-blue-500 hover:bg-blue-700 text-white py-3 px-2">All</button>
             </div>
-
         </div>
+        @endif
 
-        <div class="flex flex-row gap-4">
+        <div class="flex flex-row gap-4 mt-2">
             <div class="shrink-0">
                 <div class="shadow-lg">
                     <a href="{{ route('mobile.finder') }}" class="block w-full text-center bg-blue-500 hover:bg-blue-700 text-white py-3 tracking-tight">
@@ -41,23 +40,21 @@
                     NO RESULT FOUND
                 </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-2">
-                <template x-for="(mobile, index) in mobiles" :key="index">
-                    <a x-bind:href="mobile.url" class="rounded p-6 shadow-lg relative group">
-                        <div>
-                            <img x-bind:src="`{{ asset('storage/') }}/` + mobile.img" alt="" class="w-full h-40 object-center object-contain">
-                        </div>
-                        <div class="font-bold uppercase break-words text-center text-sm" x-text="mobile.name"></div>
-                    </a>
-                </template>
-
-
+                <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-2">
+                    <template x-for="(mobile, index) in mobiles" :key="index">
+                        <a x-bind:href="mobile.url" class="rounded p-6 shadow-lg relative group">
+                            <div>
+                                <img x-bind:src="`{{ asset('storage/') }}/` + mobile.img" alt="" class="w-full h-40 object-center object-contain">
+                            </div>
+                            <div class="font-bold uppercase break-words text-center text-sm" x-text="mobile.name"></div>
+                        </a>
+                    </template>
+                </div>
             </div>
+
         </div>
-
     </div>
 
-    </div>
 </x-guest-layout>
 
 <script>

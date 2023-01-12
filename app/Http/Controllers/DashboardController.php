@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Review;
 use App\Models\Admin\Brand;
 use App\Models\Admin\Phone;
@@ -38,5 +39,15 @@ class DashboardController extends Controller
         $reviews = Review::latest()->get();
 
         return view('reviews', compact('reviews'));
+    }
+
+    public function storeProfile(User $user)
+    {
+        return view('store-profile', compact('user'));
+    }
+
+    public function storeMobiles(User $user)
+    {
+        return view('store-mobiles', compact('user'));
     }
 }

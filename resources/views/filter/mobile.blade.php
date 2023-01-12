@@ -307,57 +307,9 @@
     <hr class="my-6">
 
     <div class="flex justify-end">
-        <x-button type="button" @click="document.querySelector('#filter').submit()" name="phone">Filter</x-button>
+        <input type="hidden" name="phone" value="1">
+        <x-button type="button" @click="document.querySelector('#filter').submit()">Filter</x-button>
     </div>
 
 </div>
 
-<script>
-    function range() {
-        return {
-            minPrice: '',
-            maxPrice: '',
-
-            minTrigger() {
-                if (this.maxPrice !== '') {
-
-                    this.minPrice = Math.min(this.minPrice, this.maxPrice - 100)
-                    this.minPrice = this.minPrice < 0 ? 0 : this.minPrice
-                }
-            },
-            maxTrigger() {
-                if (this.minPrice !== '')
-                    this.maxPrice = Math.max(this.maxPrice, this.minPrice + 100)
-            },
-            clearPrice() {
-                this.minPrice = ''
-                this.maxPrice = ''
-            }
-        }
-    }
-
-    function os() {
-        return {
-            operatingSystems: @json($operatingSystems),
-            selectedOs: [],
-            selectedVersion: [],
-            versions: [],
-            getVersions() {
-
-                this.selectedVersion = []
-                // let array = Alpine.raw(this.selectedOs)
-                var h = this.operatingSystems.filter((e) => this.selectedOs.includes(e.id))
-
-                this.versions = []
-
-                h.forEach((e) => {
-                    e['versions'].forEach((value) => {
-                        this.versions.push(value)
-                    })
-
-                })
-
-            }
-        }
-    }
-</script>

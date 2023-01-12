@@ -13,6 +13,7 @@ use App\Http\Controllers\Vendor\VendorInformationController;
 use App\Http\Controllers\Admin\OperatingSystemVersionController;
 use App\Http\Controllers\Admin\ProcessorController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Vendor\LaptopController as VendorLaptopController;
 use App\Http\Controllers\Vendor\PhoneController as VendorPhoneController;
 
 /*
@@ -35,13 +36,11 @@ Route::get('/mobile-finder/view-2', [FinderController::class, 'viewPhones'])->na
 Route::get('/mobile-finder/view', [FinderController::class, 'viewMobiles'])->name('mobile.viewPhones');
 Route::get('/mobile-finder/{phone}/view', [FinderController::class, 'viewPhone'])->name('mobile.viewPhone');
 Route::get('/laptops-finder/view', [FinderController::class, 'viewLaptops'])->name('laptop.viewLaptops');
-Route::get('/laptops-finder/{laptop}/view', [FinderController::class, 'viewLaptop'])->name('laptop.viewLaptop');
-
+Route::get('/laptop-finder/{laptop}/view', [FinderController::class, 'viewLaptop'])->name('laptop.viewLaptop');
 
 Route::get('/reviews', [DashboardController::class, 'reviews']);
-Route::get('/profile/{user}', function (User $user) {
-    return view('store-profile', compact('user'));
-})->name('store.profile');
+Route::get('/profile/{user}', [DashboardController::class, 'storeProfile'])->name('store.profile');
+Route::get('/profile/{user}/store', [DashboardController::class, 'storeMobiles'])->name('store.mobiles');
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth');
 
@@ -56,6 +55,7 @@ Route::name('vendor.')->prefix('vendor/')->middleware(['auth', 'role:vendor'])->
     Route::get('/profile/edit', [VendorInformationController::class, 'edit'])->name('profile.edit');
     Route::put('/profile/update', [VendorInformationController::class, 'update'])->name('profile.update');
     Route::resource('phones', VendorPhoneController::class);
+    Route::resource('laptops', VendorLaptopController::class);
 
 });
 

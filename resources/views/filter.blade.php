@@ -11,14 +11,65 @@
                         </template>
                     </div>
                 </div>
-                <div x-show="activeTab === 0">
+                <template x-if="activeTab === 0">
                     @include('filter.mobile')
-                </div>
-                <div x-show="activeTab === 1">
+                </template>
+                <template x-if="activeTab === 1">
                     @include('filter.laptop')
-                </div>
+                </template>
             </div>
 
         </form>
     </div>
 </x-guest-layout>
+
+
+<script>
+    function range() {
+        return {
+            minPrice: '',
+            maxPrice: '',
+
+            minTrigger() {
+                if (this.maxPrice !== '') {
+
+                    this.minPrice = Math.min(this.minPrice, this.maxPrice - 100)
+                    this.minPrice = this.minPrice < 0 ? 0 : this.minPrice
+                }
+            },
+            maxTrigger() {
+                if (this.minPrice !== '')
+                    this.maxPrice = Math.max(this.maxPrice, this.minPrice + 100)
+            },
+            clearPrice() {
+                this.minPrice = ''
+                this.maxPrice = ''
+            }
+        }
+    }
+
+    function os() {
+        return {
+            operatingSystems: @json($operatingSystems),
+            selectedOs: [],
+            selectedVersion: [],
+            versions: [],
+            getVersions() {
+
+                this.selectedVersion = []
+                // let array = Alpine.raw(this.selectedOs)
+                var h = this.operatingSystems.filter((e) => this.selectedOs.includes(e.id))
+
+                this.versions = []
+
+                h.forEach((e) => {
+                    e['versions'].forEach((value) => {
+                        this.versions.push(value)
+                    })
+
+                })
+
+            }
+        }
+    }
+</script>

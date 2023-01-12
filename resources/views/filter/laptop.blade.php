@@ -98,7 +98,43 @@
 
     <hr class="my-6">
 
+    <div>
+        <h2 class="text-lg font-semibold">Display</h2>
+
+        <div class="grid grid-cols-2 gap-4">
+            <div>
+                <h4>Technology</h4>
+                <div class="border flex flex-col h-full px-4 py-2 max-h-24 overflow-y-auto">
+                    @foreach ($types as $i => $type)
+                        <div class="flex space-x-2">
+                            <x-input type="checkbox" value="{{ $type }}" id="{{ 'type' . $i }}"
+                                name="types[]"></x-input>
+                            <x-label for="{{ 'type' . $i }}" :value="$type"></x-label>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <div>
+                <h4>Resolution</h4>
+                <div class="border flex flex-col h-full px-4 py-2 max-h-24 overflow-y-auto">
+                    @foreach ($resolutions as $i => $resolution)
+                        <div class="flex space-x-2">
+                            <x-input type="checkbox" value="{{ $i }}" id="{{ 'resolution' . $i }}"
+                                name="resolutions[]"></x-input>
+                            <x-label for="{{ 'resolution' . $i }}" :value="$resolution"></x-label>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <hr class="my-6">
+
     <div class="flex justify-end">
-        <x-button type="button" @click="document.querySelector('#filter').submit()" name="laptop">Filter</x-button>
+        <input type="hidden" name="laptop" value="1">
+        <x-button type="button" @click="document.querySelector('#filter').submit()">Filter</x-button>
     </div>
 </div>

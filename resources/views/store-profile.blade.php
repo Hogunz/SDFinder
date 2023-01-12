@@ -23,35 +23,42 @@
 
     <!-- Section 2 -->
     <section class="container mx-auto bg-white dark:bg-gray-300">
-        <div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
-            <div class="w-full relative flex items-center justify-center">
-                <button aria-label="slide backward" class="absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
-                    <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-                <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
-                    <div id="slider" class="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
-                        @foreach($user->phones->unique() as $phone)
-                            <div class="flex flex-col flex-shrink-0 relative w-full sm:w-auto">
-                                <img src="{{ asset('storage/'.$phone->img) }}" alt="black chair and white table" class="object-contain h-48 w-96 object-center" />
-                                <div class="bg-gray-800  bg-opacity-0 absolute w-full h-full p-6">
-                                    <div class="flex h-full items-end pb-6">
-                                        <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900">{{ $phone->name }}</h3>
-                                    </div>
-                                </div>
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper ">
+            <!-- Slides -->
+                @foreach($user->getMobiles() as $mobile)
+                    <div class="swiper-slide shadow-lg">
+                        <a href="{{ $mobile['url'] }}" class="rounded p-6 ">
+                            <div>
+                                <img src="{{ asset('storage/'.$mobile['img']) }}" alt="" class="w-full h-40 object-center object-contain">
                             </div>
-                        @endforeach
+                            <div class="font-bold uppercase break-words text-center text-sm">{{ $mobile['name'] }}</div>
+                            <div class="font-bold uppercase break-words text-center text-sm">{{ $mobile['variant'] }}</div>
+                            <div class="font-bold uppercase break-words text-center text-sm">{{ $mobile['price'] }}</div>
+                        </a>
                     </div>
-                </div>
-                <button aria-label="slide forward" class="absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
-                    <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-            </div>
 
+                @endforeach
+                <div class="swiper-slide h-auto flex flex-col justify-center">
+
+                        <a href="{{ route('store.mobiles', $user) }}" class="hover:underline text-xl">View All ></a>
+
+
+                </div>
+
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
         </div>
+
 
     </section>
     <!-- Section 2 -->
@@ -113,6 +120,9 @@
     <!-- Section 4 -->
 
     <!-- Section 4 -->
+
+
+
 </x-guest-layout>
 
 
@@ -134,3 +144,35 @@
         }
         prev.addEventListener("click", goPrev);
     </script>
+
+<script>
+     window.onload = function(){
+        const swiper = new Swiper('.swiper', {
+            rewind: true,
+            speed: 400,
+            spaceBetween: 100,
+            slidesPerView: 4,
+            autoplay: {
+                delay: 5000,
+            },
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                draggable: true,
+            },
+        });
+
+    }
+</script>

@@ -26,6 +26,9 @@
                         <template x-for="(phone, index) in phones" :key="index">
                             <option :value="phone.id" x-text="phone.name"></option>
                         </template>
+                        <template x-if="phones.length == 0">
+                            <option value="" disabled>No Phone Available</option>
+                        </template>
                     </x-select>
                 </div>
 
