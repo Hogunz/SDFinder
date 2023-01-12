@@ -20,7 +20,7 @@
                             </div>
                             <div>
                                 <h5>RAM: {{ $laptop->ram }} GB</h5>
-                                <h5>RAM: {{ $laptop->storage }} GB</h5>
+                                <h5>Storage: {{ $laptop->storage }} GB</h5>
                                 <p>{{ $laptop->pivot->price_string }}</p>
                             </div>
                         </div>
