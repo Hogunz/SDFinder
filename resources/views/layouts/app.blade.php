@@ -39,7 +39,7 @@
   background-color: var(--darker);
 }
 
-.dark .dark\:text-gray-300 {
+.dark .dark\:text--300 {
   color: #d1d5db;
 }
 
@@ -83,15 +83,15 @@
 
     </head>
 
-    <body class="dark:bg-gray-500">
+    <body class="dark:bg--500">
 
         <div class="flex flex-col h-screen justify-between font-sans bg-scroll scroll-smooth">
             <header>@include('layouts.guest-navigation')</header>
             <div x-data="setup()" x-init="$refs.loading.classList.add('hidden');" :class="{ 'dark': isDark }" @resize.window="watchScreen()">
-                <div class="flex h-screen antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light">
+                <div class="flex h-screen antialiased text--900 bg--100 dark:bg-dark dark:text-light">
                     <!-- Loading screen -->
                     <div x-ref="loading"
-                        class="fixed inset-0 z-50 flex items-center justify-center text-2xl font-semibold text-white bg-indigo-800">
+                        class="fixed inset-0 z-50 flex items-center justify-center text-2xl font-semibold text-white bg--500">
                         Loading.....
                     </div>
 
@@ -107,7 +107,7 @@
                         x-transition:leave-start="translate-x-0 opacity-100"
                         x-transition:leave-end="-translate-x-full opacity-0" x-ref="sidebar"
                         @keydown.escape="window.innerWidth <= 1024 ? isSidebarOpen = false : ''" tabindex="-1"
-                        class="fixed inset-y-0 z-10 flex flex-shrink-0 overflow-hidden bg-white border-r lg:static dark:border-indigo-800 dark:bg-darker focus:outline-none">
+                        class="fixed inset-y-0 z-10 flex flex-shrink-0 overflow-hidden bg-white border-r lg:static dark:border--500 dark:bg-darker focus:outline-none">
 
                         <!-- Sidebar links -->
                         <nav aria-label="Main"
@@ -116,7 +116,7 @@
                             <div class="" x-data="{ isActive: false, open: false }">
                                 <!-- active & hover classes 'bg-indigo-100 dark:bg-indigo-600' -->
                                 <a href="{{ route('admin.dashboard') }}"
-                                    class="flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-indigo-100 dark:hover:bg-indigo-600">
+                                    class="flex items-center p-2 text--500 transition-colors rounded-md dark:text-light hover:bg-indigo-100 dark:hover:bg--500">
                                     <span aria-hidden="true">
                                         <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">
@@ -135,7 +135,7 @@
                             <div x-data="{ isActive: false, open: false }">
                                 <!-- active classes 'bg-indigo-100 dark:bg-indigo-600' -->
                                 <a href="#" @click="$event.preventDefault(); open = !open"
-                                    class="flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-indigo-100 dark:hover:bg-indigo-600"
+                                    class="flex items-center p-2 text--500 transition-colors rounded-md dark:text-light hover:bg-indigo-100 dark:hover:bg--500"
                                     :class="{ 'bg-indigo-100 dark:bg-indigo-600': isActive || open }" role="button"
                                     aria-haspopup="true" :aria-expanded="(open || isActive) ? 'true' : 'false'">
                                     <span aria-hidden="true">
@@ -157,14 +157,14 @@
                                     </span>
                                 </a>
                                 <div x-show="open" class="mt-2 space-y-2 px-7" role="menu" arial-label="Components">
-                                    <!-- active & hover classes 'text-gray-700 dark:text-light' -->
-                                    <!-- inActive classes 'text-gray-400 dark:text-gray-400' -->
+                                    <!-- active & hover classes 'text--700 dark:text-light' -->
+                                    <!-- inActive classes 'text--400 dark:text--400' -->
                                     <a href="{{ route('admin.phones.index') }}" role="menuitem"
-                                        class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700">
+                                        class="block p-2 text-sm text--400 transition-colors duration-200 rounded-md dark:text--400 dark:hover:text-light hover:text--700">
                                         Manage Phone
                                     </a>
                                     <a href="{{ route('admin.laptops.index') }}" role="menuitem"
-                                        class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700">
+                                        class="block p-2 text-sm text--400 transition-colors duration-200 rounded-md dark:text--400 dark:hover:text-light hover:text--700">
                                         Manage Laptop
                                     </a>
                                 </div>
@@ -175,7 +175,7 @@
                             <div x-data="{ isActive: false, open: false }">
                                 <!-- active classes 'bg-indigo-100 dark:bg-indigo-600' -->
                                 <a href="#" @click="$event.preventDefault(); open = !open"
-                                    class="flex items-center p-2 text-gray-500 transition-colors rounded-md dark:text-light hover:bg-indigo-100 dark:hover:bg-indigo-600"
+                                    class="flex items-center p-2 text--500 transition-colors rounded-md dark:text-light hover:bg-indigo-100 dark:hover:bg--600"
                                     :class="{ 'bg-indigo-100 dark:bg-indigo-600': isActive || open }" role="button"
                                     aria-haspopup="true" :aria-expanded="(open || isActive) ? 'true' : 'false'">
                                     <span aria-hidden="true">
@@ -197,26 +197,26 @@
                                     </span>
                                 </a>
                                 <div x-show="open" class="mt-2 space-y-2 px-7" role="menu" arial-label="Components">
-                                    <!-- active & hover classes 'text-gray-700 dark:text-light' -->
-                                    <!-- inActive classes 'text-gray-400 dark:text-gray-400' -->
+                                    <!-- active & hover classes 'text--700 dark:text-light' -->
+                                    <!-- inActive classes 'text--400 dark:text--400' -->
                                     <a href="{{ route('admin.brands.index') }}" role="menuitem"
-                                        class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700">
+                                        class="block p-2 text-sm text--400 transition-colors duration-200 rounded-md dark:text--400 dark:hover:text-light hover:text--700">
                                         Manage Brands
                                     </a>
                                     <a href="{{ route('admin.os.index') }}" role="menuitem"
-                                        class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700">
+                                        class="block p-2 text-sm text--400 transition-colors duration-200 rounded-md dark:text--400 dark:hover:text-light hover:text--700">
                                         Manage Operating Systems
                                     </a>
                                     <a href="{{ route('admin.chipsets.index') }}" role="menuitem"
-                                        class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700">
+                                        class="block p-2 text-sm text--400 transition-colors duration-200 rounded-md dark:text--400 dark:hover:text-light hover:text--700">
                                         Manage Chipsets
                                     </a>
                                     <a href="{{ route('admin.processors.index') }}" role="menuitem"
-                                        class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700">
+                                        class="block p-2 text-sm text--400 transition-colors duration-200 rounded-md dark:text--400 dark:hover:text-light hover:text--700">
                                         Manage Processors
                                     </a>
                                     <a href="{{ route('admin.graphics_cards.index') }}" role="menuitem"
-                                        class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700">
+                                        class="block p-2 text-sm text--400 transition-colors duration-200 rounded-md dark:text--400 dark:hover:text-light hover:text--700">
                                         Manage Graphics Cards
                                     </a>
                                 </div>
@@ -285,27 +285,27 @@
                             <!-- Panel header -->
                             <div
                                 class="flex flex-col items-center justify-center flex-shrink-0 px-4 py-8 space-y-4 border-b dark:border-indigo-700">
-                                <span aria-hidden="true" class="text-gray-500 dark:text-indigo-600">
+                                <span aria-hidden="true" class="text--500 dark:text-indigo-600">
                                     <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                                     </svg>
                                 </span>
-                                <h2 id="settinsPanelLabel" class="text-xl font-medium text-gray-500 dark:text-light">
+                                <h2 id="settinsPanelLabel" class="text-xl font-medium text--500 dark:text-light">
                                     Settings</h2>
                             </div>
                             <!-- Content -->
                             <div class="flex-1 overflow-hidden hover:overflow-y-auto">
                                 <!-- Theme -->
                                 <div class="p-4 space-y-4 md:p-8">
-                                    <h6 class="text-lg font-medium text-gray-400 dark:text-light">Mode</h6>
+                                    <h6 class="text-lg font-medium text--400 dark:text-light">Mode</h6>
                                     <div class="flex items-center space-x-8">
                                         <!-- Light button -->
                                         <button @click="setLightTheme"
-                                            class="flex items-center justify-center px-4 py-2 space-x-4 transition-colors border rounded-md hover:text-gray-900 hover:border-gray-900 dark:border-indigo-600 dark:hover:text-indigo-100 dark:hover:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-400 dark:focus:ring-indigo-700"
-                                            :class="{ 'border-gray-900 text-gray-900 dark:border-indigo-500 dark:text-indigo-100': !
-                                                    isDark, 'text-gray-500 dark:text-indigo-500': isDark }">
+                                            class="flex items-center justify-center px-4 py-2 space-x-4 transition-colors border rounded-md hover:text--900 hover:border--900 dark:border-indigo-600 dark:hover:text-indigo-100 dark:hover:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-400 dark:focus:ring-indigo-700"
+                                            :class="{ 'border--900 text--900 dark:border-indigo-500 dark:text-indigo-100': !
+                                                    isDark, 'text--500 dark:text-indigo-500': isDark }">
                                             <span>
                                                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
                                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -318,8 +318,8 @@
 
                                         <!-- Dark button -->
                                         <button @click="setDarkTheme"
-                                            class="flex items-center justify-center px-4 py-2 space-x-4 transition-colors border rounded-md hover:text-gray-900 hover:border-gray-900 dark:border-indigo-600 dark:hover:text-indigo-100 dark:hover:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-400 dark:focus:ring-indigo-700"
-                                            :class="{ 'border-gray-900 text-gray-900 dark:border-indigo-500 dark:text-indigo-100': isDark, 'text-gray-500 dark:text-indigo-500':
+                                            class="flex items-center justify-center px-4 py-2 space-x-4 transition-colors border rounded-md hover:text--900 hover:border--900 dark:border-indigo-600 dark:hover:text-indigo-100 dark:hover:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-400 dark:focus:ring-indigo-700"
+                                            :class="{ 'border--900 text--900 dark:border-indigo-500 dark:text-indigo-100': isDark, 'text--500 dark:text-indigo-500':
                                                     !isDark }">
                                             <span>
                                                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -437,7 +437,7 @@
                         <div class="flex flex-col h-screen">
                             <!-- Panel header (Search input) -->
                             <div
-                                class="relative flex-shrink-0 px-4 py-8 text-gray-400 border-b dark:border-indigo-800 dark:focus-within:text-light focus-within:text-gray-700">
+                                class="relative flex-shrink-0 px-4 py-8 text--400 border-b dark:border-indigo-800 dark:focus-within:text-light focus-within:text--700">
                                 <span class="absolute inset-y-0 inline-flex items-center px-4">
                                     <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor">
@@ -452,7 +452,7 @@
 
                             <!-- Panel content (Search result) -->
                             <div class="flex-1 px-4 pb-4 space-y-4 overflow-y-hidden h hover:overflow-y-auto">
-                                <h3 class="py-2 text-sm font-semibold text-gray-600 dark:text-light">History</h3>
+                                <h3 class="py-2 text-sm font-semibold text--600 dark:text-light">History</h3>
                                 <p class="px=4">Search resault</p>
                                 <!--  -->
                                 <!-- Search content -->
