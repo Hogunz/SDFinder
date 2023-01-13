@@ -1,7 +1,7 @@
 <x-vendor-layout>
     <div class="w-full px-6 -mx-6">
-        <div class="bg-indigo-800 p-6 shadow rounded">
-            <h1 class="text-xl font-bold tracking-widest uppercase text-white">Laptop</h1>
+        <div class="bg-transparent p-6">
+            <h1 class="text-xl font-bold tracking-widest uppercase text-black dark:text-white">Laptop</h1>
             <a href="{{ route('vendor.laptops.create') }}">
                 <x-button type="button">Add Laptop</x-button>
             </a>
@@ -23,26 +23,15 @@
                                 <h5>Storage: {{ $laptop->storage }} GB</h5>
                                 <p>{{ $laptop->pivot->price_string }}</p>
                             </div>
-                            <div class="p-8 space-y-2">
-                                @if(!$laptop->trashed())
-                                <a href="">
-                                    <x-button class="{{ route('vendor.laptops.edit') }}" type="button">Edit</x-button>
-                                </a>
+                            <div class="p-8 flex space-x-2">
 
-                                <form action="" method="post">
-                                    @csrf
-                                    @method('delete')
-                                    <x-button class="" type="submit">Delete</x-button>
-                                </form>
-                            @else
-                                <a href="">
-                                    <x-button class="" type="button">Restore</x-button>
+                                <a href="{{ route('vendor.laptops.edit', $laptop) }}">
+                                    <x-button class="" type="button">Edit</x-button>
                                 </a>
-                            @endif
-                            <form action="" method="post">
+                            <form action="{{ route('vendor.laptops.destroy', $laptop) }}" method="post">
                                 @csrf
                                 @method('delete')
-                                <x-button class="" type="submit">Delete Permanently</x-button>
+                                <x-button class="" type="submit">Delete</x-button>
                             </form>
                             </div>
                         </div>

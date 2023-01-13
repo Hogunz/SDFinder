@@ -20,10 +20,21 @@
                         <td class="px-6 py-3 text-center">{{ $loop->iteration }}</td>
                         <td class="px-6 py-3 text-center">{{ $graphicsCard->brand }}</td>
                         <td class="px-6 py-3 text-center">{{ $graphicsCard->name }}</td>
-                            <td class="px-6 py-3 text-center">
+                            <td class="px-6 py-3 text-center flex space-x-2">
+                                @if(!$graphicsCard->trashed())
                                 <a href="{{ route('admin.graphics_cards.edit', $graphicsCard) }}">
                                     <x-button type="button">Edit</x-button>
                                 </a>
+                                <form action="{{ route('admin.graphics_cards.destroy', $graphicsCard) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <x-button type="submit">Delete</x-button>
+                                </form>
+                            @else
+                                <a href="{{ route('admin.graphics_cards.restore', $graphicsCard) }}">
+                                    <x-button type="button">Restore</x-button>
+                                </a>
+                            @endif
                             </td>
                         </tr>
                     @endforeach

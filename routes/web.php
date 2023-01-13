@@ -94,6 +94,8 @@ Route::name('admin.')->prefix('admin/')->middleware(['auth', 'role:admin'])->gro
     Route::delete('/phones/forceDelete/{phone}', [PhoneController::class, 'forceDelete'])->name('phones.forceDelete');
     //Restore processor
     Route::get('/processors/restore/{processor}', [ProcessorController::class, 'restore'])->name('processors.restore');
+     //Restore processor
+     Route::get('/graphics_cards/restore/{graphics_cards}', [GraphicsCardController::class, 'restore'])->name('graphics_cards.restore');
     //Restore brands
     Route::get('/brands/restore/{brand}', [BrandController::class, 'restore'])->name('brands.restore');
 
