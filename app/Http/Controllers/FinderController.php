@@ -153,7 +153,7 @@ class FinderController extends Controller
         }
         //Cores
         if($request->cores) {
-            $phones->whereHas('chipsets', function ($query) use ($request) {
+            $phones->whereHas('chipset', function ($query) use ($request) {
                 $query->whereIn('no_of_cores', $request->os);
             });
         }
