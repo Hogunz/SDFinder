@@ -17,7 +17,9 @@
                         <tr class="{{ $loop->iteration % 2 == 0 ? 'bg-gray-50 border-b  dark:bg-gray-900 dark:border-gray-700' : 'bg-gray-200 border-b dark:bg-gray-800 dark:border-gray-700' }}">
                             <td class="px-6 py-3 text-center">{{ $os->name }}</td>
                             <td class="px-6 py-3 text-center">
-                                <x-button type="button">Edit</x-button>
+                                <a href="{{ route('admin.os.edit', $os->id) }}" class="href">
+                                    <x-button type="button">Edit</x-button>
+                                    </a>
                                 <a href="{{ route('admin.os.show', $os) }}">
                                     <x-button type="button">Show</x-button>
                                 </a>

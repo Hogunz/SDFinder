@@ -25,6 +25,7 @@
         "@alpine-collective/toolkit": "^1.0.2",
         "daisyui": "^2.33.0",
         "flowbite": "^1.5.3",
+        "swiper": "^8.4.5",
         "tw-elements": "^1.0.0-alpha12"
     }
 }

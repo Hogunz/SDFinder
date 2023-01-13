@@ -69,7 +69,7 @@ class ChipsetController extends Controller
      */
     public function edit(Chipset $chipset)
     {
-        //
+        return view('admin.chipsets.edit', compact('chipset'));
     }
 
     /**
@@ -81,7 +81,13 @@ class ChipsetController extends Controller
      */
     public function update(Request $request, Chipset $chipset)
     {
-        //
+        $chipset->update([
+            'name' => $request->name,
+            'no_of_cores' => $request->no_of_cores,
+            'cpu' => $request->cpu,
+            'gpu' => $request->gpu,
+    ]);
+    return redirect()->route('admin.chipsets.index')->with('status', 'Chipset Successfully Updated');
     }
 
     /**

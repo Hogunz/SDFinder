@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class GraphicsCardController extends Controller
 {
 
-    private $brands = ['Amd', 'Intel', 'NVidia'];
+    private $brands = ['Amd', 'Intel', 'NVidia','Apple'];
 
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class GraphicsCardController extends Controller
      */
     public function index()
     {
-        $graphicsCards = GraphicsCard::all();
+        $graphicsCards = GraphicsCard::withTrashed()->get();
 
         return view('admin.graphics_cards.index', compact('graphicsCards'));
     }
@@ -70,7 +70,7 @@ class GraphicsCardController extends Controller
      */
     public function edit(GraphicsCard $graphicsCard)
     {
-        //
+        return view('admin.graphics_cards.edit', compact('graphicsCard'));
     }
 
     /**
@@ -82,7 +82,11 @@ class GraphicsCardController extends Controller
      */
     public function update(Request $request, GraphicsCard $graphicsCard)
     {
-        //
+        $graphicsCard ->update([
+            'brand' =>$request-> brand,
+            'name' =>$request-> name,
+        ]);
+        return redirect()->route('admin.graphics_cards.index')->with('status', 'Graphics Card Successfully Updated');
     }
 
     /**
@@ -93,6 +97,16 @@ class GraphicsCardController extends Controller
      */
     public function destroy(GraphicsCard $graphicsCard)
     {
-        //
+        $graphicsCard->delete();
+        return redirect()->route('admin.graphics_cards.index');
+
     }
+    public function restore($id)
+    {
+        GraphicsCard::withTrashed()
+        ->where('id',$id)
+        ->restore();
+        return redirect()->route('admin.graphics_cards.index');
+    }
+
 }

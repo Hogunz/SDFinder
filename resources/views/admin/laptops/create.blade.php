@@ -149,7 +149,7 @@
 
                 <div class="grid grid-cols-4 gap-4">
                     <div>
-                        <h2>Capacity (in mAh): </h2>
+                        <h2>Capacity (in Wh): </h2>
                         <x-input type="number" step="0.1" min="0" name="battery_capacity" class="text-sm" value="{{ old('battery_capacity') }}"></x-input>
                     </div>
                 </div>

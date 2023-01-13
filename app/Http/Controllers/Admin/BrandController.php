@@ -16,7 +16,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $brands = Brand::orderBy('name')->get();
+        $brands = Brand::withTrashed()->orderBy('name')->get();
         return view('admin.brands.index', compact('brands'));
     }
 
@@ -110,6 +110,15 @@ class BrandController extends Controller
      */
     public function destroy(Brand $brand)
     {
-        //
+        $brand->phones()->delete();
+        $brand->laptops()->delete();
+        $brand->delete();
+        return redirect()->route('admin.brands.index')->with('status', 'Brand Successfully Updated');
+    }
+    public function restore($id){
+        Brand::withTrashed()
+        ->where('id', $id)
+        ->restore();
+    return redirect()->route('admin.brands.index');
     }
 }

@@ -22,6 +22,7 @@ class CreateProcessorsTable extends Migration
             $table->float('base_clock');
             $table->float('max_boost_clock')->nullable();
             $table->timestamps();
+
         });
     }
 
