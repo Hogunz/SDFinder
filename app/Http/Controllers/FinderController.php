@@ -456,7 +456,7 @@ class FinderController extends Controller
         if(($phones && $phones->count() == 0) || ($laptops && $laptops->count() > 0)) $mobiles = $laptops;
         if(($phones && $phones->count() > 0) && ($laptops && $laptops->count() > 0)) $mobiles = $phones->merge($laptops);
 
-        $mobiles = $mobiles->count() > 0 ? $mobiles->sortBy([ ['name', 'asc'] ])->toArray() : [];
+        $mobiles = $mobiles && $mobiles->count() > 0 ? $mobiles->sortBy([ ['name', 'asc'] ])->toArray() : [];
 
 
         return view('view-mobiles', compact('brands', 'mobiles'));
