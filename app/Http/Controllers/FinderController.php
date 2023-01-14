@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Admin\Brand;
 use App\Models\Admin\Phone;
 use App\Models\Admin\Laptop;
 use Illuminate\Http\Request;
 use App\Models\Admin\Chipset;
-use App\Models\Admin\GraphicsCard;
-use App\Models\Vendor\PhoneUser;
-use App\Models\Admin\OperatingSystem;
 use App\Models\Admin\Processor;
+use App\Models\Vendor\PhoneUser;
+use App\Models\Admin\GraphicsCard;
+use App\Models\Admin\OperatingSystem;
 
 class FinderController extends Controller
 {
@@ -248,6 +249,7 @@ class FinderController extends Controller
 
         $phones = Phone::query();
         $laptops = Laptop::query();
+        $shops = User::role('vendor')->with(['vendorInformation'])->has('vendorInformation');
 
         //Brands
         if($request->brands) {
@@ -258,6 +260,7 @@ class FinderController extends Controller
         if($request->search) {
             $phones->where('name', 'like', "%{$request->search}%");
             $laptops->where('name', 'like', "%{$request->search}%");
+            $shops->where('name', 'like', "%{$request->search}%");
         }
 
 
@@ -369,10 +372,6 @@ class FinderController extends Controller
             if(!is_null($request->dualCamera)) {
                 $phones->where('selfie_camera_count', $request->dualCamera);
             }
-
-            if($request->search) {
-                $phones->where('name', 'like', "%{$request->search}%");
-            }
         }
 
         if($request->laptop)
@@ -457,9 +456,9 @@ class FinderController extends Controller
         if(($phones && $phones->count() > 0) && ($laptops && $laptops->count() > 0)) $mobiles = $phones->merge($laptops);
 
         $mobiles = $mobiles && $mobiles->count() > 0 ? $mobiles->sortBy([ ['name', 'asc'] ])->toArray() : [];
+        $shops = $shops->get();
 
-
-        return view('view-mobiles', compact('brands', 'mobiles'));
+        return view('view-mobiles', compact('brands', 'mobiles', 'shops'));
     }
 
     public function viewPhone(Phone $phone)
