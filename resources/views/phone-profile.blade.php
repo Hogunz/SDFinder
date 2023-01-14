@@ -120,7 +120,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <div class="tracking-tighter">
+                        <div class="tracking-tighter  text-center dark:text-white ">
                             {{ $shop->pivot->price_string }}
                         </div>
 
