@@ -7,6 +7,9 @@
                 <button type="button" @click="filter(2)" class="uppercase bg-blue-500 hover:bg-blue-700 text-white py-3 px-2">Laptops</button>
                 <button type="button" @click="filter(0)" class="uppercase bg-blue-500 hover:bg-blue-700 text-white py-3 px-2">All</button>
             </div>
+            <div>
+                <button type="button" @click="filter(3)" class="uppercase bg-blue-500 hover:bg-blue-700 text-white py-3 px-2">Shops</button>
+            </div>
         </div>
         @endif
 
@@ -32,7 +35,6 @@
                     <a href="{{ route('mobile.viewPhones') }}" class="block w-full text-center bg-blue-500 hover:bg-blue-700 text-white py-3 tracking-tight">RESET FILTER</a>
                 </div>
 
-
             </div>
             <div class="w-full relative">
 
@@ -40,7 +42,7 @@
                     NO RESULT FOUND
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-2">
+                <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-2" x-show="activeTab != 3">
                     <template x-for="(mobile, index) in mobiles" :key="index">
                         <a x-bind:href="mobile.url" class="rounded p-6 shadow-lg relative group">
                             <div>
@@ -50,6 +52,18 @@
                         </a>
                     </template>
                 </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-2" x-show="activeTab == 3">
+                    <template x-for="(shop, index) in shops" :key="index">
+                        <a x-bind:href="`/profile/`+shop.id" class="rounded p-6 shadow-lg relative group">
+                            <div>
+                                <img x-bind:src="`{{ asset('storage/') }}/` + shop.vendor_information.avatar" alt="" class="w-full h-40 object-center object-contain">
+                            </div>
+                            <div class="font-bold uppercase break-words text-center text-sm" x-text="shop.name"></div>
+                        </a>
+                    </template>
+                </div>
+
             </div>
 
         </div>
@@ -61,13 +75,16 @@
     function data()
     {
         return {
+            activeTab: 0,
             allMobiles: @json($mobiles),
             mobiles: [],
+            shops: @json($shops),
             async init() {
                 this.$nextTick();
                 this.mobiles = this.allMobiles
             },
             filter(a) {
+                this.activeTab = a
                 switch (a) {
                     case 1:
                     this.mobiles = this.allMobiles.filter((p) => p.type == 'phone')
