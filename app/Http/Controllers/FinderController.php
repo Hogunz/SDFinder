@@ -261,6 +261,24 @@ class FinderController extends Controller
             $phones->where('name', 'like', "%{$request->search}%");
             $laptops->where('name', 'like', "%{$request->search}%");
             $shops->where('name', 'like', "%{$request->search}%");
+
+            if($shops->count() == 1)
+            {
+                $user = $shops->first();
+                return view('store-profile', compact('user'));
+            }
+
+            if($phones->count() == 1)
+            {
+                $phone = Phone::find($phones->first()['id']);
+                return view('phone-profile', compact('phone'));
+            }
+
+            if($laptops->count() == 1)
+            {
+                $laptop = Laptop::find($laptops->first()['id']);
+                return view('laptop-profile', compact('laptop'));
+            }
         }
 
 
@@ -457,6 +475,8 @@ class FinderController extends Controller
 
         $mobiles = $mobiles && $mobiles->count() > 0 ? $mobiles->sortBy([ ['name', 'asc'] ])->toArray() : [];
         $shops = $shops->get();
+
+
 
         return view('view-mobiles', compact('brands', 'mobiles', 'shops'));
     }
