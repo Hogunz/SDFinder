@@ -366,4 +366,11 @@ class PhoneController extends Controller
 
         return back()->with('status', 'Phone successfully reviewed');
     }
+    public function forceDelete(Phone $phone)
+    {
+        $phone->review()->forceDelete();
+        $phone->forceDelete();
+
+        return back()->with('status', 'Phone successfully deleted');
+    }
 }

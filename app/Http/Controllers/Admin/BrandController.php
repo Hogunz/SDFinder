@@ -110,6 +110,8 @@ class BrandController extends Controller
      */
     public function destroy(Brand $brand)
     {
+        $brand->phones()->delete();
+        $brand->laptops()->delete();
         $brand->delete();
         return redirect()->route('admin.brands.index')->with('status', 'Brand Successfully Updated');
     }

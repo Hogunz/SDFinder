@@ -34,7 +34,7 @@
         <div class="grid grid-cols-2 gap-4">
             <div>
                 <h4>CPU: </h4>
-                <div class="border flex flex-col max-h-24 h-full px-4 py-2">
+                <div class="border flex flex-col h-full px-4 py-2 max-h-24 overflow-y-auto">
 
                     @foreach ($cpus as $cpu)
                         <div class="flex space-x-2">
@@ -49,7 +49,7 @@
 
             <div>
                 <h4>GPU: </h4>
-                <div class="border flex flex-col max-h-24 h-full px-4 py-2">
+                <div class="border flex flex-col h-full px-4 py-2 max-h-24 overflow-y-auto">
                     @foreach ($gpus as $gpu)
                         <div class="flex space-x-2">
                             <x-input type="checkbox" name="gpus[]" value="{{ $gpu->id }}"

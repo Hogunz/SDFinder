@@ -86,12 +86,17 @@ Route::name('admin.')->prefix('admin/')->middleware(['auth', 'role:admin'])->gro
 
     Route::put('/phones/review/{phone}', [PhoneController::class, 'review'])->name('review.phone');
     Route::put('/laptops/review/{laptop}', [LaptopController::class, 'review'])->name('review.laptop');
-
+    //Restore phones and laptops
     Route::get('/phones/restore/{phone}', [PhoneController::class, 'restore'])->name('phones.restore');
     Route::get('/laptops/restore/{laptop}', [LaptopController::class, 'restore'])->name('laptops.restore');
+    //Permanent Delete phones and laptops
     Route::delete('/laptops/forceDelete/{laptop}', [LaptopController::class, 'forceDelete'])->name('laptops.forceDelete');
-
+    Route::delete('/phones/forceDelete/{phone}', [PhoneController::class, 'forceDelete'])->name('phones.forceDelete');
+    //Restore processor
     Route::get('/processors/restore/{processor}', [ProcessorController::class, 'restore'])->name('processors.restore');
+     //Restore processor
+     Route::get('/graphics_cards/restore/{graphics_cards}', [GraphicsCardController::class, 'restore'])->name('graphics_cards.restore');
+    //Restore brands
     Route::get('/brands/restore/{brand}', [BrandController::class, 'restore'])->name('brands.restore');
 
 });

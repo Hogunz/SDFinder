@@ -18,7 +18,7 @@ class GraphicsCardController extends Controller
      */
     public function index()
     {
-        $graphicsCards = GraphicsCard::all();
+        $graphicsCards = GraphicsCard::withTrashed()->get();
 
         return view('admin.graphics_cards.index', compact('graphicsCards'));
     }
@@ -97,6 +97,16 @@ class GraphicsCardController extends Controller
      */
     public function destroy(GraphicsCard $graphicsCard)
     {
-        //
+        $graphicsCard->delete();
+        return redirect()->route('admin.graphics_cards.index');
+
     }
+    public function restore($id)
+    {
+        GraphicsCard::withTrashed()
+        ->where('id',$id)
+        ->restore();
+        return redirect()->route('admin.graphics_cards.index');
+    }
+
 }
