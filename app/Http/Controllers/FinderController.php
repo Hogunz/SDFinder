@@ -262,25 +262,25 @@ class FinderController extends Controller
             $laptops->where('name', 'like', "%{$request->search}%");
             $shops->where('name', 'like', "%{$request->search}%");
 
-            if($shops->count() == 1)
+            if($phones->count() === 1 && $laptops->count() === 0)
             {
-                $user = $shops->first();
-                return view('store-profile', compact('user'));
-            }
-
-            if($phones->count() == 1)
-            {
-                $phone = Phone::find($phones->first()['id']);
+                $phone = $phones->first();
                 return view('phone-profile', compact('phone'));
             }
 
-            if($laptops->count() == 1)
+            if($laptops->count() === 1 && $phones->count() === 0)
             {
-                $laptop = Laptop::find($laptops->first()['id']);
+                $laptop = $laptops->first();
                 return view('laptop-profile', compact('laptop'));
             }
-        }
 
+            if($shops->count() === 1)
+            {
+                // dd($laptops->get());
+                $user = $shops->first();
+                return view('store-profile', compact('user'));
+            }
+        }
 
         if($request->phone)
         {
