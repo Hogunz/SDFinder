@@ -77,169 +77,169 @@ class FinderController extends Controller
         ));
     }
 
-    public function phoneFinderOld()
-    {
-        $brands = Brand::all();
-        $operatingSystems = OperatingSystem::with(['versions'])->get();
-        $chipsets = Chipset::all();
+    // public function phoneFinderOld()
+    // {
+    //     $brands = Brand::all();
+    //     $operatingSystems = OperatingSystem::with(['versions'])->get();
+    //     $chipsets = Chipset::all();
 
-        $networks = $this->networks;
-        $multiples = $this->multiples;
-        $sims = $this->sims;
-        $types = $this->types;
-        $resolutions = $this->resolutions;
-        $rams = $this->rams;
-        $storages = $this->storages;
+    //     $networks = $this->networks;
+    //     $multiples = $this->multiples;
+    //     $sims = $this->sims;
+    //     $types = $this->types;
+    //     $resolutions = $this->resolutions;
+    //     $rams = $this->rams;
+    //     $storages = $this->storages;
 
-        return view('mobile-finder', compact(
-            'brands',
-            'operatingSystems',
-            'chipsets',
-            'networks',
-            'multiples',
-            'sims',
-            'types',
-            'resolutions',
-            'rams',
-            'storages',
-        ));
-    }
-    public function viewLaptops(Request $request )
-    {
-        $laptops = Laptop::all();
-        $brands = Brand::all();
+    //     return view('mobile-finder', compact(
+    //         'brands',
+    //         'operatingSystems',
+    //         'chipsets',
+    //         'networks',
+    //         'multiples',
+    //         'sims',
+    //         'types',
+    //         'resolutions',
+    //         'rams',
+    //         'storages',
+    //     ));
+    // }
+    // public function viewLaptops(Request $request )
+    // {
+    //     $laptops = Laptop::all();
+    //     $brands = Brand::all();
 
-        if($request->brands) {
-            $laptops->whereIn('brand_id', $request->brands);
+    //     if($request->brands) {
+    //         $laptops->whereIn('brand_id', $request->brands);
 
-        }
-        return view('view-laptops', compact('laptops','brands'));
+    //     }
+    //     return view('view-laptops', compact('laptops','brands'));
 
-    }
+    // }
 
-    public function viewPhones(Request $request)
-    {
-        // dd($request->input());
-        $phones = Phone::with(['users', 'operatingSystemVersion']);
+    // public function viewPhones(Request $request)
+    // {
+    //     // dd($request->input());
+    //     $phones = Phone::with(['users', 'operatingSystemVersion']);
 
-        //Brands
-        if($request->brands) {
-            $phones->whereIn('brand_id', $request->brands);
-        }
+    //     //Brands
+    //     if($request->brands) {
+    //         $phones->whereIn('brand_id', $request->brands);
+    //     }
 
-        //Price
-        if($request->price){
-            if($request->price['min'] || $request->price['max'] ) {
-                $phones->whereHas('users', function ($query) use ($request) {
-                    if($request->price['min'] && $request->price['max']) {
-                        $query->whereBetween('price', $request->price);
-                    }else if($request->price['min']) {
-                        $query->where('price', '>=', $request->price['min']);
-                    }else if($request->price['max']) {
-                        $query->where('price', '<=', $request->price['max']);
-                    }else {
-                        return false;
-                    }
-                });
-            }
-        }
+    //     //Price
+    //     if($request->price){
+    //         if($request->price['min'] || $request->price['max'] ) {
+    //             $phones->whereHas('users', function ($query) use ($request) {
+    //                 if($request->price['min'] && $request->price['max']) {
+    //                     $query->whereBetween('price', $request->price);
+    //                 }else if($request->price['min']) {
+    //                     $query->where('price', '>=', $request->price['min']);
+    //                 }else if($request->price['max']) {
+    //                     $query->where('price', '<=', $request->price['max']);
+    //                 }else {
+    //                     return false;
+    //                 }
+    //             });
+    //         }
+    //     }
 
-        //Networks
-        if($request->networks) {
-            $phones->whereJsonContains('networks', $request->networks);
-        }
-        //Sims
-        if($request->sims) {
-            $phones->whereJsonContains('sims', $request->sims);
-        }
-        //Multiples
-        if($request->multiples) {
-            $phones->whereIn('sim_count', $request->multiples);
-        }
+    //     //Networks
+    //     if($request->networks) {
+    //         $phones->whereJsonContains('networks', $request->networks);
+    //     }
+    //     //Sims
+    //     if($request->sims) {
+    //         $phones->whereJsonContains('sims', $request->sims);
+    //     }
+    //     //Multiples
+    //     if($request->multiples) {
+    //         $phones->whereIn('sim_count', $request->multiples);
+    //     }
 
-        //OS
-        if($request->os) {
-            $phones->whereHas('operatingSystemVersion', function ($query) use ($request) {
-                $query->whereIn('operating_system_id', $request->os);
-            });
-        }
-        //Version
-        if($request->versions) {
-            $phones->whereIn('operating_system_version_id', $request->versions);
-        }
-        //Chipset
-        if($request->chipsets) {
-            $phones->whereIn('chipset_id', $request->chipsets);
-        }
-        //Cores
-        if($request->cores) {
-            $phones->whereHas('chipset', function ($query) use ($request) {
-                $query->whereIn('no_of_cores', $request->os);
-            });
-        }
-        //Memory
-        if($request->rams) {
-            $rams = collect($request->rams)->map(function ($ram) {
-                return ["ram" => $ram];
-            })->toArray();
+    //     //OS
+    //     if($request->os) {
+    //         $phones->whereHas('operatingSystemVersion', function ($query) use ($request) {
+    //             $query->whereIn('operating_system_id', $request->os);
+    //         });
+    //     }
+    //     //Version
+    //     if($request->versions) {
+    //         $phones->whereIn('operating_system_version_id', $request->versions);
+    //     }
+    //     //Chipset
+    //     if($request->chipsets) {
+    //         $phones->whereIn('chipset_id', $request->chipsets);
+    //     }
+    //     //Cores
+    //     if($request->cores) {
+    //         $phones->whereHas('chipset', function ($query) use ($request) {
+    //             $query->whereIn('no_of_cores', $request->os);
+    //         });
+    //     }
+    //     //Memory
+    //     if($request->rams) {
+    //         $rams = collect($request->rams)->map(function ($ram) {
+    //             return ["ram" => $ram];
+    //         })->toArray();
 
-            $phones->whereJsonContains('variants', $rams);
-        }
+    //         $phones->whereJsonContains('variants', $rams);
+    //     }
 
-        //Card Slot
-        if(!is_null($request->card_slot)) {
-            $phones->where('card_slot', $request->card_slot);
-        }
+    //     //Card Slot
+    //     if(!is_null($request->card_slot)) {
+    //         $phones->where('card_slot', $request->card_slot);
+    //     }
 
-        //Storage
-        if($request->storages) {
-            $storages = collect($request->storages)->map(function ($storage) {
-                return ["storage" => $storage];
-            })->toArray();
-            $phones->whereJsonContains('variants', $storages);
-        }
+    //     //Storage
+    //     if($request->storages) {
+    //         $storages = collect($request->storages)->map(function ($storage) {
+    //             return ["storage" => $storage];
+    //         })->toArray();
+    //         $phones->whereJsonContains('variants', $storages);
+    //     }
 
-        //Type
-        if($request->types) {
-            $phones->whereIn('display_type', $request->types);
-        }
+    //     //Type
+    //     if($request->types) {
+    //         $phones->whereIn('display_type', $request->types);
+    //     }
 
-        //Resolution
-        if($request->resolutions) {
-            $phones->whereIn('resolution', $request->resolutions);
-        }
-        //Main Cam
-        if($request->cameraResolutions) {
-            $phones->whereJsonContains('camera_resolutions', $request->cameraResolutions);
-        }
-        //Video
-        if($request->videos) {
-            foreach($request->videos as $video) {
-                $phones->orWhere('video_quality', 'like', "%$video%");
-            }
-        }
-        //Camera Count
-        if($request->cameraCounts) {
-            $phones->whereIn('camera_count', $request->cameraCounts);
-        }
-        //Selfie Cam
-        if($request->selfieResolutions) {
-            $phones->whereJsonContains('selfie_camera_resolutions', $request->selfieResolutions);
-        }
-        //Dual Cam
-        if(!is_null($request->dualCamera)) {
-            $phones->where('selfie_camera_count', $request->dualCamera);
-        }
+    //     //Resolution
+    //     if($request->resolutions) {
+    //         $phones->whereIn('resolution', $request->resolutions);
+    //     }
+    //     //Main Cam
+    //     if($request->cameraResolutions) {
+    //         $phones->whereJsonContains('camera_resolutions', $request->cameraResolutions);
+    //     }
+    //     //Video
+    //     if($request->videos) {
+    //         foreach($request->videos as $video) {
+    //             $phones->orWhere('video_quality', 'like', "%$video%");
+    //         }
+    //     }
+    //     //Camera Count
+    //     if($request->cameraCounts) {
+    //         $phones->whereIn('camera_count', $request->cameraCounts);
+    //     }
+    //     //Selfie Cam
+    //     if($request->selfieResolutions) {
+    //         $phones->whereJsonContains('selfie_camera_resolutions', $request->selfieResolutions);
+    //     }
+    //     //Dual Cam
+    //     if(!is_null($request->dualCamera)) {
+    //         $phones->where('selfie_camera_count', $request->dualCamera);
+    //     }
 
-        if($request->search) {
-            $phones->where('name', 'like', "%{$request->search}%");
-        }
+    //     if($request->search) {
+    //         $phones->where('name', 'like', "%{$request->search}%");
+    //     }
 
-        $phones = $phones->get();
-        $brands = Brand::all();
+    //     $phones = $phones->get();
+    //     $brands = Brand::all();
 
-        return view('view-phones', compact('phones', 'brands'));
-    }
+    //     return view('view-phones', compact('phones', 'brands'));
+    // }
 
     public function viewMobiles(Request $request)
     {
@@ -333,7 +333,7 @@ class FinderController extends Controller
             }
             //Cores
             if($request->cores) {
-                $phones->whereHas('chipsets', function ($query) use ($request) {
+                $phones->whereHas('chipset', function ($query) use ($request) {
                     $query->whereIn('no_of_cores', $request->os);
                 });
             }
