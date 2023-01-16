@@ -2,14 +2,13 @@
     <div class="mx-auto py-12 max-w-7xl rounded dark:bg-gray-500 container" x-data="data">
         @if(!request()->get('phone') && !request()->get('laptop'))
         <div class="flex justify-end">
-            <div class="grid grid-cols-3 divide-x">
+            <div class="grid grid-cols-4 divide-x">
                 <button type="button" @click="filter(1)" class="uppercase bg-blue-500 hover:bg-blue-700 text-white py-3 px-2">Phones</button>
                 <button type="button" @click="filter(2)" class="uppercase bg-blue-500 hover:bg-blue-700 text-white py-3 px-2">Laptops</button>
                 <button type="button" @click="filter(0)" class="uppercase bg-blue-500 hover:bg-blue-700 text-white py-3 px-2">All</button>
-            </div>
-            <div>
                 <button type="button" @click="filter(3)" class="uppercase bg-blue-500 hover:bg-blue-700 text-white py-3 px-2">Shops</button>
             </div>
+
         </div>
         @endif
 
