@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Review;
+use App\Models\Visitor;
 use App\Models\Admin\Brand;
 use App\Models\Admin\Phone;
 use App\Models\Admin\Laptop;
@@ -23,6 +24,7 @@ class DashboardController extends Controller
 
     public function welcome()
     {
+        Visitor::first()->increment('visits');
         $phones = Phone::inRandomOrder()->get()->take(4);
         $laptops = Laptop::inRandomOrder()->get()->take(4);
         return view('welcome', compact('phones', 'laptops'));
@@ -43,6 +45,7 @@ class DashboardController extends Controller
 
     public function storeProfile(User $user)
     {
+        $user->vendorInformation()->increment('user_views');
         return view('store-profile', compact('user'));
     }
 

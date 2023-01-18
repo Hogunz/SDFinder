@@ -17,8 +17,40 @@
         </div>
     </section>
     <!-- Section 1 -->
+
+<!-- Section 2 -->
+<div>
+
+    <!-- Section: Design Block -->
+    <section class="mb-12 p-8 bg-white">
+      <div class="px-6 md:px-12 text-center lg:text-left">
+        <div class="container mx-auto xl:px-32">
+          <div class="grid lg:grid-cols-2 gap-12 flex items-center">
+            <div class="mt-12 lg:mt-0">
+              <h1 class="text-5xl md:text-6xl xl:text-5xl font-bold tracking-tight mb-12 text-left">{{ $laptop->name }}</h1>
+              <p class="mt-3 text-base  text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0 break-words">
+                {!! $laptop->description !!}
+            </p>
+            </div>
+            <div class="mb-12 lg:mb-0">
+              <img
+                src="{{ asset('storage/' . $laptop->img) }}"
+                class="h-56 w-full  bg-no-repeat object-scale-down sm:h-72 md:h-96 lg:h-56 lg:w-full"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Design Block -->
+
+  </div>
+<!-- Section 2 -->
+
+
     <!-- Section 3 -->
-    <section class="dark:bg-gray-500 pt-6 ">
+    {{-- <section class="dark:bg-gray-500 pt-6 ">
 
         <div class="container mx-auto relative overflow-hidden  ">
             <div class="mx-auto max-w-7xl  ">
@@ -46,7 +78,7 @@
 
         </div>
 
-    </section>
+    </section> --}}
     <!-- Section 3 -->
 
     <!-- Section 5 -->
