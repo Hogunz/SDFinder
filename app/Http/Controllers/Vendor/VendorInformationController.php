@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Vendor;
 
+use App\Models\Visitor;
+use App\Models\Admin\Phone;
+use App\Models\Admin\Laptop;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Brand;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Vendor\VendorInformation;
@@ -131,5 +135,24 @@ class VendorInformationController extends Controller
 
         return redirect()->route('vendor.profile.index');
     }
+    public function dashboard () {
+        $vendorInformations = VendorInformation::all();
+        $phones = Phone::all()->count();
+        $laptops = Laptop::all()->count();
+        $visit = Visitor::first();
 
+        $brands = Brand::with(['phones', 'laptops'])->get();
+
+        $data = $brands->map(function ($brand) {
+            return [
+                'label' => $brand->name,
+                'count' => $brand->phones->count() + $brand->laptops->count(),
+            ];
+        })->toArray();
+
+        return view('admin.dashboard', compact('vendorInformations','visit','phones','laptops', 'data'));
+
+
+
+    }
 }

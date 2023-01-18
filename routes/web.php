@@ -1,20 +1,22 @@
 <?php
 
 use App\Models\User;
+use App\Models\Visitor;
 use Illuminate\Support\Facades\Route;
+use App\Models\Vendor\VendorInformation;
 use App\Http\Controllers\FinderController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\PhoneController;
-use App\Http\Controllers\Admin\ChipsetController;
-use App\Http\Controllers\Admin\GraphicsCardController;
 use App\Http\Controllers\Admin\LaptopController;
+use App\Http\Controllers\Admin\ChipsetController;
+use App\Http\Controllers\Admin\ProcessorController;
+use App\Http\Controllers\Admin\GraphicsCardController;
 use App\Http\Controllers\Admin\OperatingSystemController;
 use App\Http\Controllers\Vendor\VendorInformationController;
 use App\Http\Controllers\Admin\OperatingSystemVersionController;
-use App\Http\Controllers\Admin\ProcessorController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\Vendor\LaptopController as VendorLaptopController;
 use App\Http\Controllers\Vendor\PhoneController as VendorPhoneController;
+use App\Http\Controllers\Vendor\LaptopController as VendorLaptopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,9 +62,7 @@ Route::name('vendor.')->prefix('vendor/')->middleware(['auth', 'role:vendor'])->
 });
 
 Route::name('admin.')->prefix('admin/')->middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [VendorInformationController::class, 'dashboard'])->name('dashboard');
 
     //Phones
     Route::resource('brands', BrandController::class);
