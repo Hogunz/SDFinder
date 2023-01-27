@@ -1994,6 +1994,9 @@ input[type="range"]::-ms-fill-lower{
 .ml-2{
   margin-left: 0.5rem;
 }
+.mt-10{
+  margin-top: 2.5rem;
+}
 .ml-4{
   margin-left: 1rem;
 }
@@ -2017,9 +2020,6 @@ input[type="range"]::-ms-fill-lower{
 }
 .mt-0{
   margin-top: 0px;
-}
-.mt-10{
-  margin-top: 2.5rem;
 }
 .ml-6{
   margin-left: 1.5rem;
@@ -2117,12 +2117,6 @@ input[type="range"]::-ms-fill-lower{
 .h-1{
   height: 0.25rem;
 }
-.h-96{
-  height: 24rem;
-}
-.h-64{
-  height: 16rem;
-}
 .max-h-24{
   max-height: 6rem;
 }
@@ -2192,6 +2186,9 @@ input[type="range"]::-ms-fill-lower{
 .max-w-7xl{
   max-width: 80rem;
 }
+.max-w-3xl{
+  max-width: 48rem;
+}
 .max-w-2xl{
   max-width: 42rem;
 }
@@ -2215,9 +2212,6 @@ input[type="range"]::-ms-fill-lower{
 }
 .max-w-sm{
   max-width: 24rem;
-}
-.max-w-3xl{
-  max-width: 48rem;
 }
 .flex-1{
   flex: 1 1 0%;
@@ -2323,9 +2317,6 @@ input[type="range"]::-ms-fill-lower{
 }
 .place-content-center{
   place-content: center;
-}
-.place-items-center{
-  place-items: center;
 }
 .content-center{
   align-content: center;
@@ -2486,11 +2477,11 @@ input[type="range"]::-ms-fill-lower{
 .border-2{
   border-width: 2px;
 }
-.border-b{
-  border-bottom-width: 1px;
-}
 .border-r{
   border-right-width: 1px;
+}
+.border-b{
+  border-bottom-width: 1px;
 }
 .border-t{
   border-top-width: 1px;
@@ -2517,10 +2508,6 @@ input[type="range"]::-ms-fill-lower{
   --tw-border-opacity: 1;
   border-color: rgb(104 117 245 / var(--tw-border-opacity));
 }
-.border-gray-200{
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity));
-}
 .border-gray-900{
   --tw-border-opacity: 1;
   border-color: rgb(17 24 39 / var(--tw-border-opacity));
@@ -2531,6 +2518,10 @@ input[type="range"]::-ms-fill-lower{
 }
 .border-transparent{
   border-color: transparent;
+}
+.border-gray-200{
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 .border-gray-400{
   --tw-border-opacity: 1;
@@ -2618,10 +2609,6 @@ input[type="range"]::-ms-fill-lower{
 .bg-slate-100{
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
-}
-.bg-gray-300{
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
@@ -3842,14 +3829,14 @@ input[type="range"]::-ms-fill-lower{
     border-radius: 0.5rem;
   }
 
-  .sm\:px-6{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
   .sm\:py-24{
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+
+  .sm\:px-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .sm\:py-6{
