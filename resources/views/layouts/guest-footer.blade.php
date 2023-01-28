@@ -4,7 +4,7 @@
         <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">©
             <script>
                 document.write(new Date().getFullYear());
-            </script><a href="/">SDFinder™</a>. All Rights Reserved.
+            </script><a href="/"> SDFinder™</a>. All Rights Reserved.
         </span>
 
     </div>
