@@ -11,7 +11,8 @@
 
                 <div class="mt-2">
                     <x-label for="brand_id" value="Select Brand" />
-                    <x-select name="brand_id" id="brand_id" x-model="brand_id" @change="selectBrand" class="w-full block rounded">
+                    <x-select name="brand_id" id="brand_id" x-model="brand_id" @change="selectBrand"
+                        class="w-full block rounded">
                         <option value="" hidden>Select Brand</option>
                         <template x-for="(brand, index) in brands" :key="index">
                             <option :value="brand.id" x-text="brand.name"></option>
@@ -34,7 +35,8 @@
 
                 <div class="mt-2" x-show="laptop_id != ''">
                     <x-label for="price" value="Price" />
-                    <x-input id="price" type="number" name="price" x-model.number="price" class="w-full block rounded"></x-input>
+                    <x-input id="price" type="number" step="0.01" name="price" x-model.number="price"
+                        class="w-full block rounded"></x-input>
                 </div>
 
                 <div class="mt-2" x-show="price != 0">
@@ -48,16 +50,14 @@
 </x-guest-layout>
 
 <script>
-    function phones()
-    {
+    function phones() {
         return {
             brands: @json($brands),
             laptops: [],
             brand_id: '',
             laptop_id: '',
             price: 0,
-            selectBrand()
-            {
+            selectBrand() {
                 this.laptop_id = ''
                 this.price = 0
                 this.laptops = this.brands.filter((brand) => brand.id == this.brand_id)[0].laptops
