@@ -78,10 +78,10 @@ class OperatingSystemVersionController extends Controller
      */
     public function update(Request $request, OperatingSystemVersion $operatingSystemVersion)
     {
-        $operatingSystemVersion ->update([
-            'name'=> $request-> name,
+        $operatingSystemVersion->update([
+            'name' => $request->name,
         ]);
-            return redirect()->route('admin.os.show', $operatingSystemVersion->operatingSystem);
+        return redirect()->route('admin.os.show', $operatingSystemVersion->operatingSystem);
     }
 
     /**

@@ -31,18 +31,15 @@
         const data = @json($data);
 
         new Chart(
-            document.getElementById('myChart'),
-            {
+            document.getElementById('myChart'), {
                 type: 'doughnut',
                 data: {
                     labels: data.map(row => row.label),
-                    datasets: [
-                    {
+                    datasets: [{
                         label: 'Brand',
-                        data: data.map(row => row.count)
-
-                    }
-                    ],
+                        data: data.map(row => row.count),
+                        backgroundColor: generateColors(data.length)
+                    }],
 
                 },
                 options: {
@@ -56,4 +53,21 @@
             }
         );
     })();
+
+    function generateColors(length) {
+        const colors = [];
+        for (let i = 0; i < length; i++) {
+            colors.push(getRandomColor());
+        }
+        return colors;
+    }
+
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
 </script>

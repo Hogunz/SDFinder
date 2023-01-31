@@ -15,8 +15,7 @@ class OperatingSystemController extends Controller
      */
     public function index()
     {
-        $operatingSystems = OperatingSystem::all();
-
+        $operatingSystems = OperatingSystem::withTrashed()->get();
         return view('admin.operating_systems.index', compact('operatingSystems'));
     }
 
@@ -81,8 +80,8 @@ class OperatingSystemController extends Controller
         $operatingSystem->update([
             'name' => $request->name,
 
-    ]);
-    return redirect()->route('admin.os.index')->with('status', 'Chipset Successfully Updated');
+        ]);
+        return redirect()->route('admin.os.index')->with('status', 'Chipset Successfully Updated');
     }
 
     /**
@@ -93,6 +92,14 @@ class OperatingSystemController extends Controller
      */
     public function destroy(OperatingSystem $operatingSystem)
     {
-        //
+        $operatingSystem->delete();
+        return redirect()->route('admin.os.index');
+    }
+    public function restore($id)
+    {
+        OperatingSystem::withTrashed()
+            ->where('id', $id)
+            ->restore();
+        return redirect()->route('admin.os.index');
     }
 }
