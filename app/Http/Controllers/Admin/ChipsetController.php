@@ -15,7 +15,7 @@ class ChipsetController extends Controller
      */
     public function index()
     {
-        $chipsets = Chipset::all();
+        $chipsets = Chipset::withTrashed()->get();
 
         return view('admin.chipsets.index', compact('chipsets'));
     }
@@ -69,6 +69,7 @@ class ChipsetController extends Controller
      */
     public function edit(Chipset $chipset)
     {
+
         return view('admin.chipsets.edit', compact('chipset'));
     }
 
@@ -86,8 +87,8 @@ class ChipsetController extends Controller
             'no_of_cores' => $request->no_of_cores,
             'cpu' => $request->cpu,
             'gpu' => $request->gpu,
-    ]);
-    return redirect()->route('admin.chipsets.index')->with('status', 'Chipset Successfully Updated');
+        ]);
+        return redirect()->route('admin.chipsets.index')->with('status', 'Chipset Successfully Updated');
     }
 
     /**
@@ -98,6 +99,14 @@ class ChipsetController extends Controller
      */
     public function destroy(Chipset $chipset)
     {
-        //
+        $chipset->delete();
+        return redirect()->route('admin.chipsets.index');
+    }
+    public function restore($id)
+    {
+        Chipset::withTrashed()
+            ->where('id', $id)
+            ->restore();
+        return redirect()->route('admin.chipsets.index');
     }
 }

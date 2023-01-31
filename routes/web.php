@@ -46,7 +46,7 @@ Route::get('/profile/{user}/store', [DashboardController::class, 'storeMobiles']
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth');
 
-Route::name('vendor.')->prefix('vendor/')->middleware(['auth', 'role:vendor'])->group(function() {
+Route::name('vendor.')->prefix('vendor/')->middleware(['auth', 'role:vendor'])->group(function () {
     Route::get('/dashboard', function () {
         return view('vendors.dashboard');
     })->name('dashboard');
@@ -58,7 +58,6 @@ Route::name('vendor.')->prefix('vendor/')->middleware(['auth', 'role:vendor'])->
     Route::put('/profile/update', [VendorInformationController::class, 'update'])->name('profile.update');
     Route::resource('phones', VendorPhoneController::class);
     Route::resource('laptops', VendorLaptopController::class);
-
 });
 
 Route::name('admin.')->prefix('admin/')->middleware(['auth', 'role:admin'])->group(function () {
@@ -94,13 +93,16 @@ Route::name('admin.')->prefix('admin/')->middleware(['auth', 'role:admin'])->gro
     Route::delete('/phones/forceDelete/{phone}', [PhoneController::class, 'forceDelete'])->name('phones.forceDelete');
     //Restore processor
     Route::get('/processors/restore/{processor}', [ProcessorController::class, 'restore'])->name('processors.restore');
-     //Restore processor
-     Route::get('/graphics_cards/restore/{graphics_cards}', [GraphicsCardController::class, 'restore'])->name('graphics_cards.restore');
+    //Restore Operating System
+    Route::get('/os/restore/{os}', [OperatingSystemController::class, 'restore'])->name('os.restore');
+    //Restore Chipsets
+    Route::get('/chipsets/restore/{chipsets}', [ChipsetController::class, 'restore'])->name('chipsets.restore');
+    //Restore Graphics Cards
+    Route::get('/graphics_cards/restore/{graphics_cards}', [GraphicsCardController::class, 'restore'])->name('graphics_cards.restore');
     //Restore brands
     Route::get('/brands/restore/{brand}', [BrandController::class, 'restore'])->name('brands.restore');
-
 });
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

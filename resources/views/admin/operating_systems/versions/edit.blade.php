@@ -8,7 +8,9 @@
                 @method('put')
                 <div class="mt-1">
                     <x-label for="name" value="Name"></x-label>
-                    <x-input type="text" name="name" class="w-full block"></x-input>
+                    <x-input type="text" name="name" value="{{ $operatingSystemVersion->name }}"
+                        class="w-full block">
+                    </x-input>
                 </div>
 
                 <div class="mt-1">

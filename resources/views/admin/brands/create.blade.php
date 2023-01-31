@@ -8,12 +8,13 @@
 
                 <div class="mt-1">
                     <x-label for="name" value="Name" class="dark:text-gray-300 mb-2"></x-label>
-                    <x-input type="text" name="name" class="w-full block text-black"></x-input>
+                    <x-input type="text" name="name" class="w-full block text-black" required></x-input>
                 </div>
 
                 <div class="mt-1">
                     <x-label for="image" value="Logo" class="dark:text-gray-300 mb-2"></x-label>
-                    <x-input type="file" accepts="images/*" name="image" class="w-full block border"></x-input>
+                    <x-input type="file" accepts="images/*" name="image" class="w-full block border" required>
+                    </x-input>
                 </div>
 
                 <div class="mt-1">

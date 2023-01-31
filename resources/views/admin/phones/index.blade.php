@@ -1,6 +1,7 @@
 <x-app-layout>
     <div class="mx-auto py-12 px-6">
-        <a href="{{ route('admin.phones.create') }}" class="bg-green-500 hover:bg-green-700 px-2 py-1 rounded shadow-sm  text-white">Create</a>
+        <a href="{{ route('admin.phones.create') }}"
+            class="bg-green-500 hover:bg-green-700 px-2 py-1 rounded shadow-sm  text-white">Create</a>
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 text-center">
                 <tr>
@@ -21,8 +22,8 @@
                         <td class="px-6 py-3 text-center ">
                             <img src="{{ asset('storage/' . $phone->img) }}" class=" w-32 h-52 object-contain mx-auto">
                         </td>
-                        <td class="px-6 py-3 text-center flex space-x-2">
-                            @if(!$phone->trashed())
+                        <td class="px-6 py-3 text-center justify-center flex space-x-2">
+                            @if (!$phone->trashed())
                                 <a href="{{ route('admin.phones.edit', $phone) }}">
                                     <x-button type="button">Edit</x-button>
                                 </a>

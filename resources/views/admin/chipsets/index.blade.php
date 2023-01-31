@@ -3,12 +3,14 @@
 
         <!-- Page Content -->
         <main class="max-w-7xl p-12 mx-auto">
-            <a href="{{ route('admin.chipsets.create') }}" class="bg-green-500 hover:bg-green-700 px-2 py-1 rounded shadow-sm text-white">Create</a>
+            <a href="{{ route('admin.chipsets.create') }}"
+                class="bg-green-500 hover:bg-green-700 px-2 py-1 rounded shadow-sm text-white">Create</a>
 
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 mt-2">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 text-center">
+                <thead
+                    class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 text-center">
                     <tr>
-                    <th class="px-6 py-2"></th>
+                        <th class="px-6 py-2"></th>
                         <th class="px-6 py-3">Name</th>
                         <th class="px-6 py-3">Cores</th>
                         <th class="px-6 py-3">CPU</th>
@@ -18,17 +20,32 @@
                 </thead>
                 <tbody>
                     @foreach ($chipsets as $chipset)
-                        <tr class="{{ $loop->iteration % 2 == 0 ? 'bg-gray-50 border-b  dark:bg-gray-900 dark:border-gray-700' : 'bg-gray-200 border-b dark:bg-gray-800 dark:border-gray-700' }}">
-                        <td class="px-6 py-3 text-center">{{ $loop->iteration }}</td>
-                        <td class="px-6 py-3 text-center">{{ $chipset->name }}</td>
+                        <tr
+                            class="{{ $loop->iteration % 2 == 0 ? 'bg-gray-50 border-b  dark:bg-gray-900 dark:border-gray-700' : 'bg-gray-200 border-b dark:bg-gray-800 dark:border-gray-700' }}">
+                            <td class="px-6 py-3 text-center">{{ $loop->iteration }}</td>
+                            <td class="px-6 py-3 text-center">{{ $chipset->name }}</td>
                             <td class="px-6 py-3 text-center">{{ $chipset->no_of_cores }}</td>
                             <td class="px-6 py-3 text-center">{{ $chipset->cpu }}</td>
                             <td class="px-6 py-3 text-center">{{ $chipset->gpu }}</td>
-                            <td class="px-6 py-3 text-center">
-                                <a href="{{ route('admin.chipsets.edit', $chipset->id) }}" class="href">
-                                    <x-button type="button">Edit</x-button>
+                            <td class="px-6 py-3 text-center justify-center flex space-x-2">
+                                @if (!$chipset->trashed())
+                                    <a href="{{ route('admin.chipsets.edit', $chipset->id) }}" class="href">
+                                        <x-button type="button">Edit</x-button>
                                     </a>
+                                    <form action="{{ route('admin.chipsets.destroy', $chipset) }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <x-button type="submit">Delete</x-button>
+                                    </form>
+                                @else
+                                    <a href="{{ route('admin.chipsets.restore', $chipset) }}">
+                                        <x-button type="button">Restore</x-button>
+                                    </a>
+                                @endif
                             </td>
+                        </tr>
+
+                        </td>
                         </tr>
                     @endforeach
                 </tbody>

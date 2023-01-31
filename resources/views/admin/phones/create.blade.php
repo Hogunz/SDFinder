@@ -8,43 +8,48 @@
             <div class="border p-6 mt-2">
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <h1 class="text-lg font-bold">Phone Name</h1>
-                        <x-input type="text" class="w-full block" name="name" value="{{ old('name') }}"></x-input>
+                        <h1 class="text-lg font-bold">Phone Name<span class=text-red-600>*</span></h1>
+                        <x-input type="text" class="w-full block" name="name" value="{{ old('name') }}" required>
+                        </x-input>
                     </div>
 
                     <div>
-                        <h1 class="text-lg font-bold">Brand</h1>
+                        <h1 class="text-lg font-bold">Brand<span class=text-red-600>*</span></h1>
                         <x-select name="brand_id" id="" class="w-full block">
                             @foreach ($brands as $brand)
-                            <option value="{{ $brand->id }}" {{ old('brand_id') == $brand->id ? 'selected' : '' }}>{{ $brand->name }}</option>
+                                <option value="{{ $brand->id }}"
+                                    {{ old('brand_id') == $brand->id ? 'selected' : '' }}>{{ $brand->name }} </option>
                             @endforeach
                         </x-select>
                     </div>
                 </div>
 
                 <div class="mt-2">
-                    <h1 class="text-lg font-bold">Main Image</h1>
-                    <x-input type="file" name="img" class="w-full block" accept="image/*" />
+                    <h1 class="text-lg font-bold">Main Image<span class=text-red-600>*</span></h1>
+                    <x-input type="file" name="img" class="w-full block" accept="image/*" required />
                 </div>
 
                 <div class="mt-2">
-                    <h1 class="text-lg font-bold">Gallery</h1>
-                    <x-input type="file" name="galleries[]" class="w-full block" accept="image/*" multiple />
+                    <h1 class="text-lg font-bold">Gallery<span class=text-red-600>*</span></h1>
+                    <x-input type="file" name="galleries[]" class="w-full block" accept="image/*" required
+                        multiple />
                 </div>
 
             </div>
 
             <div class="border p-6 mt-2">
                 <div>
-                    <h1 class="text-lg font-bold">Network</h1>
+                    <h1 class="text-lg font-bold">Network<span class=text-red-600>*</span></h1>
                     <h2>Technology</h2>
-                    <div class="flex space-x-4 mt-2" x-data='{
+                    <div class="flex space-x-4 mt-2"
+                        x-data='{
                         networks: @json($networks)
                     }'>
 
                         <template x-for="(network, index) in networks" :key="index">
                             <div class="flex space-x-2">
-                                <x-input type="checkbox" x-bind:value="network" x-bind:id="network" name="networks[]" />
+                                <x-input type="checkbox" x-bind:value="network" x-bind:id="network"
+                                    name="networks[]" />
                                 <x-label x-text="network" x-bind:for="network"></x-label>
                             </div>
                         </template>
@@ -57,19 +62,23 @@
                 <h1 class="text-lg font-bold">Body</h1>
                 <div class="grid grid-cols-2 gap-8">
                     <div>
-                        <h2 class="mt-2">Dimensions</h2>
+                        <h2 class="mt-2">Dimensions<span class=text-red-600>*</span></h2>
                         <div class="flex space-x-2 items-center">
-                            <x-input type="number" step="0.1" min="0" class="w-24 block text-sm" name="length" value="{{ old('length') }}" />
+                            <x-input type="number" step="0.1" min="0" class="w-24 block text-sm"
+                                name="length" value="{{ old('length') }}" required />
                             <span>x</span>
-                            <x-input type="number" step="0.1" min="0" class="w-24 block text-sm" name="width" value="{{ old('width') }}" />
+                            <x-input type="number" step="0.1" min="0" class="w-24 block text-sm"
+                                name="width" value="{{ old('width') }}" required />
                             <span>x</span>
-                            <x-input type="number" step="0.1" min="0" class="w-24 block text-sm" name="thickness" value="{{ old('thickness') }}" />
+                            <x-input type="number" step="0.1" min="0" class="w-24 block text-sm"
+                                name="thickness" value="{{ old('thickness') }}" required />
                             <span>mm</span>
                         </div>
 
                         <div class="mt-2">
-                            <h2>Weight</h2>
-                            <x-input type="number" step="0.1" min="0" name="weight" class="text-sm" value="{{ old('weight') }}"></x-input>
+                            <h2>Weight<span class=text-red-600>*</span></h2>
+                            <x-input type="number" step="0.1" min="0" name="weight" class="text-sm"
+                                value="{{ old('weight') }}" required></x-input>
                             <span>g</span>
                         </div>
 
@@ -78,15 +87,20 @@
                             <div>
                                 <div class="grid grid-cols-3 gap-4 mt-2 items-center">
                                     <span class="text-sm">Front Material</span>
-                                    <x-input type="text" name="front_material" class="w-full block text-sm col-span-2" value="{{ old('front_material') }}"></x-input>
+                                    <x-input type="text" name="front_material"
+                                        class="w-full block text-sm col-span-2" value="{{ old('front_material') }}">
+                                    </x-input>
                                 </div>
                                 <div class="grid grid-cols-3 gap-4 mt-2 items-center">
                                     <span class="text-sm">Back Material</span>
-                                    <x-input type="text" name="back_material" class="w-full block text-sm col-span-2" value="{{ old('back_material') }}"></x-input>
+                                    <x-input type="text" name="back_material" class="w-full block text-sm col-span-2"
+                                        value="{{ old('back_material') }}"></x-input>
                                 </div>
                                 <div class="grid grid-cols-3 gap-4 mt-2 items-center">
                                     <span class="text-sm">Frame Material</span>
-                                    <x-input type="text" name="frame_material" class="w-full block text-sm col-span-2" value="{{ old('frame_material') }}"></x-input>
+                                    <x-input type="text" name="frame_material"
+                                        class="w-full block text-sm col-span-2" value="{{ old('frame_material') }}">
+                                    </x-input>
                                 </div>
                             </div>
                         </div>
@@ -94,14 +108,16 @@
                         <div class="mt-2">
                             <h2 class="text-lg font-bold">Body Additional Description</h2>
                             <div>
-                                <x-input type="text" name="body_description" class="w-full block text-sm col-span-2" value="{{ old('body_description') }}"></x-input>
+                                <x-input type="text" name="body_description" class="w-full block text-sm col-span-2"
+                                    value="{{ old('body_description') }}"></x-input>
                             </div>
                         </div>
                     </div>
 
                     <div>
-                        <h2 class="text-lg font-bold">SIM</h2>
-                        <div x-data='{
+                        <h2 class="text-lg font-bold">SIM<span class=text-red-600>*</span></h2>
+                        <div
+                            x-data='{
                             multiple: 1,
                             multiples: @json($multiples),
                             sims: @json($sims)
@@ -115,7 +131,8 @@
                                 <template x-for="i in multiple">
                                     <div class="grid grid-cols-3 gap-4 mt-2 items-center">
                                         <span class="text-sm" x-text="`SIM` + i + `: `"></span>
-                                        <x-select name="sims[]" id="" class="w-full block col-span-2 text-sm">
+                                        <x-select name="sims[]" id=""
+                                            class="w-full block col-span-2 text-sm">
                                             <template x-for="(sim, index) in sims" :key="index">
                                                 <option x-bind:value="sims[index]" x-text="sim"></option>
                                             </template>
@@ -133,7 +150,7 @@
                 <h1 class="text-lg font-bold">Display</h1>
                 <div class="grid grid-rows-2 grid-flow-col gap-4">
                     <div>
-                        <h2>Type</h2>
+                        <h2>Type<span class=text-red-600>*</span></h2>
                         <x-select name="display_type" id="" class="w-full block text-sm">
                             @foreach ($types as $type)
                                 <option value="{{ $type }}">{{ $type }}</option>
@@ -142,23 +159,28 @@
                     </div>
 
                     <div>
-                        <h2>Size</h2>
-                        <x-input type="text" name="size" class="text-sm" value="{{ old('size') }}"></x-input>
+                        <h2>Size<span class=text-red-600>*</span></h2>
+                        <x-input type="text" name="size" class="text-sm" value="{{ old('size') }}"
+                            required>
+                        </x-input>
                         <span>in</span>
                     </div>
 
                     <div>
 
-                        <h2>Screen Dimensions <span class="italic text-sm">(width x height)</span></h2>
+                        <h2>Screen Dimensions <span class="italic text-sm">(width x height)</span><span
+                                class=text-red-600>*</span></h2>
 
-                        <x-input type="number" name="display_width" class=" w-40 text-sm" value="{{ old('display_width') }}"></x-input>
+                        <x-input type="number" name="display_width" class=" w-40 text-sm"
+                            value="{{ old('display_width') }}" required></x-input>
                         <span>x</span>
-                        <x-input type="number" name="display_height" class=" w-40 text-sm" value="{{ old('display_height') }}"></x-input>
+                        <x-input type="number" name="display_height" class=" w-40 text-sm"
+                            value="{{ old('display_height') }}" required></x-input>
                         <span>pixels</span>
                     </div>
 
                     <div>
-                        <h2>Resolution</h2>
+                        <h2>Resolution<span class=text-red-600>*</span></h2>
                         <x-select name="resolution" id="" class="w-full block text-sm">
                             @foreach ($resolutions as $i => $resolution)
                                 <option value="{{ $i }}">{{ $resolution }}</option>
@@ -170,7 +192,10 @@
                 <div class="mt-2">
                     <h2 class="text-lg font-bold">Display Additional Description</h2>
                     <div>
-                        <x-input type="text" name="display_description" class="w-full block text-sm col-span-2" value="{{ old('display_description') }}" placeholder="AMOLED, Corning Gorilla Glass 5, 3.26 inches, 382 x 720 pixels, 250 PPI, 800 nits (HBM), 900 nits (peak)"></x-input>
+                        <x-input type="text" name="display_description" class="w-full block text-sm col-span-2"
+                            value="{{ old('display_description') }}"
+                            placeholder="AMOLED, Corning Gorilla Glass 5, 3.26 inches, 382 x 720 pixels, 250 PPI, 800 nits (HBM), 900 nits (peak)">
+                        </x-input>
                     </div>
                 </div>
             </div>
@@ -181,8 +206,9 @@
 
 
                     <div>
-                        <h2>OS</h2>
-                        <x-select name="" id="" x-model="selectedOs" x-on:change="getVersions()" class="w-full block text-sm">
+                        <h2>OS<span class=text-red-600>*</span></h2>
+                        <x-select name="" id="" x-model="selectedOs" x-on:change="getVersions()"
+                            required class="w-full block text-sm">
                             <option value="" hidden>Select OS</option>
                             <template x-for="(os, index) in operatingSystems" :key="index">
                                 <option :value="os.id" x-text="os.name"></option>
@@ -191,8 +217,9 @@
                     </div>
 
                     <div>
-                        <h2>OS Version</h2>
-                        <x-select name="operating_system_version_id" id="" x-model="selectedVersion" class="w-full block text-sm">
+                        <h2>OS Version<span class=text-red-600>*</span></h2>
+                        <x-select name="operating_system_version_id" id="" x-model="selectedVersion"
+                            required class="w-full block text-sm">
                             <option value="">Select OS</option>
                             <template x-for="(version, index) in versions" :key="index">
                                 <option :value="version.id" x-text="version.name"></option>
@@ -202,8 +229,8 @@
 
 
                     <div>
-                        <h2>Chipset</h2>
-                        <x-select name="chipset_id" id="" class="w-full block text-sm">
+                        <h2>Chipset<span class=text-red-600>*</span></h2>
+                        <x-select name="chipset_id" id="" required class="w-full block text-sm">
                             @foreach ($chipsets as $chipset)
                                 <option value="{{ $chipset->id }}">{{ $chipset->name }}</option>
                             @endforeach
@@ -217,37 +244,40 @@
                 <h1 class="text-lg font-bold">Memory</h1>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <h2>Card Slot</h2>
-                        <x-select name="card_slot" id="" class="text-sm">
+                        <h2>Card Slot<span class=text-red-600>*</span></h2>
+                        <x-select name="card_slot" id="" required class="text-sm">
                             <option value="0">No</option>
                             <option value="1">Yes</option>
                         </x-select>
                     </div>
 
                     <div x-data="{
-                        variants: [{ram: '1',storage: '1',},],
+                        variants: [{ ram: '1', storage: '1', }, ],
                         addVariant() {
-                            this.variants.push({ ram: '1', storage: '1',})
+                            this.variants.push({ ram: '1', storage: '1', })
                         },
-                        deleteVariant(index){
+                        deleteVariant(index) {
                             this.variants.splice(index, 1)
                         }
-                    }" >
-                    <div class="flex space-x-2 items-center">
+                    }">
+                        <div class="flex space-x-2 items-center">
 
-                        <h2 class="">Variants</h2>
+                            <h2 class="">Variants<span class=text-red-600>*</span></h2>
 
-                        <div>
-                            <button type="button" class="text-xs bg-green-500 hover:bg-green-700 h-7 w-7 rounded text-white" @click="addVariant">+</button>
+                            <div>
+                                <button type="button"
+                                    class="text-xs bg-green-500 hover:bg-green-700 h-7 w-7 rounded text-white"
+                                    @click="addVariant">+</button>
+                            </div>
                         </div>
-                    </div>
 
                         <template x-for="(variant, variantIndex) in variants" :key="variantIndex">
                             <div class="grid grid-cols-3 gap-4 items-center">
                                 <div>
-                                    <h2 class="text-sm">RAM</h2>
+                                    <h2 class="text-sm">RAM<span class=text-red-600>*</span></h2>
                                     <div class="flex items-center space-x-2">
-                                        <x-select id="" x-bind:name="`variants[`+ variantIndex +`][ram]`" class="w-40 text-sm" x-model="variant.ram">
+                                        <x-select id="" x-bind:name="`variants[` + variantIndex + `][ram]`"
+                                            class="w-40 text-sm" x-model="variant.ram">
                                             @foreach ($rams as $ram)
                                                 <option value="{{ $ram }}">{{ $ram }}</option>
                                             @endforeach
@@ -257,9 +287,11 @@
 
                                 </div>
                                 <div>
-                                    <h2 class="text-sm">Storage</h2>
+                                    <h2 class="text-sm">Storage<span class=text-red-600>*</span></h2>
                                     <div class="flex items-center space-x-2">
-                                        <x-select id="" x-bind:name="`variants[`+ variantIndex +`][storage]`" class="w-40 text-sm" x-model="variant.storage">
+                                        <x-select id=""
+                                            x-bind:name="`variants[` + variantIndex + `][storage]`"
+                                            class="w-40 text-sm" x-model="variant.storage">
                                             @foreach ($storages as $storage)
                                                 <option value="{{ $storage }}">{{ $storage }}</option>
                                             @endforeach
@@ -271,7 +303,9 @@
                                 </div>
 
                                 <div x-show="variants.length > 1">
-                                    <button type="button" class="text-xs bg-red-500 hover:bg-red-700 h-7 w-7 text-center rounded text-white" @click="deleteVariant(variantIndex)">-</button>
+                                    <button type="button"
+                                        class="text-xs bg-red-500 hover:bg-red-700 h-7 w-7 text-center rounded text-white"
+                                        @click="deleteVariant(variantIndex)">-</button>
                                 </div>
                             </div>
 
@@ -288,17 +322,17 @@
                 <div>
                     <div x-data="{
                         cameras: {{ old('camera_count') ?? 1 }},
-                        camera_resolutions: [ [] ],
-                    }" x-init="
-
-                        $watch('cameras', function () {
-                            camera_resolutions = Array(cameras).fill('')
-                        })
-                    " class="grid grid-cols-2 gap-4">
+                        camera_resolutions: [
+                            []
+                        ],
+                    }" x-init="$watch('cameras', function() {
+                        camera_resolutions = Array(cameras).fill('')
+                    })" class="grid grid-cols-2 gap-4">
                         <div>
                             <div class="flex space-x-2 items-center">
-                                <h2>Cameras: </h2>
-                                <x-select name="camera_count" id="" x-model.number="cameras" class="text-sm" >
+                                <h2>Cameras<span class=text-red-600>*</span>: </h2>
+                                <x-select name="camera_count" id="" x-model.number="cameras"
+                                    class="text-sm">
                                     <template x-for="i in 5">
                                         <option :value="i" x-text="i"></option>
                                     </template>
@@ -306,11 +340,14 @@
                             </div>
 
                             <div>
-                                <template x-for="(camera_resolution, index) in camera_resolutions" :key="index">
+                                <template x-for="(camera_resolution, index) in camera_resolutions"
+                                    :key="index">
                                     <div class="mt-2">
                                         <div class="flex space-x-4 items-center">
-                                            <h2>Resolution (in MP): </h2>
-                                            <x-input type="text" name="camera_resolutions[]" x-model="camera_resolution" class="text-sm col-span-2"></x-input>
+                                            <h2>Resolution (in MP)<span class=text-red-600>*</span>: </h2>
+                                            <x-input type="text" name="camera_resolutions[]"
+                                                x-model="camera_resolution" class="text-sm col-span-2" required>
+                                            </x-input>
                                         </div>
                                     </div>
                                 </template>
@@ -319,8 +356,9 @@
 
                         <div>
                             <div>
-                                <h2>Videos</h2>
-                                <x-input type="text" class="w-full block" name="video_quality" placeholder="4K@30fps,1080p@30/60/90/120fps"></x-input>
+                                <h2>Videos<span class=text-red-600>*</span></h2>
+                                <x-input type="text" class="w-full block" name="video_quality"
+                                    placeholder="4K@30fps,1080p@30/60/90/120fps" required></x-input>
                                 <div class="text-xs">Use comma to separate</div>
                             </div>
                         </div>
@@ -329,7 +367,8 @@
                 <div class="mt-2">
                     <h2 class="text-lg font-bold">Camera Additional Description</h2>
                     <div>
-                        <x-input type="text" name="camera_description" class="w-full block text-sm col-span-2" value="{{ old('camera_description') }}" placeholder="LED flash, HDR, panorama"></x-input>
+                        <x-input type="text" name="camera_description" class="w-full block text-sm col-span-2"
+                            value="{{ old('camera_description') }}" placeholder="LED flash, HDR, panorama"></x-input>
                     </div>
                 </div>
             </div>
@@ -340,19 +379,18 @@
                 <h1 class="text-lg font-bold">Selfie Camera</h1>
                 <div x-data="{
                     cameras: {{ old('selfie_camera_count') ?? 1 }},
-                    selfie_camera_resolutions: [ [] ],
-                }" x-init="
-
-
-                    $watch('cameras', function () {
-                        selfie_camera_resolutions = Array(cameras).fill('');
-                    })
-                ">
+                    selfie_camera_resolutions: [
+                        []
+                    ],
+                }" x-init="$watch('cameras', function() {
+                    selfie_camera_resolutions = Array(cameras).fill('');
+                })">
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <div class="flex space-x-2 items-center">
-                                <h2>Cameras: </h2>
-                                <x-select name="selfie_camera_count" id="" x-model.number="cameras" class="text-sm">
+                                <h2>Cameras<span class=text-red-600>*</span>: </h2>
+                                <x-select name="selfie_camera_count" id="" x-model.number="cameras" required
+                                    class="text-sm">
                                     <template x-for="i in 2">
                                         <option :value="i" x-text="i"></option>
                                     </template>
@@ -361,17 +399,20 @@
 
                             <div class="flex space-x-2 mt-2">
 
-                                <x-input type="checkbox" value="1" id="pop-up" name="selfie_pop_up" :checked="old('selfie_pop_up') " />
+                                <x-input type="checkbox" value="1" id="pop-up" name="selfie_pop_up"
+                                    :checked="old('selfie_pop_up')" />
                                 <x-label value="Pop-up Camera" for="pop-up"></x-label>
                             </div>
                         </div>
 
                         <div>
-                            <template x-for="(selfie_camera_resolution, index) in selfie_camera_resolutions" :key="index">
+                            <template x-for="(selfie_camera_resolution, index) in selfie_camera_resolutions"
+                                :key="index">
                                 <div class="flex space-x-4 items-center mt-2">
 
-                                    <h2>Resolution (in MP): </h2>
-                                    <x-input type="text" name="selfie_camera_resolutions[]" x-model="selfie_camera_resolution" class="text-sm"></x-input>
+                                    <h2>Resolution (in MP)<span class=text-red-600>*</span>: </h2>
+                                    <x-input type="text" name="selfie_camera_resolutions[]"
+                                        x-model="selfie_camera_resolution" class="text-sm" required></x-input>
 
                                 </div>
                             </template>
@@ -382,7 +423,9 @@
                 <div class="mt-2">
                     <h2 class="text-lg font-bold">Selfie Camera Additional Description</h2>
                     <div>
-                        <x-input type="text" name="selfie_cameras_description" class="w-full block text-sm col-span-2" value="{{ old('selfie_cameras_description') }}" placeholder="Panorama, 1080p@30fps"></x-input>
+                        <x-input type="text" name="selfie_cameras_description"
+                            class="w-full block text-sm col-span-2" value="{{ old('selfie_cameras_description') }}"
+                            placeholder="Panorama, 1080p@30fps"></x-input>
                     </div>
                 </div>
 
@@ -392,16 +435,16 @@
                 <h1 class="text-lg font-bold">Sound</h1>
                 <div class="grid grid-cols-2">
                     <div>
-                        <h2>Loud Speaker</h2>
-                        <x-select name="loud_speaker" id="" class="text-sm">
+                        <h2>Loud Speaker<span class=text-red-600>*</span></h2>
+                        <x-select name="loud_speaker" id="" required class="text-sm">
                             <option value="1" {{ old('loud_speaker') == 1 ? 'selected' : '' }}>Yes</option>
                             <option value="0" {{ old('loud_speaker') == 0 ? 'selected' : '' }}>No</option>
                         </x-select>
                     </div>
 
                     <div>
-                        <h2>3.5mm jack</h2>
-                        <x-select name="jack" id="" class="text-sm">
+                        <h2>3.5mm jack<span class=text-red-600>*</span></h2>
+                        <x-select name="jack" id="" required class="text-sm">
                             <option value="1" {{ old('jack') == 1 ? 'selected' : '' }}>Yes</option>
                             <option value="0" {{ old('jack') == 0 ? 'selected' : '' }}>No</option>
                         </x-select>
@@ -414,20 +457,23 @@
 
                 <div class="grid grid-cols-4 gap-4">
                     <div>
-                        <h2>Capacity (in mAh): </h2>
-                        <x-input type="number" step="0.1" min="0" name="battery_capacity" class="text-sm" value="{{ old('battery_capacity') }}"></x-input>
+                        <h2>Capacity (in mAh)<span class=text-red-600>*</span>: </h2>
+                        <x-input type="number" step="0.1" min="0" name="battery_capacity"
+                            class="text-sm" value="{{ old('battery_capacity') }}"></x-input>
                     </div>
                     <div>
-                        <h2>Wired Charging Power (in W): </h2>
-                        <x-input type="number" step="0.1" min="0" name="wired_charging_power" class="text-sm" value="{{ old('wired_charging_power') }}"></x-input>
+                        <h2>Wired Charging Power (in W)<span class=text-red-600>*</span>: </h2>
+                        <x-input type="number" step="0.1" min="0" name="wired_charging_power"
+                            class="text-sm" value="{{ old('wired_charging_power') }}" required></x-input>
                     </div>
                     <div>
-                        <h2>Wireless Charging Power (in W): </h2>
-                        <x-input type="number" step="0.1" min="0" name="wireless_charging_power" class="text-sm" value="{{ old('wireless_charging_power') }}"></x-input>
+                        <h2>Wireless Charging Power (in W)<span class=text-red-600>*</span>: </h2>
+                        <x-input type="number" step="0.1" min="0" name="wireless_charging_power"
+                            class="text-sm" value="{{ old('wireless_charging_power') }}" required></x-input>
                     </div>
                     <div>
-                        <h2>Removable</h2>
-                        <x-select name="removable_battery" id="" class="w-full block text-sm">
+                        <h2>Removable<span class=text-red-600>*</span></h2>
+                        <x-select name="removable_battery" id="" required class="w-full block text-sm">
                             <option value="0">No</option>
                             <option value="1">Yes</option>
                         </x-select>
@@ -436,15 +482,16 @@
                 <div class="mt-2">
                     <h2 class="text-lg font-bold">Battery Additional Description</h2>
                     <div>
-                        <x-input type="text" name="battery_description" class="w-full block text-sm col-span-2" value="{{ old('battery_description') }}"></x-input>
+                        <x-input type="text" name="battery_description" class="w-full block text-sm col-span-2"
+                            value="{{ old('battery_description') }}"></x-input>
                     </div>
                 </div>
             </div>
 
             <div class="border p-6 mt-2" x-data="{
-                features: [  ],
+                features: [],
                 addFeature() {
-                    this.features.push({key: '', value: ''})
+                    this.features.push({ key: '', value: '' })
                 },
                 deleteFeature(index) {
                     this.features.splice(index, 1)
@@ -453,24 +500,31 @@
                 <div class="flex space-x-2 items-end">
                     <h1 class="text-lg font-bold">Features</h1>
                     <div>
-                        <button type="button" class="text-xs bg-green-500 hover:bg-green-700 h-7 w-7 rounded text-white" @click="addFeature">+</button>
+                        <button type="button"
+                            class="text-xs bg-green-500 hover:bg-green-700 h-7 w-7 rounded text-white"
+                            @click="addFeature">+</button>
                     </div>
                 </div>
                 <template x-for="(feature, index) in features" :key="index">
                     <div class="flex space-x-2 mt-2">
-                        <x-input type="text" x-bind:name="`features[`+ index +`][key]`" placeholder="Sensors"></x-input>
-                        <x-input type="text" x-bind:name="`features[`+ index +`][value]`" placeholder="Fingerprint (side-mounted), accelerometer, dual gyro, dual proximity, compass, color spectrum" class="w-full"></x-input>
+                        <x-input type="text" x-bind:name="`features[` + index + `][key]`" placeholder="Sensors">
+                        </x-input>
+                        <x-input type="text" x-bind:name="`features[` + index + `][value]`"
+                            placeholder="Fingerprint (side-mounted), accelerometer, dual gyro, dual proximity, compass, color spectrum"
+                            class="w-full"></x-input>
                         <div>
-                            <button type="button" class="text-xs bg-red-500 hover:bg-red-700 h-7 w-7 text-center rounded text-white" @click="deleteFeature(index)">-</button>
+                            <button type="button"
+                                class="text-xs bg-red-500 hover:bg-red-700 h-7 w-7 text-center rounded text-white"
+                                @click="deleteFeature(index)">-</button>
                         </div>
                     </div>
                 </template>
             </div>
 
             <div class="border p-6 mt-2" x-data="{
-                miscs: [  ],
+                miscs: [],
                 addMisc() {
-                    this.miscs.push({key: '', value: ''})
+                    this.miscs.push({ key: '', value: '' })
                 },
                 deleteMisc(index) {
                     this.miscs.splice(index, 1)
@@ -479,21 +533,27 @@
                 <div class="flex space-x-2 items-end">
                     <h1 class="text-lg font-bold">Misc</h1>
                     <div>
-                        <button type="button" class="text-xs bg-green-500 hover:bg-green-700 h-7 w-7 text-center rounded text-white" @click="addMisc">+</button>
+                        <button type="button"
+                            class="text-xs bg-green-500 hover:bg-green-700 h-7 w-7 text-center rounded text-white"
+                            @click="addMisc">+</button>
                     </div>
                 </div>
                 <template x-for="(misc, index) in miscs" :key="index">
                     <div class="flex space-x-2 mt-2 items-center">
-                        <x-input type="text" x-bind:name="`miscs[`+ index +`][key]`" placeholder="Colors"></x-input>
-                        <x-input type="text" x-bind:name="`miscs[`+ index +`][value]`" placeholder="Black, Gold, Violet" class="w-full"></x-input>
+                        <x-input type="text" x-bind:name="`miscs[` + index + `][key]`" placeholder="Colors">
+                        </x-input>
+                        <x-input type="text" x-bind:name="`miscs[` + index + `][value]`"
+                            placeholder="Black, Gold, Violet" class="w-full"></x-input>
                         <div>
-                            <button type="button" class="text-xs bg-red-500 hover:bg-red-700 h-7 w-7 text-center rounded text-white" @click="deleteMisc(index)">-</button>
+                            <button type="button"
+                                class="text-xs bg-red-500 hover:bg-red-700 h-7 w-7 text-center rounded text-white"
+                                @click="deleteMisc(index)">-</button>
                         </div>
                     </div>
                 </template>
             </div>
 
-            <div class="border p-6 mt-2" x-data="{ description: ''}">
+            <div class="border p-6 mt-2" x-data="{ description: '' }">
                 <textarea hidden name="description" x-model="description"></textarea>
                 <h1 class="text-lg font-bold">Additional Description</h1>
                 <div contenteditable class="border p-2 " @input="description = $event.target.innerHTML"></div>
@@ -509,8 +569,7 @@
 </x-app-layout>
 
 <script>
-    function os()
-    {
+    function os() {
         return {
             operatingSystems: @json($operatingSystems),
             selectedOs: '',
@@ -518,7 +577,7 @@
             versions: [],
             getVersions() {
                 this.selectedVersion = '',
-                this.versions = this.operatingSystems.filter((e) => e.id == this.selectedOs)[0]['versions']
+                    this.versions = this.operatingSystems.filter((e) => e.id == this.selectedOs)[0]['versions']
             }
         }
     }
