@@ -1,7 +1,8 @@
 <x-app-layout>
 
     <div class="grid grid-cols-4 gap-4 text-center  ">
-        <a href="" class="border rounded-lg place-content-center flex flex-col h-24 hover:bg-slate-600">
+        <a href="{{ route('admin.users.index') }}"
+            class="border rounded-lg place-content-center flex flex-col h-24 hover:bg-slate-600">
             Store Owners
             <div class="font-bold text-2xl "> {{ $vendorInformations->count() }} </div>
         </a>
