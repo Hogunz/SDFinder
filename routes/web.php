@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Vendor\VendorInformation;
 use App\Http\Controllers\FinderController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\PhoneController;
 use App\Http\Controllers\Admin\LaptopController;
@@ -31,7 +32,6 @@ use App\Http\Controllers\Vendor\LaptopController as VendorLaptopController;
 
 Route::get('/', [DashboardController::class, 'welcome']);
 Route::get('/brands', [DashboardController::class, 'brands']);
-
 Route::get('/mobile-finder', [FinderController::class, 'phoneFinder'])->name('mobile.finder');
 Route::get('/mobile-finder-2', [FinderController::class, 'phoneFinderOld'])->name('mobile.finder.old');
 Route::get('/mobile-finder/view-2', [FinderController::class, 'viewPhones'])->name('mobile.viewPhones');
@@ -62,7 +62,7 @@ Route::name('vendor.')->prefix('vendor/')->middleware(['auth', 'role:vendor'])->
 
 Route::name('admin.')->prefix('admin/')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/dashboard', [VendorInformationController::class, 'dashboard'])->name('dashboard');
-
+    Route::resource('users', UserController::class);
     //Phones
     Route::resource('brands', BrandController::class);
     Route::resource('chipsets', ChipsetController::class);

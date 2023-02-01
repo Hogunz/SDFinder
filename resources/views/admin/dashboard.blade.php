@@ -1,22 +1,25 @@
 <x-app-layout>
 
-    <div class="grid grid-cols-4 gap-4 text-center">
-        <div class="border rounded-lg place-content-center flex flex-col h-24">
+    <div class="grid grid-cols-4 gap-4 text-center  ">
+        <a href="{{ route('admin.users.index') }}"
+            class="border rounded-lg place-content-center flex flex-col h-24 hover:bg-slate-600">
             Store Owners
-            <div class="font-bold text-2xl"> {{ $vendorInformations->count() }} </div>
-        </div>
-        <div class="border rounded-lg place-content-center flex flex-col h-24">
+            <div class="font-bold text-2xl "> {{ $vendorInformations->count() }} </div>
+        </a>
+        <a href="" class="border rounded-lg place-content-center flex flex-col h-24 hover:bg-slate-600">
             Number of Visits
             <div class="font-bold text-2xl">{{ $visit->visits }}</div>
-        </div>
-        <div class="border rounded-lg place-content-center flex flex-col h-24">
+        </a>
+        <a href="{{ route('admin.phones.index') }}"
+            class="border rounded-lg place-content-center flex flex-col h-24 hover:bg-slate-600">
             Number of Phones
             <div class="font-bold text-2xl">{{ $phones }}</div>
-        </div>
-        <div class="border rounded-lg place-content-center flex flex-col h-24">
+        </a>
+        <a href="{{ route('admin.laptops.index') }}"
+            class="border rounded-lg place-content-center flex flex-col h-24 hover:bg-slate-600">
             Number of Laptops
             <div class="font-bold text-2xl">{{ $laptops }}</div>
-        </div>
+        </a>
 
     </div>
 

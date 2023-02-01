@@ -86,9 +86,8 @@ class BrandController extends Controller
             'name' => 'required',
         ]);
 
-        if($request->file('image'))
-        {
-            if(Storage::exists($brand->image))
+        if ($request->file('image')) {
+            if (Storage::exists($brand->image))
                 Storage::delete($brand->image);
 
             $path = $request->file('image')->store('brands', 'public');
@@ -115,10 +114,11 @@ class BrandController extends Controller
         $brand->delete();
         return redirect()->route('admin.brands.index')->with('status', 'Brand Successfully Updated');
     }
-    public function restore($id){
+    public function restore($id)
+    {
         Brand::withTrashed()
-        ->where('id', $id)
-        ->restore();
-    return redirect()->route('admin.brands.index');
+            ->where('id', $id)
+            ->restore();
+        return redirect()->route('admin.brands.index');
     }
 }
