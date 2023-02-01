@@ -24,16 +24,11 @@ class UsersSeeder extends Seeder
         ]);
 
         $vendorUser = User::create([
-            'name' => 'vendor',
+            'name' => 'Octagon',
             'email' => 'vendor@gmail.com',
             'password' => Hash::make('vendor'),
         ]);
 
-        // $user = User::create([
-        //     'name' => 'user',
-        //     'email' => 'user@gmail.com',
-        //     'password' => Hash::make('user'),
-        // ]);
 
         //Create roles
         Role::create(['name' => 'admin']);
