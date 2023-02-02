@@ -42,6 +42,11 @@
                                         <x-button type="button">Restore</x-button>
                                     </a>
                                 @endif
+                                <form action="{{ route('admin.chipsets.forceDelete', $chipset) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <x-button type="submit">Delete Permanently</x-button>
+                                </form>
                             </td>
                         </tr>
 

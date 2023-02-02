@@ -39,6 +39,12 @@
                                         <x-button type="button">Restore</x-button>
                                     </a>
                                 @endif
+                                <form action="{{ route('admin.graphics_cards.forceDelete', $graphicsCard) }}"
+                                    method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <x-button type="submit">Delete Permanently</x-button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

@@ -1,4 +1,4 @@
-<div class="bg-slate-300 p-6">
+<div class="bg-slate-300 border-none border-transparent mb-2 p-6">
 
     <div>
         <h2 class="text-lg font-semibold">General</h2>
@@ -31,7 +31,8 @@
 
     <div>
         <h2 class="text-lg font-semibold">Networks</h2>
-        <div class="flex space-x-4 items-center">
+        <h3>A node in the wireless mesh network that serves as a network device.</h3>
+        <div class="mt-2 flex space-x-4 items-center">
             @foreach ($networks as $i => $network)
                 <div class="flex space-x-2">
                     <x-input type="checkbox" :id="'network' . $i" :value="$network" name="networks[]" />
@@ -45,7 +46,9 @@
 
     <div>
         <h2 class="text-lg font-semibold">Sim</h2>
-
+        <h3>A SIM (Subscriber Identity Module) is a small, removable chip used in mobile devices to store
+            information<br>
+            required to identify and authenticate a subscriber on a mobile network. </h3>
         <div class="grid grid-cols-2 gap-4">
             <div>
                 <h4>Sizes: </h4>
@@ -81,7 +84,9 @@
 
     <div>
         <h2 class="text-lg font-semibold">Platforms</h2>
-
+        <h3>In the context of devices, a platform refers to the underlying hardware and software components that
+            support<br>
+            the functionality and capabilities of the device. </h3>
         <div x-data="os">
             <div class="grid grid-cols-4 gap-4">
                 <div>
@@ -120,8 +125,8 @@
                     <div class="border flex flex-col h-full px-4 py-2 max-h-24 overflow-y-auto">
                         @foreach ($chipsets as $chipset)
                             <div class="flex space-x-2">
-                                <x-input type="checkbox" value="{{ $chipset->id }}" id="{{ 'chipset' . $chipset->id }}"
-                                    name="chipsets[]"></x-input>
+                                <x-input type="checkbox" value="{{ $chipset->id }}"
+                                    id="{{ 'chipset' . $chipset->id }}" name="chipsets[]"></x-input>
                                 <x-label for="{{ 'chipset' . $chipset->id }}" :value="$chipset->name"></x-label>
                             </div>
                         @endforeach
@@ -149,6 +154,7 @@
 
     <div>
         <h2 class="text-lg font-semibold">Memory</h2>
+        <h3>Memory in a device refers to the component that stores and retrieves digital information.</h3>
         <div class="grid grid-cols-3 gap-4">
             <div>
                 <h4>RAM</h4>
@@ -194,7 +200,8 @@
 
     <div>
         <h2 class="text-lg font-semibold">Display</h2>
-
+        <h3>The display in a device is the component that shows visual information, such as text, images, and video.
+        </h3>
         <div class="grid grid-cols-2 gap-4">
             <div>
                 <h4>Technology</h4>
@@ -229,7 +236,7 @@
 
     <div>
         <h2 class="text-lg font-semibold">Main Camera</h2>
-
+        <h3>The main camera in a device is the primary camera used to capture still images and video.</h3>
         <div class="grid grid-cols-3 gap-4">
             <div>
                 <h4>Resolution</h4>
@@ -276,7 +283,8 @@
 
     <div>
         <h2 class="text-lg font-semibold">Selfie Camera</h2>
-
+        <h3>A selfie camera, also known as a front-facing camera, is a secondary camera in a device that is used to<br>
+            capture images and video of the user. </h3>
         <div class="grid grid-cols-2 gap-4">
             <div>
                 <h4>Resolution</h4>
@@ -312,4 +320,3 @@
     </div>
 
 </div>
-

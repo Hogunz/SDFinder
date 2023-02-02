@@ -102,4 +102,10 @@ class OperatingSystemController extends Controller
             ->restore();
         return redirect()->route('admin.os.index');
     }
+    public function forceDelete(OperatingSystem $operatingSystem)
+    {
+
+        $operatingSystem->forceDelete();
+        return back()->with('status', 'Operating system successfully deleted');
+    }
 }

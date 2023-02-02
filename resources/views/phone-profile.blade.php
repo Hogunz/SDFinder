@@ -20,35 +20,35 @@
 
 
 
-<!-- Container for demo purpose -->
-<div>
+    <!-- Container for demo purpose -->
+    <div>
 
-    <!-- Section: Design Block -->
-    <section class="mb-12 p-8 bg-white">
-      <div class="px-6 md:px-12 text-center lg:text-left">
-        <div class="container mx-auto xl:px-32">
-          <div class="grid lg:grid-cols-2 gap-12 flex items-center">
-            <div class="mt-12 lg:mt-0">
-              <h1 class="text-5xl md:text-6xl xl:text-5xl font-bold tracking-tight mb-12 text-left">{{ $phone->name }}</h1>
-              <p class="mt-3 text-base  text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0 break-words">
-                {!! $phone->description !!}
-            </p>
+        <!-- Section: Design Block -->
+        <section class="mb-12 p-8 bg-white">
+            <div class="px-6 md:px-12 text-center lg:text-left">
+                <div class="container mx-auto xl:px-32">
+                    <div class="grid lg:grid-cols-2 gap-12 flex items-center">
+                        <div class="mt-12 lg:mt-0">
+                            <h1 class="text-5xl md:text-6xl xl:text-5xl font-bold tracking-tight mb-12 text-left">
+                                {{ $phone->name }}</h1>
+                            <p
+                                class="mt-3 text-base  text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0 break-words">
+                                {!! $phone->description !!}
+                            </p>
+                        </div>
+                        <div class="mb-12 lg:mb-0">
+                            <img src="{{ asset('storage/' . $phone->img) }}"
+                                class="h-56 w-full  bg-no-repeat object-scale-down sm:h-72 md:h-96 lg:h-56 lg:w-full"
+                                alt="" />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="mb-12 lg:mb-0">
-              <img
-                src="{{ asset('storage/'.$phone->img) }}"
-                class="h-56 w-full  bg-no-repeat object-scale-down sm:h-72 md:h-96 lg:h-56 lg:w-full"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Section: Design Block -->
+        </section>
+        <!-- Section: Design Block -->
 
-  </div>
-  <!-- Container for demo purpose -->
+    </div>
+    <!-- Container for demo purpose -->
 
 
 
@@ -101,20 +101,24 @@
                 <p class="my-4 text-lg text-gray-400"><strong
                         class="font-semibold text-gray-900 dark:text-white">Display:</strong> {{ $phone->display }}.</p>
                 <p class="my-4 text-lg text-gray-400"><strong
-                        class="font-semibold text-gray-900 dark:text-white">Chipset:</strong> {{ $phone->chipset->description }}.</p>
+                        class="font-semibold text-gray-900 dark:text-white">Chipset:</strong>
+                    {{ $phone->chipset->description }}.</p>
                 <p class="my-4 text-lg text-gray-400"><strong
                         class="font-semibold text-gray-900 dark:text-white">Memory:</strong> {{ $phone->memory }}.</p>
                 <p class="my-4 text-lg text-gray-400"><strong
-                        class="font-semibold text-gray-900 dark:text-white">OS/Software:</strong> {{ $phone->os }}.</p>
+                        class="font-semibold text-gray-900 dark:text-white">OS/Software:</strong> {{ $phone->os }}.
+                </p>
                 <p class="my-4 text-lg text-gray-400"><strong class="font-semibold text-gray-900 dark:text-white">Rear
                         camera:</strong> {{ $phone->rear_camera }}.</p>
                 <p class="my-4 text-lg text-gray-400"><strong class="font-semibold text-gray-900 dark:text-white">Front
                         camera:</strong> {{ $phone->front_camera }}.
                 </p>
                 <p class="my-4 text-lg text-gray-400"><strong
-                        class="font-semibold text-gray-900 dark:text-white">Battery:</strong> {{ $phone->battery_info }}.</p>
+                        class="font-semibold text-gray-900 dark:text-white">Battery:</strong>
+                    {{ $phone->battery_info }}.</p>
                 <p class=" text-lg text-gray-400"><strong
-                        class="font-semibold text-gray-900 dark:text-white">Misc:</strong> {{ $phone->other_features }}.</p>
+                        class="font-semibold text-gray-900 dark:text-white">Misc:</strong>
+                    {{ $phone->other_features }}.</p>
             </div>
         </div>
     </section>
@@ -123,7 +127,7 @@
         <div class="md:container py-6 px-24 md:mx-auto">
             <h2 class="text-4xl font-extrabold dark:text-white">Reviews</h2>
             <p class="my-4 text-lg text-gray-400">
-                {!! optional($phone->review)->review ?? "No Reviews Yet" !!}
+                {!! optional($phone->review)->review ?? 'No Reviews Yet' !!}
             </p>
         </div>
     </section>
@@ -139,8 +143,7 @@
                     <div class="flex dark:text-white">
                         <div class="mr-4">
                             <img class="shadow sm:w-24 sm:h-24 w-24 h-24  bg-gray-100"
-                                src="{{ asset('storage/'.$shop->vendorInformation->avatar) }}"
-                                alt="Avatar" />
+                                src="{{ asset('storage/' . $shop->vendorInformation->avatar) }}" alt="Avatar" />
                         </div>
                         <div>
                             <p class="text-4xl font-extrabold line-clamp-1">{{ $shop->name }}</p>
@@ -163,7 +166,8 @@
                     </div>
                     <div class="text-center">
                         <div class="tracking-tighter  text-center dark:text-white ">
-                            {{ $shop->pivot->price_string }}
+                            {{ $shop->pivot->price_string }} <br>
+                            Freebies: {{ $shop->pivot->device_description }}
                         </div>
 
                         <a href="{{ route('store.profile', $shop) }}">

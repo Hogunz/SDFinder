@@ -26,7 +26,7 @@ class AddSoftDeleteToChipsetsTable extends Migration
     public function down()
     {
         Schema::table('chipsets', function (Blueprint $table) {
-            $table->softDeletes();
+            $table->dropSoftDeletes();
         });
     }
 }

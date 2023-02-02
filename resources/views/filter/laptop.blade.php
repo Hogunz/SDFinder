@@ -1,4 +1,4 @@
-<div class="bg-slate-300 p-6">
+<div class="bg-slate-300 mb-2 p-6">
     <div>
         <h2 class="text-lg font-semibold">General</h2>
         <div class="w-full mt-2">
@@ -26,10 +26,9 @@
         </div>
     </div>
 
-    <hr class="my-6">
 
     <div>
-        <h2 class="text-lg font-semibold"></h2>
+        <h2 class="text-lg font-semibold">Main Components</h2>
 
         <div class="grid grid-cols-2 gap-4">
             <div>
@@ -39,7 +38,7 @@
                     @foreach ($cpus as $cpu)
                         <div class="flex space-x-2">
                             <x-input type="checkbox" name="cpus[]" value="{{ $cpu->id }}"
-                                id="{{ 'cpu'.$cpu->id }}" />
+                                id="{{ 'cpu' . $cpu->id }}" />
                             <x-label value="{{ $cpu->name }}" for="{{ 'cpu' . $cpu->id }}" />
                         </div>
                     @endforeach
@@ -53,7 +52,7 @@
                     @foreach ($gpus as $gpu)
                         <div class="flex space-x-2">
                             <x-input type="checkbox" name="gpus[]" value="{{ $gpu->id }}"
-                                id="{{ 'gpu'.$gpu->id }}" />
+                                id="{{ 'gpu' . $gpu->id }}" />
                             <x-label value="{{ $gpu->name }}" for="{{ 'gpu' . $gpu->id }}" />
                         </div>
                     @endforeach
@@ -66,6 +65,7 @@
 
     <div>
         <h2 class="text-lg font-semibold">Memory</h2>
+        <h3>Memory in a device refers to the component that stores and retrieves digital information.</h3>
         <div class="grid grid-cols-2 gap-4">
             <div>
                 <h4>RAM</h4>
@@ -100,7 +100,8 @@
 
     <div>
         <h2 class="text-lg font-semibold">Display</h2>
-
+        <h3>The display in a device is the component that shows visual information, such as text, images, and video.
+        </h3>
         <div class="grid grid-cols-2 gap-4">
             <div>
                 <h4>Technology</h4>

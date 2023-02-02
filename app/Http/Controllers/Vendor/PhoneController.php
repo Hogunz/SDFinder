@@ -38,7 +38,7 @@ class PhoneController extends Controller
         $variant = json_decode($request->variant, true);
         // $variant = $request->variant;
 
-        Auth::user()->phones()->attach($request->phone_id, ['variant' => $variant, 'price' => $request->price]);
+        Auth::user()->phones()->attach($request->phone_id, ['variant' => $variant, 'price' => $request->price, 'device_description' => $request->device_description]);
 
         return redirect()->route('vendor.phones.index')->with('status', 'Successfully added phone');
     }

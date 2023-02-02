@@ -33,26 +33,23 @@ class LaptopController extends Controller
         ]);
 
 
-        Auth::user()->laptops()->attach($request->laptop_id, ['price' => $request->price]);
+        Auth::user()->laptops()->attach($request->laptop_id, ['price' => $request->price, 'device_description' => $request->device_description]);
 
         return redirect()->route('vendor.laptops.index')->with('status', 'Successfully added laptop');
     }
     public function edit(Laptop $laptop)
     {
         return view('vendors.laptops.edit', compact('laptop'));
-
     }
     public function update(Request $request, Laptop $laptop)
     {
-       Auth::user()->laptops()->updateExistingPivot($laptop->id, ['price' => $request->price]);
-       return redirect()->route('vendor.laptops.index');
+        Auth::user()->laptops()->updateExistingPivot($laptop->id, ['price' => $request->price]);
+        return redirect()->route('vendor.laptops.index');
     }
 
     public function destroy(Laptop $laptop)
     {
         Auth::user()->laptops()->detach($laptop->id);
         return redirect()->route('vendor.laptops.index');
-
     }
-
 }

@@ -26,7 +26,7 @@ class AddSoftDeleteToOperatingSystemsTable extends Migration
     public function down()
     {
         Schema::table('operating_systems', function (Blueprint $table) {
-            $table->softDeletes();
+            $table->dropSoftDeletes();
         });
     }
 }

@@ -27,7 +27,8 @@ class Phone extends Model
         'misc' => 'array',
     ];
 
-    public function brand(){
+    public function brand()
+    {
         return $this->belongsTo(Brand::class)->withTrashed();
     }
 
@@ -43,7 +44,7 @@ class Phone extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'phone_user')->using(PhoneUser::class)->withPivot(['variant', 'price'])->withTimestamps();
+        return $this->belongsToMany(User::class, 'phone_user')->using(PhoneUser::class)->withPivot(['variant', 'price', 'device_description'])->withTimestamps();
     }
 
     public function review()
@@ -85,9 +86,9 @@ class Phone extends Model
     {
         $text = "";
         $variants = collect($this->variants);
-        foreach($variants as $variant) {
+        foreach ($variants as $variant) {
             $text .= "{$variant['storage']}GB {$variant['ram']}GB";
-            if($variants->last() != $variant)
+            if ($variants->last() != $variant)
                 $text .= ", ";
         }
 
@@ -98,9 +99,9 @@ class Phone extends Model
     {
         $text = "";
         $camera_resolutions = collect($this->camera_resolutions);
-        foreach($camera_resolutions as $back) {
+        foreach ($camera_resolutions as $back) {
             $text .= "{$back}MP";
-            if($camera_resolutions->last() != $back)
+            if ($camera_resolutions->last() != $back)
                 $text .= ", ";
         }
         $text .= " {$this->camera_description}";
@@ -113,9 +114,9 @@ class Phone extends Model
     {
         $text = "";
         $selfie_camera_resolutions = collect($this->selfie_camera_resolutions);
-        foreach($selfie_camera_resolutions as $front) {
+        foreach ($selfie_camera_resolutions as $front) {
             $text .= "{$front}MP";
-            if($selfie_camera_resolutions->last() != $front)
+            if ($selfie_camera_resolutions->last() != $front)
                 $text .= ", ";
         }
         $text .= " {$this->selfie_cameras_description}";
@@ -139,7 +140,7 @@ class Phone extends Model
     {
         $text = "";
         $features = collect($this->features);
-        foreach($features as $feature) {
+        foreach ($features as $feature) {
             $text .= "{$feature['key']}: {$feature['value']}";
         }
 
