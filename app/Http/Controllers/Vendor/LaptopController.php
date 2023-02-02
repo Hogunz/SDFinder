@@ -29,7 +29,7 @@ class LaptopController extends Controller
         $request->validate([
             'brand_id' => ['required'],
             'laptop_id' => ['required'],
-            'price' => ['required', 'numeric', 'min:0'],
+            'price' => ['required', 'numeric', 'min:0', 'max:305254'],
         ]);
 
 

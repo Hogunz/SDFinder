@@ -159,7 +159,9 @@
                     <div>
                         <div class=" font-semibold text-center text-gray-900 dark:text-white">
                             {{ $shop->pivot->price_string }} <br>
-                            Freebies: {{ $shop->pivot->device_description }}
+                            @if ($shop->pivot->device_description)
+                                Freebies: {{ $shop->pivot->device_description }}
+                            @endif
                         </div>
                         <a href="{{ route('store.profile', $shop) }}">
                             <button

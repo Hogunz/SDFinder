@@ -165,10 +165,13 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <div class="tracking-tighter  text-center dark:text-white ">
+                        <div class="tracking-tighter text-center dark:text-white">
                             {{ $shop->pivot->price_string }} <br>
-                            Freebies: {{ $shop->pivot->device_description }}
+                            @if ($shop->pivot->device_description)
+                                Freebies: {{ $shop->pivot->device_description }}
+                            @endif
                         </div>
+
 
                         <a href="{{ route('store.profile', $shop) }}">
                             <button

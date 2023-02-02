@@ -3145,6 +3145,10 @@ input[type="range"]::-ms-fill-lower{
   --tw-text-opacity: 1;
   color: rgb(81 69 205 / var(--tw-text-opacity));
 }
+.text-red-500{
+  --tw-text-opacity: 1;
+  color: rgb(240 82 82 / var(--tw-text-opacity));
+}
 .underline{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
