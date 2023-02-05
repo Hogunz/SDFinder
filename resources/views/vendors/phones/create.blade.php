@@ -37,7 +37,7 @@
                 <div class="mt-2" x-show="phone_id != ''">
                     <x-label for="variant" value="Select Variant" />
                     <x-select name="variant" id="variant" x-model="variant" class="w-full block rounded">
-                        <option value="" hidden>Select Varant</option>
+                        <option value="" hidden>Select Variant</option>
                         <template x-for="(variant, index) in variants" :key="index">
                             <option :value="JSON.stringify(variant)" x-text="variant.ram+` GB,`+variant.storage+` GB`">
                             </option>
@@ -48,6 +48,14 @@
                 <div class="mt-2" x-show="variant != ''">
                     <x-label for="price" value="Price" />
                     <x-input id="price" type="number" step="0.01" name="price" x-model.number="price"
+                        class="w-full block rounded"></x-input>
+                    @if ($errors->has('price'))
+                        <p class="text-red-500 text-xs mt-2">{{ $errors->first('price') }}</p>
+                    @endif
+                </div>
+                <div class="mt-2" x-show="device_description != ''">
+                    <x-label for="device_description" value="Additional Description" />
+                    <x-input id="device_description" type="text" name="device_description"
                         class="w-full block rounded"></x-input>
                 </div>
 

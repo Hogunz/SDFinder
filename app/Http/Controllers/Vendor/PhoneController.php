@@ -31,14 +31,14 @@ class PhoneController extends Controller
             'brand_id' => ['required'],
             'phone_id' => ['required'],
             'variant' => ['required', 'json'],
-            'price' => ['required', 'numeric', 'min:0'],
+            'price' => ['required', 'numeric', 'min:0', 'max:305254'],
         ]);
 
         // dd(json_decode($request->variant, true));
         $variant = json_decode($request->variant, true);
         // $variant = $request->variant;
 
-        Auth::user()->phones()->attach($request->phone_id, ['variant' => $variant, 'price' => $request->price]);
+        Auth::user()->phones()->attach($request->phone_id, ['variant' => $variant, 'price' => $request->price, 'device_description' => $request->device_description]);
 
         return redirect()->route('vendor.phones.index')->with('status', 'Successfully added phone');
     }

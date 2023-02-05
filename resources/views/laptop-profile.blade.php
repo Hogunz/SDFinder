@@ -18,35 +18,35 @@
     </section>
     <!-- Section 1 -->
 
-<!-- Section 2 -->
-<div>
+    <!-- Section 2 -->
+    <div>
 
-    <!-- Section: Design Block -->
-    <section class="mb-12 p-8 bg-white">
-      <div class="px-6 md:px-12 text-center lg:text-left">
-        <div class="container mx-auto xl:px-32">
-          <div class="grid lg:grid-cols-2 gap-12 flex items-center">
-            <div class="mt-12 lg:mt-0">
-              <h1 class="text-5xl md:text-6xl xl:text-5xl font-bold tracking-tight mb-12 text-left">{{ $laptop->name }}</h1>
-              <p class="mt-3 text-base  text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0 break-words">
-                {!! $laptop->description !!}
-            </p>
+        <!-- Section: Design Block -->
+        <section class="mb-12 p-8 bg-white">
+            <div class="px-6 md:px-12 text-center lg:text-left">
+                <div class="container mx-auto xl:px-32">
+                    <div class="grid lg:grid-cols-2 gap-12 flex items-center">
+                        <div class="mt-12 lg:mt-0">
+                            <h1 class="text-5xl md:text-6xl xl:text-5xl font-bold tracking-tight mb-12 text-left">
+                                {{ $laptop->name }}</h1>
+                            <p
+                                class="mt-3 text-base  text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0 break-words">
+                                {!! $laptop->description !!}
+                            </p>
+                        </div>
+                        <div class="mb-12 lg:mb-0">
+                            <img src="{{ asset('storage/' . $laptop->img) }}"
+                                class="h-56 w-full  bg-no-repeat object-scale-down sm:h-72 md:h-96 lg:h-56 lg:w-full"
+                                alt="" />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="mb-12 lg:mb-0">
-              <img
-                src="{{ asset('storage/' . $laptop->img) }}"
-                class="h-56 w-full  bg-no-repeat object-scale-down sm:h-72 md:h-96 lg:h-56 lg:w-full"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Section: Design Block -->
+        </section>
+        <!-- Section: Design Block -->
 
-  </div>
-<!-- Section 2 -->
+    </div>
+    <!-- Section 2 -->
 
 
     <!-- Section 3 -->
@@ -88,25 +88,28 @@
             <div class="container mx-auto">
                 <h2 class="text-4xl font-extrabold dark:text-white">Specifications</h2>
                 <p class="my-4 text-lg text-gray-400"><strong
-                    class="font-semibold text-gray-900 dark:text-white">GPU:</strong> {{ $laptop->gpu }}.</p>
+                        class="font-semibold text-gray-900 dark:text-white">GPU:</strong> {{ $laptop->gpu }}.</p>
                 <p class="my-4 text-lg text-gray-400"><strong
-                    class="font-semibold text-gray-900 dark:text-white">CPU:</strong> {{ $laptop->cpu }}.</p>
+                        class="font-semibold text-gray-900 dark:text-white">CPU:</strong> {{ $laptop->cpu }}.</p>
 
                 <p class="my-4 text-lg text-gray-400"><strong
                         class="font-semibold text-gray-900 dark:text-white">Display:</strong> {{ $laptop->display }}.
                 </p>
                 <p class="my-4 text-lg text-gray-400"><strong
-                    class="font-semibold text-gray-900 dark:text-white">Storage:</strong> {{ $laptop->storage_mem }}.
-            </p>
-            <p class="my-4 text-lg text-gray-400"><strong
-                class="font-semibold text-gray-900 dark:text-white">Battery:</strong> {{ $laptop->battery }}.
-        </p>
-        <p class="my-4 text-lg text-gray-400"><strong
-            class="font-semibold text-gray-900 dark:text-white">Camera:</strong> {{ $laptop->camera_display }}.
-    </p>
-    <p class="my-4 text-lg text-gray-400"><strong
-        class="font-semibold text-gray-900 dark:text-white">Features:</strong> {{ $laptop->features_display }}.
-</p>
+                        class="font-semibold text-gray-900 dark:text-white">Storage:</strong>
+                    {{ $laptop->storage_mem }}.
+                </p>
+                <p class="my-4 text-lg text-gray-400"><strong
+                        class="font-semibold text-gray-900 dark:text-white">Battery:</strong> {{ $laptop->battery }}.
+                </p>
+                <p class="my-4 text-lg text-gray-400"><strong
+                        class="font-semibold text-gray-900 dark:text-white">Camera:</strong>
+                    {{ $laptop->camera_display }}.
+                </p>
+                <p class="my-4 text-lg text-gray-400"><strong
+                        class="font-semibold text-gray-900 dark:text-white">Features:</strong>
+                    {{ $laptop->features_display }}.
+                </p>
 
             </div>
         </div>
@@ -132,8 +135,7 @@
                     <div class="flex dark:text-white">
                         <div class="mr-4">
                             <img class="shadow sm:w-24 sm:h-24 w-24 h-24  bg-gray-100"
-                                src="{{ asset('storage/'.$shop->vendorInformation->avatar) }}"
-                                alt="Avatar" />
+                                src="{{ asset('storage/' . $shop->vendorInformation->avatar) }}" alt="Avatar" />
                         </div>
                         <div>
                             <p class="text-4xl font-extrabold line-clamp-1">{{ $shop->name }}</p>
@@ -156,7 +158,10 @@
                     </div>
                     <div>
                         <div class=" font-semibold text-center text-gray-900 dark:text-white">
-                            {{ $shop->pivot->price_string }}
+                            {{ $shop->pivot->price_string }} <br>
+                            @if ($shop->pivot->device_description)
+                                Freebies: {{ $shop->pivot->device_description }}
+                            @endif
                         </div>
                         <a href="{{ route('store.profile', $shop) }}">
                             <button

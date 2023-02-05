@@ -91,6 +91,12 @@ Route::name('admin.')->prefix('admin/')->middleware(['auth', 'role:admin'])->gro
     //Permanent Delete phones and laptops
     Route::delete('/laptops/forceDelete/{laptop}', [LaptopController::class, 'forceDelete'])->name('laptops.forceDelete');
     Route::delete('/phones/forceDelete/{phone}', [PhoneController::class, 'forceDelete'])->name('phones.forceDelete');
+    //Permanent Delete Device Configuration Management
+    Route::delete('/brands/forceDelete/{brand}', [BrandController::class, 'forceDelete'])->name('brands.forceDelete');
+    Route::delete('/os/forceDelete/{operatingSystem}', [OperatingSystemController::class, 'forceDelete'])->name('os.forceDelete');
+    Route::delete('/chipsets/forceDelete/{chipset}', [ChipsetController::class, 'forceDelete'])->name('chipsets.forceDelete');
+    Route::delete('/processors/forceDelete/{processor}', [ProcessorController::class, 'forceDelete'])->name('processors.forceDelete');
+    Route::delete('/graphics_cards/restore/{graphicsCard}', [GraphicsCardController::class, 'forceDelete'])->name('graphics_cards.forceDelete');
     //Restore processor
     Route::get('/processors/restore/{processor}', [ProcessorController::class, 'restore'])->name('processors.restore');
     //Restore Operating System

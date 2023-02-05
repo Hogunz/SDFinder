@@ -121,4 +121,12 @@ class BrandController extends Controller
             ->restore();
         return redirect()->route('admin.brands.index');
     }
+
+    public function forceDelete(Brand $brand)
+    {
+        $brand->phones()->forceDelete();
+        $brand->laptops()->forceDelete();
+        $brand->forceDelete();
+        return back()->with('status', 'brand successfully deleted');
+    }
 }

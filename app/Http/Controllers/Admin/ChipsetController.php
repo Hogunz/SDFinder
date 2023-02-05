@@ -109,4 +109,9 @@ class ChipsetController extends Controller
             ->restore();
         return redirect()->route('admin.chipsets.index');
     }
+    public function forceDelete(Chipset $chipset)
+    {
+        $chipset->forceDelete();
+        return back()->with('status', 'Chipset successfully deleted');
+    }
 }

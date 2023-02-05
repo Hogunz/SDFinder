@@ -25,21 +25,24 @@ class Laptop extends Model
         return $this->morphOne(Review::class, 'reviewable');
     }
 
-    public function brand(){
+    public function brand()
+    {
         return $this->belongsTo(Brand::class)->withTrashed();
     }
 
-    public function graphicsCard(){
+    public function graphicsCard()
+    {
         return $this->belongsTo(GraphicsCard::class);
     }
 
-    public function processor(){
+    public function processor()
+    {
         return $this->belongsTo(Processor::class);
     }
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'laptop_user')->using(LaptopUser::class)->withPivot(['price'])->withTimestamps();
+        return $this->belongsToMany(User::class, 'laptop_user')->using(LaptopUser::class)->withPivot(['price', 'device_description'])->withTimestamps();
     }
 
     public function getGpuAttribute()
@@ -66,24 +69,24 @@ class Laptop extends Model
     public function getStorageMemAttribute()
     {
         $storage = "{$this->ram}GB, {$this->storage}GB Storage, {$this->storage_description} ";
-       return $storage;
+        return $storage;
     }
 
     public function getBatteryAttribute()
     {
         $battery = "{$this->battery_capacity}Wh, {$this->battery_description}";
-       return trim("$battery");
+        return trim("$battery");
     }
 
     public function getCameraDisAttribute()
     {
         $camera = "{$this->camera}, {$this->camera_description}";
-       return trim("$camera");
+        return trim("$camera");
     }
 
     public function getFeaturesDisAttribute()
     {
         $feature = "{$this->features}, {$this->features_description}";
-       return trim("$feature");
+        return trim("$feature");
     }
 }
