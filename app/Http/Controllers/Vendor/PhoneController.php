@@ -50,7 +50,9 @@ class PhoneController extends Controller
     }
     public function update(Request $request, Phone $phone)
     {
-
+        $request->validate([
+            'price' => ['required', 'numeric', 'min:0', 'max:305254'],
+        ]);
         $variant = $request->variant;
         $pivotPhone = Auth::user()->phones()->wherePivot('phone_id', $phone->id)->wherePivot('variant->ram', $variant['ram'])->wherePivot('variant->storage', $variant['storage'])->first();
         $pivotPhone->pivot->where('variant->ram', $variant['ram'])->where('variant->storage', $variant['storage'])->update([
