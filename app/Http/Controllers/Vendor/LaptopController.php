@@ -43,6 +43,9 @@ class LaptopController extends Controller
     }
     public function update(Request $request, Laptop $laptop)
     {
+        $request->validate([
+            'price' => ['required', 'numeric', 'min:0', 'max:305254'],
+        ]);
         Auth::user()->laptops()->updateExistingPivot($laptop->id, ['price' => $request->price]);
         return redirect()->route('vendor.laptops.index');
     }

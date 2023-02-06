@@ -18,6 +18,9 @@
                     <x-label for="price" value="Price" />
                     <x-input id="price" type="number" step="0.01" name="price" x-model.number="price"
                         class="w-full block rounded"></x-input>
+                    @if ($errors->has('price'))
+                        <p class="text-red-500 text-xs mt-2">{{ $errors->first('price') }}</p>
+                    @endif
                 </div>
 
                 <div class="mt-2" x-show="price != 0">
