@@ -18,7 +18,7 @@ class FinderController extends Controller
     private $networks = ['2G', '3G', '4G', '5G'];
     private $multiples = [1 => 'Single', 2 => 'Dual', 3 => 'Triple', 4 => 'Quad'];
     private $sims = ['Nano', 'Micro', 'Mini'];
-    private $types = ['IPS', 'OLED', 'AMOLED','IPS LCD','Retina','None'];
+    private $types = ['IPS', 'OLED', 'AMOLED', 'IPS LCD', 'Retina', 'None'];
     private $resolutions = [
         'hd' => 'HD',
         'fhd' => 'FHD',
@@ -77,63 +77,57 @@ class FinderController extends Controller
         ));
     }
 
-   
+
     public function viewMobiles(Request $request)
     {
 
         $brands = Brand::all();
         $mobiles = [];
-
         $phones = Phone::query();
         $laptops = Laptop::query();
         $shops = User::role('vendor')->with(['vendorInformation'])->has('vendorInformation');
 
         //Brands
-        if($request->brands) {
+        if ($request->brands) {
             $phones->whereIn('brand_id', $request->brands);
             $laptops->whereIn('brand_id', $request->brands);
         }
-// Search for navbar
-        if($request->search) {
+        // Search for navbar
+        if ($request->search) {
             $phones->where('name', 'like', "%{$request->search}%");
             $laptops->where('name', 'like', "%{$request->search}%");
             $shops->where('name', 'like', "%{$request->search}%");
 
-            if($phones->count() === 1 && $laptops->count() === 0)
-            {
+            if ($phones->count() === 1 && $laptops->count() === 0) {
                 $phone = $phones->first();
                 return view('phone-profile', compact('phone'));
             }
 
-            if($laptops->count() === 1 && $phones->count() === 0)
-            {
+            if ($laptops->count() === 1 && $phones->count() === 0) {
                 $laptop = $laptops->first();
                 return view('laptop-profile', compact('laptop'));
             }
 
-            if($shops->count() === 1)
-            {
-                // dd($laptops->get());
+            if ($shops->count() === 1) {
                 $user = $shops->first();
                 return view('store-profile', compact('user'));
             }
         }
-//filter phones
-        if($request->phone)
-        {
+        //filter phones
+        if ($request->phone) {
             $laptops = [];
 
             //Price
-            if($request->price){
-                if($request->price['min'] || $request->price['max'] ) {
+            if ($request->price) {
+                if ($request->price['min'] || $request->price['max']) {
                     $phones->whereHas('users', function ($query) use ($request) {
-                        if($request->price['min'] && $request->price['max']) {
+                        if ($request->price['min'] && $request->price['max']) {
                             $query->whereBetween('price', $request->price);
-                        }else if($request->price['min']) {
+                        } else if ($request->price['min']) {
                             $query->where('price', '>=', $request->price['min']);
-                        }else if($request->price['max']) {
+                        } else if ($request->price['max']) {
                             $query->where('price', '<=', $request->price['max']);
-                        }else {
+                        } else {
                             return false;
                         }
                     });
@@ -141,41 +135,41 @@ class FinderController extends Controller
             }
 
             //Networks
-            if($request->networks) {
+            if ($request->networks) {
                 $phones->whereJsonContains('networks', $request->networks);
             }
             //Sims
-            if($request->sims) {
+            if ($request->sims) {
                 $phones->whereJsonContains('sims', $request->sims);
             }
             //Multiples
-            if($request->multiples) {
+            if ($request->multiples) {
                 $phones->whereIn('sim_count', $request->multiples);
             }
 
             //OS
-            if($request->os) {
+            if ($request->os) {
                 $phones->whereHas('operatingSystemVersion', function ($query) use ($request) {
                     $query->whereIn('operating_system_id', $request->os);
                 });
             }
             //Version
-            if($request->versions) {
+            if ($request->versions) {
                 $phones->whereIn('operating_system_version_id', $request->versions);
             }
 
             //Chipset
-            if($request->chipsets) {
+            if ($request->chipsets) {
                 $phones->whereIn('chipset_id', $request->chipsets);
             }
             //Cores
-            if($request->cores) {
+            if ($request->cores) {
                 $phones->whereHas('chipset', function ($query) use ($request) {
                     $query->whereIn('no_of_cores', $request->os);
                 });
             }
             //Memory
-            if($request->rams) {
+            if ($request->rams) {
                 $rams = collect($request->rams)->map(function ($ram) {
                     return ["ram" => $ram];
                 })->toArray();
@@ -184,12 +178,12 @@ class FinderController extends Controller
             }
 
             //Card Slot
-            if(!is_null($request->card_slot)) {
+            if (!is_null($request->card_slot)) {
                 $phones->where('card_slot', $request->card_slot);
             }
 
             //Storage
-            if($request->storages) {
+            if ($request->storages) {
                 $storages = collect($request->storages)->map(function ($storage) {
                     return ["storage" => $storage];
                 })->toArray();
@@ -197,52 +191,51 @@ class FinderController extends Controller
             }
 
             //Type
-            if($request->types) {
+            if ($request->types) {
                 $phones->whereIn('display_type', $request->types);
             }
 
             //Resolution
-            if($request->resolutions) {
+            if ($request->resolutions) {
                 $phones->whereIn('resolution', $request->resolutions);
             }
             //Main Cam
-            if($request->cameraResolutions) {
+            if ($request->cameraResolutions) {
                 $phones->whereJsonContains('camera_resolutions', $request->cameraResolutions);
             }
             //Video
-            if($request->videos) {
-                foreach($request->videos as $video) {
+            if ($request->videos) {
+                foreach ($request->videos as $video) {
                     $phones->orWhere('video_quality', 'like', "%$video%");
                 }
             }
             //Camera Count
-            if($request->cameraCounts) {
+            if ($request->cameraCounts) {
                 $phones->whereIn('camera_count', $request->cameraCounts);
             }
             //Selfie Cam
-            if($request->selfieResolutions) {
+            if ($request->selfieResolutions) {
                 $phones->whereJsonContains('selfie_camera_resolutions', $request->selfieResolutions);
             }
             //Dual Cam
-            if(!is_null($request->dualCamera)) {
+            if (!is_null($request->dualCamera)) {
                 $phones->where('selfie_camera_count', $request->dualCamera);
             }
         }
-//filter for Laptop
-        if($request->laptop)
-        {
+        //filter for Laptop
+        if ($request->laptop) {
             $phones = [];
             //Price
-            if($request->price){
-                if($request->price['min'] || $request->price['max'] ) {
+            if ($request->price) {
+                if ($request->price['min'] || $request->price['max']) {
                     $laptops->whereHas('users', function ($query) use ($request) {
-                        if($request->price['min'] && $request->price['max']) {
+                        if ($request->price['min'] && $request->price['max']) {
                             $query->whereBetween('price', $request->price);
-                        }else if($request->price['min']) {
+                        } else if ($request->price['min']) {
                             $query->where('price', '>=', $request->price['min']);
-                        }else if($request->price['max']) {
+                        } else if ($request->price['max']) {
                             $query->where('price', '<=', $request->price['max']);
-                        }else {
+                        } else {
                             return false;
                         }
                     });
@@ -250,37 +243,37 @@ class FinderController extends Controller
             }
 
             //CPU
-            if($request->cpus) {
+            if ($request->cpus) {
                 $laptops->whereIn('processor_id', $request->cpus);
             }
 
             //GPU
-            if($request->gpus) {
+            if ($request->gpus) {
                 $laptops->whereIn('graphics_card_id', $request->gpus);
             }
 
             //Memory
-            if($request->rams) {
+            if ($request->rams) {
                 $laptops->whereIn('ram', $request->rams);
             }
 
             //Storage
-            if($request->storages) {
+            if ($request->storages) {
                 $laptops->whereIn('storage', $request->storages);
             }
 
             //Type
-            if($request->types) {
+            if ($request->types) {
                 $laptops->whereIn('display_type', $request->types);
             }
 
             //Resolution
-            if($request->resolutions) {
+            if ($request->resolutions) {
                 $laptops->whereIn('display_resolution', $request->resolutions);
             }
         }
 
-        if($phones && $phones->exists()) {
+        if ($phones && $phones->exists()) {
             $phones = $phones->get()->map(function ($phone) {
                 $array = [];
                 $array['id'] = $phone->id;
@@ -293,7 +286,7 @@ class FinderController extends Controller
             });
         }
 
-        if($laptops && $laptops->exists()) {
+        if ($laptops && $laptops->exists()) {
             $laptops = $laptops->get()->map(function ($laptop) {
                 $array = [];
                 $array['id'] = $laptop->id;
@@ -306,11 +299,11 @@ class FinderController extends Controller
             });
         }
 
-        if(($phones && $phones->count() > 0) || ($laptops && $laptops->count() == 0)) $mobiles = $phones;
-        if(($phones && $phones->count() == 0) || ($laptops && $laptops->count() > 0)) $mobiles = $laptops;
-        if(($phones && $phones->count() > 0) && ($laptops && $laptops->count() > 0)) $mobiles = $phones->merge($laptops);
+        if (($phones && $phones->count() > 0) || ($laptops && $laptops->count() == 0)) $mobiles = $phones;
+        if (($phones && $phones->count() == 0) || ($laptops && $laptops->count() > 0)) $mobiles = $laptops;
+        if (($phones && $phones->count() > 0) && ($laptops && $laptops->count() > 0)) $mobiles = $phones->merge($laptops);
 
-        $mobiles = $mobiles && $mobiles->count() > 0 ? $mobiles->sortBy([ ['name', 'asc'] ])->toArray() : [];
+        $mobiles = $mobiles && $mobiles->count() > 0 ? $mobiles->sortBy([['name', 'asc']])->toArray() : [];
         $shops = $shops->get();
 
 
@@ -327,7 +320,4 @@ class FinderController extends Controller
     {
         return view('laptop-profile', compact('laptop'));
     }
-
-
-
 }

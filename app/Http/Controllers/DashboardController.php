@@ -16,7 +16,7 @@ class DashboardController extends Controller
 {
     public function dashboard()
     {
-        if(Auth::user()->hasRole('vendor'))
+        if (Auth::user()->hasRole('vendor'))
             return redirect()->route('vendor.dashboard');
 
         return redirect()->route('admin.dashboard');

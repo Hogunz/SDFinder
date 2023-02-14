@@ -25,7 +25,7 @@
         <section class="mb-12 p-8 bg-white">
             <div class="px-6 md:px-12 text-center lg:text-left">
                 <div class="container mx-auto xl:px-32">
-                    <div class="grid lg:grid-cols-2 gap-12 flex items-center">
+                    <div class="grid lg:grid-cols-2 gap-12  items-center">
                         <div class="mt-12 lg:mt-0">
                             <h1 class="text-5xl md:text-6xl xl:text-5xl font-bold tracking-tight mb-12 text-left">
                                 {{ $laptop->name }}</h1>
@@ -126,7 +126,7 @@
     <!-- Section 6 -->
     <section class="bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-600 pt-6 pb-6">
         <div class="container mx-auto">
-            <h5 class="text-xl font-extrabold text-white dark:text-white">The stores where you buy you buy the product:
+            <h5 class="text-xl font-extrabold text-white dark:text-white">The stores where you buy the product:
             </h5>
         </div>
         @forelse ($laptop->users->unique() as $shop)

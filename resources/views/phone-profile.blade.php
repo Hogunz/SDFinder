@@ -134,7 +134,7 @@
     <!-- Section 6 -->
     <section class="bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-600 pt-6 pb-6">
         <div class="container mx-auto">
-            <h5 class="text-xl font-extrabold text-white dark:text-white">The stores where you buy you buy the product:
+            <h5 class="text-xl font-extrabold text-white dark:text-white">The stores where you buy the product:
             </h5>
         </div>
         @forelse ($phone->users as $shop)
