@@ -76,13 +76,9 @@
                         class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 rounded-md flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
                         <div class="flex items-center">
 
-                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/light-with-button-svg3.svg"
-                                alt="logo" />
+                            <img class="h-10" src="{{ asset('img/sd.svg') }}" alt="logo" />
 
-                            <h2 class="hidden sm:block text-base text-gray-700 font-bold leading-normal px-3 hover:text-red-600"
-                                style="font-family:  sans-serif;
-                                                ">
-                                SDFinder</h2>
+
                         </div>
                     </button>
                 </a>
